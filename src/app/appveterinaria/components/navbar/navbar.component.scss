@@ -1,0 +1,43 @@
+.navbar {
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    z-index: 1030;
+    box-shadow: 0 0.5rem 1rem #0000006b;
+    background-color: #1e2741!important;
+}
+.navbar-nav {
+    flex-direction: row;
+}
+
+.nav-item{
+    margin-left: 5px;
+    margin-right: 5px;
+}
+.icon-nav{
+    height: 55px;
+    :hover{
+        background-color: cyan;
+    }
+}
+.icon-sidenav{
+    color: white;
+    display: flex;
+    align-items: center;
+    margin: 0px;
+}
+.fa-angle-double-right{
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 30px;
+}
+
+.open-sidenav{
+    width: 300px;
+    transition: 0.5s;
+}
+.closed-sidenav{
+    width: 25px;
+    transition: 0.3s;
+}

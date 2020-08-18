@@ -1,0 +1,29 @@
+.image1{
+    background: linear-gradient(to top, #5c4d4281 10%, #5c4d42 90%), url('../../assets/images/landing1.jpg');
+}
+.image2{
+    background: linear-gradient(to top, #0e6b8886 10%, #00556e 90%), url('../../assets/images/landing2.jpg');
+}
+.image3{
+    background: linear-gradient(to top, #291c4d8f 10%, #0a0f52 90%), url('../../assets/images/landing3.jpg');
+}
+.image4{
+    background: linear-gradient(to top, #4d321c7e 10%, #833f00 90%), url('../../assets/images/landing4.jpg');
+}
+
+
+.image1, .image2, .image3, .image4{
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position-x: center;
+}
+.carousel-item{
+    height: 800px;
+}
+.carousel{
+    box-shadow: 0 0.5rem 1rem #000000a2;
+}
+
+.carousel-indicators {
+    bottom: 80px;
+}

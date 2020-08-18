@@ -1,0 +1,26 @@
+<nav class="navbar py-0 navbar-dark pr-4" >
+    <ul class="navbar-nav icon-nav">
+        <li class="nav-item text-center icon-sidenav" (click)="sidenav()" [ngClass]="stateSidenav ? 'open-sidenav' : 'closed-sidenav'">
+            <i class="fas fa-angle-double-right" [@iconOpenClose]="stateSidenav ? 'open' : 'closed'"></i>
+        </li>
+    </ul>
+    <ul class="navbar-nav pl-4 mr-auto py-2">
+        <li class="nav-item">
+            <a class="nav-link active" aria-current="page" [routerLink]='["./"]'>Home</a>
+        </li>
+    </ul>
+    <ul class="navbar-nav ml-auto py-2">
+        <li class="nav-item mx-2">
+            <a class="nav-link" href="#">Link 1</a>
+        </li>
+        <li class="nav-item mx-2">
+            <a class="nav-link" href="#">Link 2</a>
+        </li>
+        <li class="nav-item mx-2">
+            <a class="nav-link" href="#">Perfil</a>
+        </li>
+        <li class="nav-item mx-2">
+            <a class="nav-link" href="#" tabindex="-1" aria-disabled="true">SALIR</a>
+        </li>
+    </ul>
+</nav>
