@@ -1,19 +1,17 @@
 .sidenav {
     position: fixed;
-    //background-image: -webkit-gradient(linear, left bottom, left top, from(#343a412d), color-stop(30%, #343a41), to(#131618));
+    //background-image: -webkit-gradient(linear, left bottom, left top, from(#1e274100), color-stop(30%, #1e2741d7), to(#1e2741));
     background-color: #1e2741!important;
-    padding: 10px 0px 1rem 0px;
+    padding: 10px 0px 3rem 0px;
     contain: content;
-    height: 670px;
+    height: 100%;
     overflow-y: auto;
     top: 55px;
     left: 0;
     box-shadow: 0.3rem 0.3rem 0.3rem #0000006b;
 }
 ::-webkit-scrollbar{
-    /* display: none; */
-    background-color: aqua;
-    width: 2px;;
+    display: none;
 }
 
 .show-label{
@@ -34,7 +32,7 @@
 }
 li{
     padding: 0;
-    min-height: 3rem;
+    min-height: 3.5rem;
     border-top: 1px solid #0e4c86;
 }
 .drop{
@@ -54,7 +52,8 @@ label{
 }
 
 .nav-link,.drop{
-    color: #00b7ff;
+    //color: #00b7ff;
+    color: cyan;
 }
 
 

@@ -17,8 +17,17 @@
 }
 .icon-nav{
     height: 55px;
-    :hover{
-        background-color: cyan;
+    &:hover{
+        background-color: #060e27;
+    }
+}
+.dropdown-item{
+    font-size: 17px;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+    &:hover{
+        background-color: #0084ff;
+        color: white;
     }
 }
 .icon-sidenav{
@@ -40,4 +49,8 @@
 .closed-sidenav{
     width: 25px;
     transition: 0.3s;
+}
+.dropdown-menu{
+    position: absolute;
+    border: none;
 }
