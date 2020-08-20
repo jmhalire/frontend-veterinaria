@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { OtraComponent } from './otra.component';
+import { BuscarrecordatorioComponent } from './buscarrecordatorio.component';
 
-describe('OtraComponent', () => {
-  let component: OtraComponent;
-  let fixture: ComponentFixture<OtraComponent>;
+describe('BuscarrecordatorioComponent', () => {
+  let component: BuscarrecordatorioComponent;
+  let fixture: ComponentFixture<BuscarrecordatorioComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ OtraComponent ]
+      declarations: [ BuscarrecordatorioComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(OtraComponent);
+    fixture = TestBed.createComponent(BuscarrecordatorioComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

@@ -13,6 +13,37 @@
 ::-webkit-scrollbar{
     display: none;
 }
+// .navbar-dark .navbar-nav .active>.nav-link {
+//     background-color: #ffffff;
+// }
+.nav-item{
+    display: flex;
+    align-items: center;
+    color: cyan;
+    &.active{
+        background-color: #00a1a1;
+        .nav-link{
+            color: white;
+            label{
+                margin-left: 1.5rem;
+                -webkit-text-stroke-width: thin;
+            }
+        }
+    }
+    &:hover, a:hover{
+        color: white;
+        background-color: #0084ff;
+        label,span{
+            color: white;
+            transform: translateX(15px);
+            transition: 0.2s;
+        }
+    }
+    .nav-link{
+        color: cyan;
+    }
+    
+}
 
 .show-label{
     transition: 0.5s;
@@ -51,21 +82,7 @@ label{
     text-transform: uppercase;
 }
 
-.nav-link,.drop{
-    //color: #00b7ff;
-    color: cyan;
-}
 
-
-.nav-item:hover,.nav-item a:hover{
-    color: white;
-    background-color: #0084ff;
-    >label,span{
-        color: white;
-        transform: translateX(15px);
-        transition: 0.2s;
-    }
-}
 .dropdown{
     padding-left: 2em;
     background: linear-gradient(45deg,black, transparent);

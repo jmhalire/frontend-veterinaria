@@ -63,7 +63,7 @@ const openClose = [
 const sidenav = [
     trigger('sidenav', [
       state('open', style({
-        width: '300px',
+        width: '280px',
       })),
       state('closed', style({
         width: '30px',
@@ -76,7 +76,7 @@ const sidenav = [
 const main = [
     trigger('main', [
       state('open', style({
-        marginLeft: '300px',
+        marginLeft: '280px',
       })),
       state('closed', style({
         marginLeft: '30px',

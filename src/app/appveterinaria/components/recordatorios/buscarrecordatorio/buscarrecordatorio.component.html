@@ -1,0 +1,49 @@
+<div class="card">
+    <div class="card-header">
+        <h4 class="card-title">Búsqueda</h4>
+    </div>
+    <div class="card-body">
+        <form class="mx-auto" name="form" method="get">
+            <div class="card-text">
+                <div>
+                    <div class="form-group">
+                        <label for="form_range">Periodo</label>
+                        <select id="form_range" name="form[range]" required="required" class="form-control">
+                            <option value="">Seleccione un rango</option>
+                            <option value="1">Ayer</option>
+                            <option value="2">Hoy</option>
+                            <option value="3">Mañana</option>
+                            <option value="4">Semana Pasada</option>
+                            <option value="5" selected="selected">Esta Semana</option>
+                            <option value="6">Próxima Semana</option>
+                            <option value="7">Mes Pasado</option>
+                            <option value="8">Este Mes</option>
+                            <option value="9">Próximo Mes</option>
+                        </select>
+                    </div>
+                </div>
+                <div>
+                    <div class="form-group bmd-form-group is-filled">
+                        <label for="form_start" class="required bmd-label-static">Fecha desde</label>
+                        <input type="datetime-local" id="form_start" name="form[start]" required="required"
+                            class="js-datepicker form-control" value="2020-08-17">
+                    </div>
+                </div>
+                <div>
+                    <div class="form-group bmd-form-group is-filled"><label for="form_end"
+                            class="required bmd-label-static">Fecha hasta</label><input type="datetime-local"
+                            id="form_end" name="form[end]" required="required" class="js-datepicker form-control"
+                            value="2020-08-23">
+                    </div>
+                </div>
+                <div class="toggle-group"><label class="btn btn-primary btn-sm toggle-on"
+                        style="line-height: 20px;">SI</label><label class="btn btn-default btn-sm active toggle-off"
+                        style="line-height: 20px;">NO</label><span class="toggle-handle btn btn-default btn-sm"></span>
+                </div>
+            </div>
+            <br>
+
+            <input type="submit" class="btn btn-block btn-raised btn-outline-info" value="Buscar">
+        </form>
+    </div>
+</div>

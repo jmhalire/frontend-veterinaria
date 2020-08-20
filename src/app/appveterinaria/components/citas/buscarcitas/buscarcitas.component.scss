@@ -1,0 +1,25 @@
+.card{
+    border: none;
+    .card-header{
+        background-color: #005c5ccb!important;
+        color: white;
+        text-align: center;
+    }
+    .card-body{
+        background-color: #00888833;
+        form{
+            width: 85%;
+        } 
+    }
+}
+
+.form-control, .form-select{
+    color: #000000;
+    &:focus {
+        background-color: white;
+        border-color: #17ffe9;
+        box-shadow: 0 0 0 0.2rem #02aa9970;
+        outline: 0;
+        transition: 0.5s;
+    }
+}
