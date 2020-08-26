@@ -12,7 +12,8 @@ import { FooterComponent } from "./components/footer/footer.component";
 import { HomeComponent } from "./components/home.component";
 import { SigninComponent } from './components/navbar/signin/signin.component';
 
-//modules
+//services
+
 
 
 @NgModule({
@@ -28,7 +29,7 @@ import { SigninComponent } from './components/navbar/signin/signin.component';
     AppRoutingModule,
     BrowserAnimationsModule
   ],
-  providers: [], 
+  providers: [  ], 
   bootstrap: [AppComponent]
 })
 export class AppModule { }

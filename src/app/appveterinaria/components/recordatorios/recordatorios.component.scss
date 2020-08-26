@@ -1,3 +1,14 @@
+.navbar{
+    background-color: #cccccc;
+    border-radius: 5px 5px 0 0;
+    display: block;
+    ul{
+        list-style: none;
+        display: flex;
+        justify-content: flex-end;
+    }
+}
+
 .card{
     border: none;
     .card-header{
@@ -28,6 +39,6 @@
 @media screen and (min-width: 1200px){
     .client{
         display: grid;
-        grid-template-columns: 1fr 3fr;
+        grid-template-columns: 1fr 4fr;
     }
 }

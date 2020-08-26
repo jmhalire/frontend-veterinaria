@@ -1,3 +1,4 @@
+<app-opcionmascotas></app-opcionmascotas>
 <div class="client">
   <app-buscarmascota></app-buscarmascota>
   <div class="card">
@@ -9,59 +10,25 @@
         <thead>
           <tr>
             <th>#</th>
-            <th>First Name</th>
-            <th>Last Name</th>
-            <th>ther Name</th>
+            <th>Nro historia</th>
+            <th>dueño</th>
+            <th>nombres</th>
+            <th>especie</th>
+            <th>sexo</th>
+            <th>accion</th>
           </tr>
         </thead>
         <tbody>
-          <tr>
-            <th scope="row">1</th>
-            <td>Marcelino andree mendoza flores</td>
-            <td>plaza santiago nro 234-ate</td>
-            <td>2455</td>
-          </tr>
-          <tr>
-            <th scope="row">2</th>
-            <td>Jacob</td>
-            <td>Thornton</td>
-            <td>Thornton</td>
-          </tr>
-          <tr>
-            <th scope="row">3</th>
-            <td>Mark</td>
-            <td>Otto</td>
-            <td>Thornton</td>
-          </tr>
-          <tr>
-            <th scope="row">4</th>
-            <td>Jacob</td>
-            <td>Thornton</td>
-            <td>Thornton</td>
-          </tr>
-          <tr>
-            <th scope="row">5</th>
-            <td>Marcelino andree mendoza flores</td>
-            <td>plaza santiago nro 234-ate</td>
-            <td>2455</td>
-          </tr>
-          <tr>
-            <th scope="row">6</th>
-            <td>Jacob</td>
-            <td>Thornton</td>
-            <td>Thornton</td>
-          </tr>
-          <tr>
-            <th scope="row">7</th>
-            <td>Mark</td>
-            <td>Otto</td>
-            <td>Thornton</td>
-          </tr>
-          <tr>
-            <th scope="row">8</th>
-            <td>Jacob</td>
-            <td>Thornton</td>
-            <td>Thornton</td>
+          <tr *ngFor='let mascota of  mascotas; index as i'>
+            <th scope="row">{{ i+1 }}</th>
+            <td>{{ mascota.id_historia}}</td>
+            <td>{{ mascota.duenio}}</td>
+            <td>{{ mascota.nombre}}</td>
+            <td>{{ mascota.especie}}</td>
+            <td>{{ mascota.sexo}}</td>
+            <td>
+              <button type="submit" class="btn btn-dark">Ver detalles</button>
+            </td>
           </tr>
         </tbody>
       </table>

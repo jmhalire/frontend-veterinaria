@@ -18,7 +18,7 @@ const routes: Routes = [
       { path: 'clientes', component: ClientesComponent },
       { path: 'mascotas', component: MascotasComponent },
       { path: 'citas-programadas', component: CitasComponent },
-      { path: 'recordatorios', component: RecordatoriosComponent }
+      { path: 'recordatorios', component: RecordatoriosComponent}
     ]
   },
 

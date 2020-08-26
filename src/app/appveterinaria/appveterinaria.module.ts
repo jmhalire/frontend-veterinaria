@@ -1,6 +1,8 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
+
+//componetes 
 import { AppveterinariaRoutingModule } from './appveterinaria-routing.module';
 import { AppveterinariaComponent } from './appveterinaria.component';
 import { HomeComponent } from "./components/home/home.component";
@@ -15,18 +17,25 @@ import { BuscarcitasComponent } from './components/citas/buscarcitas/buscarcitas
 import { BuscarclienteComponent } from "./components/clientes/buscarcliente/buscarcliente.component";
 import { RecordatoriosComponent } from './components/recordatorios/recordatorios.component';
 import { BuscarrecordatorioComponent } from './components/recordatorios/buscarrecordatorio/buscarrecordatorio.component';
+import { OpcioncitasComponent } from './components/citas/opcioncitas/opcioncitas.component';
+import { OpcionmascotasComponent } from './components/mascotas/opcionmascotas/opcionmascotas.component';
+import { OpcionclientesComponent } from './components/clientes/opcionclientes/opcionclientes.component';
 
+//servicios
+import { VeterinariaService } from "./services/veterinaria.service";
+import { AgregarComponent } from './components/clientes/agregar/agregar.component';
 
 @NgModule({
   declarations: [
     AppveterinariaComponent, HomeComponent,NavbarComponent,SidenavComponent, AsideComponent, ClientesComponent, MascotasComponent, 
-    CitasComponent, BuscarmascotaComponent, BuscarcitasComponent, BuscarclienteComponent, RecordatoriosComponent, BuscarrecordatorioComponent
+    CitasComponent, BuscarmascotaComponent, BuscarcitasComponent, BuscarclienteComponent, RecordatoriosComponent, BuscarrecordatorioComponent, 
+    OpcioncitasComponent, OpcionmascotasComponent, OpcionclientesComponent, AgregarComponent
   ],
   imports: [
     CommonModule,
     AppveterinariaRoutingModule
   ],
-  providers:[],
+  providers:[ VeterinariaService ],
   bootstrap:[AppveterinariaComponent]
 })
 export class AppveterinariaModule { }

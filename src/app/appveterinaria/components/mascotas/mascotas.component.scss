@@ -19,15 +19,20 @@
     thead{
         --bs-table-bg: #1e2741;
         color: rgb(0, 247, 255);
-    }
-    tbody tr th{
-        width: 20px;;
+        tr {
+            th:first-child{
+                width: 20px;
+            }
+            th:last-child{
+                width: 130px;
+            }
+        }
     }
 }   
 
 @media screen and (min-width: 1200px){
     .client{
         display: grid;
-        grid-template-columns: 1fr 3fr;
+        grid-template-columns: 1fr 4fr;
     }
 }
