@@ -21,8 +21,6 @@ import { OpcioncitasComponent } from './components/citas/opcioncitas/opcioncitas
 import { OpcionmascotasComponent } from './components/mascotas/opcionmascotas/opcionmascotas.component';
 import { OpcionclientesComponent } from './components/clientes/opcionclientes/opcionclientes.component';
 
-//servicios
-import { VeterinariaService } from "./services/veterinaria.service";
 import { AgregarComponent } from './components/clientes/agregar/agregar.component';
 
 @NgModule({
@@ -35,7 +33,7 @@ import { AgregarComponent } from './components/clientes/agregar/agregar.componen
     CommonModule,
     AppveterinariaRoutingModule
   ],
-  providers:[ VeterinariaService ],
+  providers:[ ],
   bootstrap:[AppveterinariaComponent]
 })
 export class AppveterinariaModule { }

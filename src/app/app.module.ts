@@ -1,20 +1,21 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
+import { HttpClientModule } from "@angular/common/http";
+import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 
 //routing
 import { AppRoutingModule } from './app-routing.module';
 
 //components
 import { AppComponent } from './app.component';
-import { NavbarComponent } from "./components/navbar/navbar.component";
-import { FooterComponent } from "./components/footer/footer.component";
-import { HomeComponent } from "./components/home.component";
-import { SigninComponent } from './components/navbar/signin/signin.component';
+import { NavbarComponent } from "./applogin/navbar/navbar.component";
+import { FooterComponent } from "./applogin/footer/footer.component";
+import { HomeComponent } from "./applogin/home.component";
+import { SigninComponent } from "./applogin/signin/signin.component";
 
 //services
-
-
+import { VeterinariaService } from "./services/veterinaria.service";
 
 @NgModule({
   declarations: [
@@ -27,9 +28,12 @@ import { SigninComponent } from './components/navbar/signin/signin.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    HttpClientModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
-  providers: [  ], 
+  providers: [ VeterinariaService ], 
   bootstrap: [AppComponent]
 })
 export class AppModule { }

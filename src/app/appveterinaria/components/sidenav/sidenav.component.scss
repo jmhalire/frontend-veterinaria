@@ -18,10 +18,14 @@
     display: flex;
     align-items: center;
     color: cyan;
+    padding: 0;
+    min-height: 3.5rem;
+    border-top: 1px solid #0e4c8610;
     &.active{
-        background-color: #00a1a1;
+        background-color: white;
+        border: none;
         .nav-link{
-            color: white;
+            color: black;
             label{
                 margin-left: 1.5rem;
                 -webkit-text-stroke-width: thin;
@@ -38,9 +42,13 @@
         }
     }
     .nav-link{
+        display: flex;
         color: cyan;
-    }
-    
+        width: 100%;
+        height: 100%;
+        align-items: center;
+        padding: 0%;
+    } 
 }
 
 .show-label{
@@ -57,11 +65,6 @@
     will-change: transform;
 }
 
-li{
-    padding: 0;
-    min-height: 3.5rem;
-    border-top: 1px solid #0e4c86;
-}
 .drop{
     padding: 14px 0px;
     display: flex;
@@ -69,15 +72,11 @@ li{
     text-decoration: none;
     user-select: none;
 }
-.nav-link{
-    display: flex;
-    align-items: center;
-}
+
 label{
     font-size: 18px;
     text-transform: uppercase;
 }
-
 
 .dropdown{
     padding-left: 2em;

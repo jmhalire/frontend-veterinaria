@@ -1,5 +1,5 @@
 import { Component, OnInit, Host, ViewChild } from '@angular/core'; 
-import { main } from "../animations";
+import { main } from "@animations/animations";
 import { NavbarComponent } from './components/navbar/navbar.component';
 
 @Component({

@@ -4,8 +4,9 @@
   "compilerOptions": {
     "baseUrl": "./",
     "paths": {
-      "@services/*": ["src/app/appveterinaria/services/*"],
-      "@interfaces/*": ["src/app/appveterinaria/interfaces/*"]
+      "@services/*": ["src/app/services/*"],
+      "@interfaces/*": ["src/app/interfaces/*"],
+      "@animations/*": ["src/app/animations/*"]
     },
     "outDir": "./dist/out-tsc",
     "sourceMap": true,

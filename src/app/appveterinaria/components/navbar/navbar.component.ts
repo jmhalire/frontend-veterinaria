@@ -1,5 +1,5 @@
 import { Component, OnInit, EventEmitter, Output, Input } from '@angular/core';
-import { openClose } from "../../../animations";
+import { openClose } from "@animations/animations";
 
 @Component({
   selector: 'app-navbar',

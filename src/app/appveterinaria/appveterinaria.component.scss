@@ -2,8 +2,16 @@
 .index{
     margin-top: 55px;
     height: 100%;
+    width: 100%;
 }
+
 .main{
-    margin-right: 25px;
     padding: 10px;
+}
+
+
+@media screen and (min-width: 1200px){
+    .main{
+        margin-right: 25px;
+    }
 }

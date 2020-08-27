@@ -1,5 +1,5 @@
 import { Component, OnInit, Input, ViewChild, ElementRef, EventEmitter, Output } from '@angular/core';
-import { sidenav } from 'src/app/animations';
+import { sidenav } from '@animations/animations';
 
 @Component({
   selector: 'app-sidenav',

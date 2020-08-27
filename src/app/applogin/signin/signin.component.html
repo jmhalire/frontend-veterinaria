@@ -1,0 +1,39 @@
+<div class="modal fade" id="staticBackdrop" data-backdrop="static" data-keyboard="false" tabindex="-1"
+  aria-labelledby="staticBackdropLabel" aria-hidden="true">
+  <div class="modal-dialog ">
+    <div class="modal-content ">
+      <div class="modal-header">
+        <h5 class="modal-title text-center" id=" ">
+          <i aria-hidden="true" class="fa fa-fw fa-sign-in-alt ng-tns-c21-1"></i>
+          Iniciar sesion
+        </h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form [formGroup]='signinForm' (ngSubmit)="signin()">
+          <div class="text-center">
+            <i class="fal fa-fw fa-user" aria-hidden="true" style="font-size: 8rem;"></i>
+          </div>
+          <br>
+          <div class="form-inline">
+            <h5>Usuario</h5>
+            <input class="form-control" formControlName='Email' type="text" required>
+          </div>
+          <br>
+          <div class="form-inline">
+            <h5>Contraseña</h5>
+            <input class="form-control" formControlName='Password' type="password" required>
+          </div>
+          <div class="modal-footer">
+            <button type="submit" class="btn btn-dark btn-block">Iniciar</button>
+            <br>
+            <hr><br>
+            <a href="#" class="mr-auto mt-3" style="text-decoration: none;">Olvidaste tu contraseña?</a>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
