@@ -23,12 +23,13 @@ import { OpcionclientesComponent } from './components/clientes/opcionclientes/op
 
 import { AgregarComponent } from './components/clientes/agregar/agregar.component';
 import { AgregarmascotaComponent } from './components/mascotas/agregarmascota/agregarmascota.component';
+import { DeudoresComponent } from './components/clientes/deudores/deudores.component';
 
 @NgModule({
   declarations: [
     AppveterinariaComponent, HomeComponent,NavbarComponent,SidenavComponent, AsideComponent, ClientesComponent, MascotasComponent, 
     CitasComponent, BuscarmascotaComponent, BuscarcitasComponent, BuscarclienteComponent, RecordatoriosComponent, BuscarrecordatorioComponent, 
-    OpcioncitasComponent, OpcionmascotasComponent, OpcionclientesComponent, AgregarComponent, AgregarmascotaComponent
+    OpcioncitasComponent, OpcionmascotasComponent, OpcionclientesComponent, AgregarComponent, AgregarmascotaComponent, DeudoresComponent
   ],
   imports: [
     CommonModule,
