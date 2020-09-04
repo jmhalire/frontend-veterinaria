@@ -1,5 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-import { VeterinariaService } from "@services/veterinaria.service";
+import { Component, OnInit, ViewChild, Host } from '@angular/core';
+import { ListaclientesComponent } from './listaclientes/listaclientes.component';
 
 @Component({
   selector: 'app-clientes',
@@ -8,18 +8,14 @@ import { VeterinariaService } from "@services/veterinaria.service";
 })
 export class ClientesComponent implements OnInit {
 
-  public clientes: any[]
-  public titleList: string
-  constructor(private veteService: VeterinariaService) {
-    this.titleList = 'LISTA DE CLIENTES'
-    this.clientes = [];
+  @ViewChild(ListaclientesComponent) list: ListaclientesComponent;
+  constructor() {
+
    }
 
   ngOnInit(): void {
 
-    this.clientes =  this.veteService.getListaClientes()
-    console.log(this.clientes);
-    
   }
+
 
 }

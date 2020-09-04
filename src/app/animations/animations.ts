@@ -63,23 +63,23 @@ const openClose = [
 const sidenav = [
     trigger('sidenav', [
       state('open', style({
-        width: '280px',
+        width: '260px',
       })),
       state('closed', style({
-        width: '30px',
+        width: '50px',
       })),
-      transition('* => closed', [animate('0.3s')]),
-      transition('* => open', [animate('0.3s')]),
+      transition('* => closed', [animate('0.25s')]),
+      transition('* => open', [animate('0.25s')]),
     ])
 ]
 
 const main = [
     trigger('main', [
       state('open', style({
-        marginLeft: '280px',
+        marginLeft: '260px',
       })),
       state('closed', style({
-        marginLeft: '30px',
+        marginLeft: '50px',
       })),
       transition('* => closed', [animate('0.4s')]),
       transition('* => open', [animate('0.2s')]),
@@ -87,23 +87,22 @@ const main = [
 ]
 
 
+const search = trigger('search', [
+    transition(':enter', [style({ opacity: 1, transform: 'translateX(-80%)'}), animate('0.2s ease-in'),]),
+    transition(':leave', [animate('0.2s ease-out', style({ opacity: 0.5, transform: 'translateX(-100%)' }))])
+])
 
+
+const signin = trigger('signin', 
+        [transition(':enter',
+        [style({ opacity: 0, transform: 'translateY(-100%)'}), animate('0.3s ease-in-out')])
+    ])
 /*
 const profile = trigger('profile',
     [transition(':enter',
         [style({ opacity: 1, transform: 'translateY(-60%) scale3d(0.1,0.1,0.1)' }), animate('300ms')])
     ])
 
-const signinAnimations = {
-    signin: trigger('signin', 
-        [transition(':enter',
-            [style({ opacity: 0, transform: 'translateX(100%) rotate(120deg)'}), animate('300ms')])
-    ]),
-    logo: trigger('logo', 
-        [transition(':enter',
-            [style({ opacity: 0,height:'0px'}), animate('350ms')])
-        ])
-}
 
 const signupAnimation = {
     signup: trigger('signup', 
@@ -126,5 +125,7 @@ const body = {
 export {
     sidenav,
     main,
-    openClose
+    openClose,
+    signin,
+    search
 }

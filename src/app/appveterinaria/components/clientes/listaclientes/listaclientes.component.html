@@ -1,0 +1,44 @@
+<app-message *ngIf="message" [messageDate]="messageDate"></app-message>
+<button class="btn btn-primary my-1" (click)="handlefuntion()">{{texto}} cuadro de busqueda</button>
+<div class="content">
+  <div class="search" *ngIf="openClose" @search>
+    <app-buscarcliente></app-buscarcliente>
+  </div>
+  <div class="card">
+    <div class="card-header bg-dark text-center text-white">
+      <h4 class="card-title">{{titleList}}</h4>
+    </div>
+    <div class="card-body p-0">
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>Nombre</th>
+            <th>Apellidos</th>
+            <th>Telefono</th>
+            <th>Direccion</th>
+            <th>Opcion</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor='let cliente of  clientes; index as i'>
+            <th scope="row">{{ i+1 }}</th>
+            <td>{{ cliente.Nombres}}</td>
+            <td>{{ cliente.Apellidos}}</td>
+            <td>{{ cliente.Celular}}</td>
+            <td>{{ cliente.Direccion}}</td>
+            <td>
+              <div class="d-flex">
+                <button type="submit" class="btn btn-dark" [routerLink]="['./', cliente.id]">Ver detalles</button>
+              </div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="card-footer">
+      footer
+    </div>
+  </div>
+</div>
+<br>

@@ -1,0 +1,20 @@
+<div class="card">
+    <div class="card-header">
+        <h4 class="card-title">mascotas de <strong>{{ nameClient }}</strong></h4>
+    </div>
+    <div class="card-body p-0">
+        <ul class="list-group list-group-flush">
+            <li class="list-group-item" *ngFor="let mascota of mascotas">
+                <div class="d-flex">
+                    <h6 class="mr-2">Especie: </h6>
+                    <h6>{{ mascota.Especie }}</h6>
+                </div>
+                <span style="font-size: 3rem;">{{ mascota.Nombres }}</span><br>
+                <span style="font-size: 1.5rem;">{{ mascota.Sexo }}</span>
+            </li>
+        </ul>
+    </div>
+    <div class="card-footer d-flex">
+        <button type="submit" class="btn btn-primary ml-auto">Agregar una mascota a jaime</button>
+    </div>
+</div>

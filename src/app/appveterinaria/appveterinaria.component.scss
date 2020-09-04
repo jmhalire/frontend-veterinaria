@@ -1,17 +1,37 @@
-//class="bg-dark" style="margin-top:55px;min-height:680px"
 .index{
-    margin-top: 55px;
-    height: 100%;
-    width: 100%;
+    padding-left: 50px;
 }
 
 .main{
+    margin-top: 55px;
     padding: 10px;
+    overflow-y: auto;
+    
+}
+/* .main-open{
+    margin-left: 0px;
+} */
+
+
+::-webkit-scrollbar{
+    display: none;
+}
+@media screen and (max-width: 450px){
+    .main{
+        min-width: 420px;
+    }
 }
 
+@media screen and (min-width: 992px){
+    .main-open{
+        margin-left: 210px;
+        transition: 0.25s ease-in-out;
+    }
+    
+}
 
 @media screen and (min-width: 1200px){
-    .main{
-        margin-right: 25px;
-    }
+    /* .index{
+        padding-right: 50px;
+    } */
 }

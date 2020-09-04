@@ -1,0 +1,21 @@
+.list-group{
+    flex-direction: row;
+}
+.btn-group{
+    width: 100%;
+}
+.btn-secondary.active {
+    background-color: #40484e;
+    transform: translateY(2px) scaleY(1.07);
+
+}
+
+table{
+    min-width: auto;
+    thead{
+        background-color: #272d31;
+    }
+}
+.btn-check:focus+.btn-secondary, .btn-secondary:focus {
+    box-shadow: none;
+}

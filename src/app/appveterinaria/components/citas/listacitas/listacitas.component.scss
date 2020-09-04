@@ -1,0 +1,16 @@
+.card{
+    border: none;
+    width: 100%;
+    .card-header{
+        background-color: #48515a!important;
+        color: white;
+        text-align: center;
+    }
+    .card-body{
+        overflow-x: auto;
+    }
+}
+
+
+@media screen and (min-width: 1200px){
+}

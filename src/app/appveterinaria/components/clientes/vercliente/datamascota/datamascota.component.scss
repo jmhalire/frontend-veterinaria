@@ -1,0 +1,17 @@
+
+.card{
+    border: none;
+    contain: content;
+    height: min-content;
+    .card-header{
+        background-color: #48515a!important;
+        color: white;
+        text-align: center;
+    }
+    .card-body{
+        table tbody tr th{
+            padding-left: 1.5rem;
+        }
+    }
+}
+

@@ -8,15 +8,13 @@ import { VeterinariaService } from "@services/veterinaria.service";
 })
 export class MascotasComponent implements OnInit {
 
-  public mascotas: any[]
-  public titleList: string
-  constructor(private veteService: VeterinariaService) { 
-    this.titleList = 'LISTA DE MASCOTAS'
+  
+  constructor() { 
+    
   }
 
   ngOnInit(): void {
 
-    this.mascotas = this.veteService.getListaMascotas();
   }
 
 }

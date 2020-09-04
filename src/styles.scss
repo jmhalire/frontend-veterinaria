@@ -20,13 +20,114 @@ p {
   font-family: 'Roboto', sans-serif;
 }
 
-.modal-backdrop {
-  position: unset;
-  background: none;
+// .modal-backdrop {
+//   background-color: #000000;
+// }
+.card{
+  position: static;
 }
-
+.btn{
+  min-width: fit-content;
+}
 body{
   padding: 0px;
   margin: 0px;
   background-color: #fff0ae;
 }
+
+.modal-backdrop {
+  display: none;
+}
+
+.table{
+  width: 101%;
+  min-width: 800px;
+  color: #000000;
+  border-color: #484e53;
+  thead{
+      --bs-table-bg: #48515ace;
+      color: white;
+      tr th:first-child{
+          width: 20px;
+      }
+      tr th:last-child{
+          width: 130px;
+      }
+  }
+  tbody tr:hover{
+    background-color: teal;
+    color: white;
+    cursor: pointer;
+    td div .btn{
+      background-color: white;
+      color: #000000;
+      &:hover{
+        border: 1px solid black;
+      }
+    }
+  }
+  tbody tr{
+    padding: 0;
+    td, th{
+      vertical-align: middle;
+    }
+  }
+} 
+
+//botones personalizados
+
+//primer boton
+.btn>*{
+  cursor: pointer;
+}
+.btn-cyan{
+  background-color: darkcyan;
+  color: #ffffff;
+  &:hover{
+    background-color: rgb(0, 124, 130);
+    color: white;
+  }
+}
+.btn-check:focus+.btn-cyan, .btn-cyan:focus {
+  background-color: rgb(0, 124, 130);
+  box-shadow: 0 0 0 0.2rem rgba(0, 124, 124, 0.514);
+}
+
+//segundo boton
+.btn-brown{
+  background-color: #5c4d42;
+  color: #ffffff;
+  &:hover{
+    color: white;
+    background-color: rgb(71, 57, 47);
+  }
+}
+.btn-check:focus+.btn-brown, .btn-brown:focus {
+  background-color: rgb(71, 57, 47);
+  box-shadow: 0 0 0 0.2rem rgb(173, 155, 141);
+}
+
+::-webkit-scrollbar {
+  width: 12px;     /* Tamaño del scroll en vertical */
+  height: 12px;    /* Tamaño del scroll en horizontal */ 
+
+}
+
+::-webkit-scrollbar-thumb {
+  background: #005a69;
+  border-radius: 10px;
+  
+}
+/* Cambiamos el fondo y agregamos una sombra cuando esté en hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #00859c;
+}
+
+::-webkit-scrollbar-track {
+  background: #e4e4e4;
+}
+/* Cambiamos el fondo cuando esté en active o hover */
+::-webkit-scrollbar-track:hover {
+background: #ffffff;
+}
+

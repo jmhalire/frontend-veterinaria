@@ -1,94 +1,61 @@
-<div class="sidenav" [@sidenav]="stateSidenav ? 'open' : 'closed'" (mouseover)="showSidenav(); stateSidenav=true;">
+<div class="sidenav" [@sidenav]="stateSidenav ? 'open' : 'closed'">
     <ul class="navbar-nav">
         <h1 class="text-center text-white" [ngClass]="stateSidenav ? 'show-label' : 'hidden-label'">Mascotitas</h1>
     </ul>
     <hr>
     <ul class="navbar-nav">
         <li class="nav-item" routerLinkActive="active" [routerLink]="['./home']">
-            <a class="nav-link ml-1">
+            <a class="nav-link ml-3">
                 <i class="fal fa-home-lg mr-2"></i>
                 <label class="nav-link-text" [ngClass]="stateSidenav ? 'show-label' : 'hidden-label'">Inicio</label>
             </a>
         </li>
-        <li class="nav-item" routerLinkActive="active" [routerLink]="['./clientes']">
-            <a class="nav-link ml-1">
+        <li class="nav-item" routerLinkActive="active" [routerLink]="['clientes']">
+            <a class="nav-link ml-3">
                 <i class="fal fa-fw fa-users mr-2" aria-hidden="true"></i>
                 <label class="nav-link-text" [ngClass]="stateSidenav ? 'show-label' : 'hidden-label'">Clientes</label>
             </a>
         </li>
         <li class="nav-item" routerLinkActive="active" [routerLink]="['./mascotas']">
-            <a class="nav-link ml-1">
+            <a class="nav-link ml-3">
                 <i class="fal fa-fw fa-paw mr-2" aria-hidden="true"></i>
                 <label class="nav-link-text" [ngClass]="stateSidenav ? 'show-label' : 'hidden-label'">Mascotas</label>
             </a>
         </li>
-        <li  data-toggle="tooltip" data-placement="right" title="">
-            <a class="nav-item w-100 drop pl-1" (click)="primerdropdown($event)">
-                <i class="fal fa-hand-holding-box mr-2" aria-hidden="true"></i>
-                <label class="nav-link-text" [ngClass]="stateSidenav ? 'show-label' : 'hidden-label'">Servicios</label>
-                <i class="fas fa-angle-right ml-auto mr-2" style="font-size: 26px;" #icondropdown1></i>
-            </a> 
-            <ul class="navbar-nav dropdown" [ngClass]="dropdown1 ? 'show-dropdown1' : 'hidden-dropdown1'">
-                <li class="nav-item" routerLinkActive="active">
-                    <a class="nav-link ml-1" >
-                        <i class="fa fa-fw fa-notes-medical mr-2" aria-hidden="true"></i>
-                        <span class="nav-link-text" [ngClass]="stateSidenav ? 'show-label' : 'hidden-label'">Visitas</span>
-                    </a>
-                </li>
-                <li class="nav-item" routerLinkActive="active" data-toggle="tooltip" data-placement="right" title="" data-original-title="Estética y Baños">
-                    <a class="nav-link ml-1" >
-                        <i class="fa fa-fw fa-bath mr-2" aria-hidden="true"></i>
-                        <span class="nav-link-text" [ngClass]="stateSidenav ? 'show-label' : 'hidden-label'">Estética y Baños</span>
-                    </a>
-                </li>
-                <li class="nav-item" routerLinkActive="active" data-toggle="tooltip" data-placement="right" title="" data-original-title="Guardería">
-                    <a class="nav-link ml-1">
-                        <i class="fa fa-fw fa-home mr-2" aria-hidden="true"></i>
-                        <span class="nav-link-text" [ngClass]="stateSidenav ? 'show-label' : 'hidden-label'">Guardería</span>
-                    </a>
-                </li>
-            </ul>
-        </li>
         <li class="nav-item" routerLinkActive="active" [routerLink]="['./citas-programadas']">
-            <a class="nav-link ml-1" >
+            <a class="nav-link ml-3" >
                 <i class="fal fa-fw fa-calendar mr-2" aria-hidden="true"></i>
                 <label class="nav-link-text" [ngClass]="stateSidenav ? 'show-label' : 'hidden-label'">Citas Programadas</label>
             </a>
         </li>
-        <li class="nav-item" routerLinkActive="active"  [routerLink]="['./recordatorios']">
-            <a class="nav-link ml-1">
-                <i class="fal fa-fw fa-bell mr-2" aria-hidden="true"></i>
-                <label class="nav-link-text" [ngClass]="stateSidenav ? 'show-label' : 'hidden-label'">Recordatorios</label>
-            </a>
-        </li>
         <li  data-toggle="tooltip" data-placement="right" title="">
-            <a class="nav-item w-100 drop pl-1" routerLinkActive="active" (click)="Segundodropdown($event)">
+            <a class="nav-item drop pl-3" routerLinkActive="active" (click)="Segundodropdown($event)">
                 <i class="fal fa-fw fa-shopping-basket mr-2" aria-hidden="true"></i>
                 <label class="nav-link-text" [ngClass]="stateSidenav ? 'show-label' : 'hidden-label'">Ventas y Stock</label>
-                <i class="fas fa-angle-right ml-auto mr-2" style="font-size: 26px;" #icondropdown2></i>
+                <i class="fas fa-angle-right ml-auto mr-1" style="font-size: 26px;" #icondropdown2></i>
             </a>
           
             <ul class="navbar-nav dropdown" [ngClass]="dropdown2 ? 'show-dropdown2' : 'hidden-dropdown2'">
                 <li class="nav-item" routerLinkActive="active">
-                    <a class="nav-link ml-1" >
+                    <a class="nav-link ml-3" >
                         <i class="fa fa-fw fa-cart-plus mr-2" aria-hidden="true"></i>
                         <span class="nav-link-text" [ngClass]="stateSidenav ? 'show-label' : 'hidden-label'">Ventas</span>
                     </a>
                 </li>
                 <li class="nav-item" routerLinkActive="active" data-toggle="tooltip" data-placement="right" title="" data-original-title="Inventario">
-                    <a class="nav-link ml-1" >
+                    <a class="nav-link ml-3" >
                         <i class="fa fa-fw fa-boxes mr-2" aria-hidden="true"></i>
                         <span class="nav-link-text" [ngClass]="stateSidenav ? 'show-label' : 'hidden-label'">Inventario</span>
                     </a>
                 </li>
                 <li class="nav-item" routerLinkActive="active" data-toggle="tooltip" data-placement="right" title="" data-original-title="Gastos">
-                    <a class="nav-link ml-1" >
+                    <a class="nav-link ml-3" >
                         <i class="fa fa-fw fa-coins mr-2" aria-hidden="true"></i>
                         <span class="nav-link-text" [ngClass]="stateSidenav ? 'show-label' : 'hidden-label'" >Gastos</span>
                     </a>
                 </li>
                 <li class="nav-item" routerLinkActive="active" data-toggle="tooltip" data-placement="right" title="" data-original-title="Proveedores">
-                    <a class="nav-link ml-1">
+                    <a class="nav-link ml-3">
                         <i class="fa fa-fw fa-truck-moving mr-2" aria-hidden="true"></i>
                         <span class="nav-link-text" [ngClass]="stateSidenav ? 'show-label' : 'hidden-label'" >Proveedores</span>
                     </a>
@@ -96,19 +63,19 @@
             </ul>
         </li>
         <li class="nav-item" routerLinkActive="active" data-toggle="tooltip" data-placement="right" title="" data-original-title="Reportes">
-            <a class="nav-link ml-1">
+            <a class="nav-link ml-3">
                 <i class="fal fa-analytics mr-2" aria-hidden="true"></i>
                 <label class="nav-link-text" [ngClass]="stateSidenav ? 'show-label' : 'hidden-label'">Reportes</label>
             </a>
         </li>
         <li class="nav-item" routerLinkActive="active" data-toggle="tooltip" data-placement="right" title="" data-original-title="Reportes">
-            <a class="nav-link ml-1">
+            <a class="nav-link ml-3">
                 <i class="fal fa-users-cog  mr-2" aria-hidden="true"></i>
                 <label class="nav-link-text" [ngClass]="stateSidenav ? 'show-label' : 'hidden-label'">Usuarios</label>
             </a>
         </li>
         <li class="nav-item" routerLinkActive="active" data-toggle="tooltip" data-placement="right" title="" data-original-title="Ayuda">
-            <a class="nav-link ml-1">
+            <a class="nav-link ml-3">
                 <i class="fa fa-question mr-2" aria-hidden="true"></i>
                 <label class="nav-link-text" [ngClass]="stateSidenav ? 'show-label' : 'hidden-label'">Ayuda</label>
             </a>

@@ -1,13 +1,17 @@
-<nav class="navbar">
-    <ul class="my-auto">
-        <li class="nav-item mx-2 active">
-            <button class="btn btn-primary">Agregar mascota</button>
-        </li>
-        <li class="nav-item mx-2">
-            <button class="btn btn-danger">mascotas internadas</button>
-        </li>
-        <li class="nav-item mx-2">
-            <button class="btn btn-success">mascotas recuperados</button>
-        </li>
-    </ul>
-</nav>
+<div class="more">
+    <button class="btn btn-dark mx-1 ml-auto" routerLinkActive="active" [routerLink]="['lista']">
+        <label>lista de mascotas</label>
+    </button>
+    <button class="btn btn-success mx-1" routerLinkActive="active" [routerLink]="['visita']">
+        <label>Nueva visita</label>
+    </button>
+    <button class="btn btn-cyan mx-1" routerLinkActive="active" [routerLink]="['agregar']">
+        <label>Nueva mascota</label>
+    </button>
+    <button class="btn btn-primary mx-1" routerLinkActive="active" [routerLink]="['lista-visitas']">
+        <label>listado de visitas</label>
+    </button>
+    <button class="btn btn-brown mx-1" routerLinkActive="active" [routerLink]="['guarderia']">
+        <label>Guarderia</label>
+    </button>
+</div>

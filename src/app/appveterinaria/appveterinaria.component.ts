@@ -1,4 +1,4 @@
-import { Component, OnInit, Host, ViewChild } from '@angular/core'; 
+import { Component, OnInit, Host, ViewChild, ElementRef } from '@angular/core'; 
 import { main } from "@animations/animations";
 import { NavbarComponent } from './components/navbar/navbar.component';
 
@@ -13,6 +13,7 @@ export class AppveterinariaComponent implements OnInit {
 
   public message: boolean;
   @ViewChild(NavbarComponent) navbar: NavbarComponent;
+  @ViewChild('main') main: ElementRef;
 
   constructor(
   ) {
@@ -20,20 +21,26 @@ export class AppveterinariaComponent implements OnInit {
   }
 
   ngOnInit(): void {
+
   }
 
   /**
    * eventSidenav
    */
   public eventSidenav(e:boolean) {
-    this.message = e;   
+    this.message = e;  
+    if(e){
+      if(screen.width > 992){
+        this.main.nativeElement.classList.add('main-open')
+      }
+    }
+    else{
+        this.main.nativeElement.classList.remove('main-open')
+      }
   }
 
   /**
    * prueba
    */
-  public prueba(e:Event) {
-    this.navbar.setState();
-    this.message = true;
-  }
+
 }

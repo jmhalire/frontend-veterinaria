@@ -1,0 +1,47 @@
+<div class="card h-100">
+    <div class="card-header">
+        <h4 class="card-title">{{title}}</h4>
+    </div>
+    <div class="card-body">
+        <form class="mx-auto" (ngSubmit)="created()">
+            <div class="form-group my-3">
+                <label>Cliente</label>
+                <select name="client" class="form-select" #cliente>
+                    <option value="" disabled selected>Seleccione al dueño...</option>
+                    <option *ngFor="let cliente of clientes;"  [value]="cliente.id">
+                        {{ cliente.id  }} _ {{cliente.Nombres }} _ {{cliente.Email}} _ {{cliente.Celular}}
+                    </option>
+                </select>
+            </div>
+            <div class="form-group my-3">
+                <label>Nombres</label>
+                <input type="text" class="form-control" #nombres>
+            </div>
+            <div class="row my-3">
+                <div class="col-sm-6">
+                    <div class="form-group bmd-form-group is-filled">
+                        <label class="required bmd-label-static">Especie</label>
+                        <select  name="" class="form-select" #especie>
+                            <option value="" disabled selected>Seleccione una especie...</option>
+                            <option *ngFor="let especie of Especies;"  [value]="especie.value">{{ especie.nombre }}</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="col-sm-6">
+                    <div class="form-group ">
+                        <label>Sexo</label>
+                        <select name="client" class="form-select"  aria-selected="true" #sexo>
+                            <option value="" disabled selected>Seleccione un genero...</option>
+                            <option  *ngFor="let genero of Generos;"  [value]="genero.value">{{ genero.nombre }}</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            
+            <br>
+            <div class="d-flex">
+                <button  type="submit" class="btn btn-cyan mx-auto">Guardar</button>
+            </div>
+        </form>
+    </div>
+</div>

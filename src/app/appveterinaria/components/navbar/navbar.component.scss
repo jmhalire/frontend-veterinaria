@@ -1,19 +1,23 @@
 .navbar {
     position: fixed;
+    flex-flow: wrap-reverse;
     top: 0;
     right: 0;
     left: 0;
     z-index: 1030;
-    box-shadow: 0 0.5rem 1rem #0000006b;
     background-color: #1e2741!important;
+    box-shadow: 0 0.5rem 1rem #0000006b;
 }
+
 .navbar-nav {
     flex-direction: row;
+    
 }
 
 .nav-item{
     margin-left: 5px;
     margin-right: 5px;
+    cursor: pointer;
 }
 .icon-nav{
     height: 55px;
@@ -43,11 +47,11 @@
 }
 
 .open-sidenav{
-    width: 280px;
+    width: 260px;
     transition: 0.5s;
 }
 .closed-sidenav{
-    width: 25px;
+    width: 30px;
     transition: 0.3s;
 }
 .dropdown-menu{

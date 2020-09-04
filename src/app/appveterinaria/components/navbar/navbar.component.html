@@ -1,25 +1,28 @@
-<nav class="navbar py-0 navbar-dark pr-4" >
+<nav class="navbar py-0 navbar-dark pr-4">
     <ul class="navbar-nav icon-nav">
-        <li class="nav-item text-center icon-sidenav" (click)="sidenav()" [ngClass]="stateSidenav ? 'open-sidenav' : 'closed-sidenav'">
+        <li class="nav-item text-center icon-sidenav" (click)="sidenav()"
+            [ngClass]="stateSidenav ? 'open-sidenav' : 'closed-sidenav'">
             <i class="fas fa-angle-double-right" [@iconOpenClose]="stateSidenav ? 'open' : 'closed'"></i>
         </li>
     </ul>
     <ul class="navbar-nav pl-4 mr-auto py-2">
         <li class="nav-item dropdown d-none d-lg-inline-block">
-            <a class="mr-lg-2 rounded btn-block btn-raised btn btn-outline-light btn-sm" id="addDropdown" href="#" data-toggle="dropdown" data-disabled="true" aria-haspopup="true" aria-expanded="false" title="Accesos Rapidos">
+            <a class="mr-lg-2 rounded btn-block btn-raised btn btn-outline-light btn-sm" id="addDropdown" href="#"
+                data-toggle="dropdown" data-disabled="true" aria-haspopup="true" aria-expanded="false"
+                title="Accesos Rapidos">
                 <i class="fa fa-plus-circle" aria-hidden="true"></i>
                 <span class="ml-2">Agregar</span>
             </a>
             <div class="dropdown-menu" aria-labelledby="addDropdown">
                 <h6 class="dropdown-header">¿Qué desea agregar?</h6>
                 <div class="dropdown-divider"></div>
-                <a class="dropdown-item" >
+                <a class="dropdown-item">
                     Nueva visita
                 </a>
-                <a class="dropdown-item" >
+                <a class="dropdown-item">
                     Nuevo Cliente
                 </a>
-                <a class="dropdown-item" >
+                <a class="dropdown-item">
                     Nueva Mascota
                 </a>
             </div>
@@ -27,13 +30,15 @@
     </ul>
     <ul class="navbar-nav ml-auto py-2">
         <li class="nav-item">
-            <a class="nav-link mr-lg-2"  data-toggle="tooltip" data-placement="bottom" title="" data-original-title="Cajas Registradoras">
+            <a class="nav-link mr-lg-2" data-toggle="tooltip" data-placement="bottom" title=""
+                data-original-title="Cajas Registradoras">
                 <i class="fas fa-cash-register fa-lg" aria-hidden="true"></i>
                 <span class="ml-2">Caja</span>
             </a>
         </li>
         <li class="nav-item mx-2">
-            <a class="nav-link mr-lg-2"  data-toggle="tooltip" data-placement="bottom" title="" data-original-title=" Nueva  Venta">
+            <a class="nav-link mr-lg-2" data-toggle="tooltip" data-placement="bottom" title=""
+                data-original-title=" Nueva  Venta">
                 <i class="fa fa-cart-plus fa-lg" aria-hidden="true"></i>
                 <span class="ml-2">Venta</span>
             </a>
@@ -42,13 +47,13 @@
             <a class="nav-link mr-2" href="#">
                 <i class="fa fa-user-md fa-lg" aria-hidden="true"></i>
             </a>
-            <div class="text-white my-auto"  >
+            <div class="text-white my-auto">
                 <p style="font-size:11px">Benvenido</p>
                 <p style="font-size:16px">jaime halire</p>
             </div>
         </li>
-        <li class="nav-item mx-2">
-            <a class="nav-link" data-toggle="modal" data-target="#exitModal" [routerLink]='["/"]'>
+        <li class="nav-item mx-2" (click)="logout()">
+            <a class="nav-link" data-toggle="modal" data-target="#exitModal">
                 <i class="fa fa-fw fa-sign-out-alt" aria-hidden="true"></i>SALIR
             </a>
         </li>

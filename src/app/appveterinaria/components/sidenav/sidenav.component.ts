@@ -51,10 +51,4 @@ export class SidenavComponent implements OnInit {
     }
   }
 
-  /**
-   * showSidenav
-   */
-  public showSidenav() {
-    this.emitEvent.emit(true);
-  }
 }

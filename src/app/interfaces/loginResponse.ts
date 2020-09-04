@@ -4,5 +4,4 @@ export interface LoginResponse {
     value: boolean;
     message: string;
     token: string;
-    user: Usuario;
 }

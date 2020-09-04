@@ -1,0 +1,27 @@
+.card{
+    border: none;
+    width: 100%;
+    .card-body{
+        overflow-x: auto;
+    }
+}
+  
+::-webkit-scrollbar {     /* Tamaño del scroll en vertical */
+    height: 8px;    /* Tamaño del scroll en horizontal */  /* Ocultar scroll */
+  }
+  
+.search{
+    width: 100%;
+}
+
+@media screen and (min-width: 992px){
+    .content{
+        display: flex;
+    }
+    .search{
+        min-width: 280px;
+        width: 280px;
+        margin-right: 4px;
+        
+    }
+}

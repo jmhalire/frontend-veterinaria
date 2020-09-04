@@ -1,16 +1,18 @@
-.modal-dialog {
+.card {
     // box-shadow:  100% 100% #0000006b;
     box-shadow: 1px 0px 20px 10px #00000091;
+    position: absolute;
+    top: 10%;
+    right: 0;
+    left: 0;
 }
-.modal{
-    background-color: #00000071;
-}
+
 .form-control{
     font-size: 20px;
 }
 
 @media (min-width: 576px){
-    .modal-dialog {
+    .card {
         max-width: 375px;
         margin: 1.75rem auto;
     }

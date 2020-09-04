@@ -1,0 +1,92 @@
+<app-message *ngIf="message" [messageDate]="messageDate"></app-message>
+
+<ng-container *ngIf="loading; else content">
+    <div class="d-flex mx-auto my-auto">
+        <h1 class="display-3">Loading...</h1>
+    </div>
+</ng-container>
+<ng-template #content>
+    <div class="detailsClient">
+        <div class="col-md cliente">
+            <app-datacliente [cliente]="cliente"></app-datacliente>
+        </div>
+        <div class="col-md-5 mascota">
+            <app-datamascota [mascotas]="mascotas" [nameClient]="cliente.Nombres">
+            </app-datamascota>
+        </div>
+    </div>
+    <!-- confirmar eliminacion -->
+    <!-- Modal -->
+    <div class="modal modalDelete fade" id="staticBackdropDelete" data-backdrop="static" data-keyboard="false"
+        tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header p-3">
+                    <h5 class="modal-title" id="staticBackdropLabel">ELIMINAR</h5>
+                </div>
+                <div class="modal-body">
+                    <h5 class="my-4">¿Esta seguro que desea eliminar a <strong>{{cliente.Nombres}}?</strong></h5>
+                </div>
+                <div class="modal-footer d-flex justify-content-around">
+                    <button type="submit" class="btn btn-primary" (click)="deleted()" data-dismiss="modal"
+                        aria-label="Close">Aceptar</button>
+                    <button type="submit" class="btn btn-danger" data-dismiss="modal"
+                        aria-label="Close">Cancelar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- formulario para editar -->
+    <!-- Modal -->
+    <div class="modal modalEdit fade" id="staticBackdropEdit" data-backdrop="static" data-keyboard="false" tabindex="-1"
+        aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <form [formGroup]='updatedForm' (ngSubmit)="updated()">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="staticBackdropLabel">ACTUALIZAR DATOS DEL CLIENTE</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="form-group my-3">
+                            <label>Nombres</label>
+                            <input type="text" class="form-control" formControlName='Nombres'>
+                        </div>
+                        <div class="form-group my-3">
+                            <label>Apellidos</label>
+                            <input type="text" class="form-control" formControlName='Apellidos'>
+                        </div>
+                        <div class="row my-3">
+                            <div class="col-sm-6">
+                                <div class="form-group ">
+                                    <label>E-mail</label>
+                                    <input type="email" class="form-control" formControlName='Email'>
+                                </div>
+                                <!-- Content -->
+                            </div>
+                            <div class="col-sm-6">
+                                <div class="form-group ">
+                                    <label>Celular</label>
+                                    <input type="text" class="form-control" formControlName='Celular'>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group my-3">
+                            <label>Direccion</label>
+                            <input type="text" class="form-control" formControlName='Direccion'>
+                        </div>
+                        <br>
+                    </div>
+                    <div class="modal-footer d-flex justify-content-around">
+                        <button type="submit" class="btn btn-light">Guardar</button>
+                        <button type="reset" class="btn btn-danger" data-dismiss="modal"
+                            aria-label="Close">Cancelar</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</ng-template>

@@ -1,0 +1,17 @@
+.card{
+    border: none;
+    width: 100%;
+    .card-body{
+        overflow-x: auto;
+    }
+}
+::-webkit-scrollbar {     /* Tamaño del scroll en vertical */
+    height: 8px;    /* Tamaño del scroll en horizontal */  /* Ocultar scroll */
+  }
+.table{
+    --bs-table-bg: #4d91ff28!important;
+    thead{
+        --bs-table-bg: #4790ff!important;
+    }
+} 
+//#0d6efd!important

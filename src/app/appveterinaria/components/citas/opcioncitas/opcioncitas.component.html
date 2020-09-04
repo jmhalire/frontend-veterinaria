@@ -1,11 +1,11 @@
-<nav class="navbar">
-      <ul class="my-auto">
-        <li class="nav-item mx-2 active">
-            <button class="btn btn-info">Agregar cita</button>
-        </li>
-        <li class="nav-item mx-2">
-            <button class="btn btn-success">Citas finalizadas</button>
-        </li>
-      </ul>
-</nav>
-  
+<div class="more">
+  <button class="btn btn-dark mx-1 ml-auto" routerLinkActive="active" [routerLink]="['lista']">
+      <label>lista de citas</label>
+  </button>
+  <button class="btn btn-cyan mx-1" routerLinkActive="active" [routerLink]="['agregar']">
+      <label>Nueva cita</label>
+  </button>
+  <button class="btn btn-primary mx-1" routerLinkActive="active" [routerLink]="['lista-visitas']">
+      <label>Citas finalizadas</label>
+  </button>
+</div>

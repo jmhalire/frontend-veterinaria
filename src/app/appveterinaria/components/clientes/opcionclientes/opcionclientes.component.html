@@ -1,10 +1,11 @@
-<nav class="navbar">
-    <ul class="my-auto">
-      <li class="nav-item active mx-2">
-          <button class="btn btn-info">Agregar cliente</button>
-      </li>
-      <li class="nav-item mx-2">
-          <button class="btn btn-warning">Deudores</button>
-      </li>
-    </ul>
-</nav>
+<div class="more">
+    <button class="btn btn-dark mr-1 ml-auto" routerLinkActive="active" [routerLink]="['lista']">
+        <label>lista de clientes</label>
+    </button>
+    <button class="btn btn-cyan mx-1" routerLinkActive="active" [routerLink]="['agregar']">
+        <label>Nuevo cliente</label>
+    </button>
+    <button class="btn btn-warning ml-1" routerLinkActive="active">
+        <label>Deudores</label>
+    </button>
+</div>

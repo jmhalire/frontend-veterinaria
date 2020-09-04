@@ -1,17 +1,18 @@
 .sidenav {
     position: fixed;
+    cursor: pointer;
     //background-image: -webkit-gradient(linear, left bottom, left top, from(#1e274100), color-stop(30%, #1e2741d7), to(#1e2741));
     background-color: #1e2741!important;
     padding: 10px 0px 3rem 0px;
     contain: content;
-    height: 100%;
+    height: 95%;
     overflow-y: auto;
     top: 55px;
     left: 0;
     box-shadow: 0.3rem 0.3rem 0.3rem #0000006b;
 }
-::-webkit-scrollbar{
-    display: none;
+::-webkit-scrollbar {
+    width: 8px;     /* Tamaño del scroll en vertical */    /* Tamaño del scroll en horizontal */  /* Ocultar scroll */
 }
 
 .nav-item{
@@ -19,27 +20,40 @@
     align-items: center;
     color: cyan;
     padding: 0;
-    min-height: 3.5rem;
+    min-height: 4rem;
     border-top: 1px solid #0e4c8610;
     &.active{
-        background-color: white;
-        border: none;
+        background-color: #264192;
+        border-top-left-radius: 15px;
+        border-bottom-left-radius: 15px;
         .nav-link{
-            color: black;
+            color: #ffffff;
             label{
-                margin-left: 1.5rem;
+                margin-left: 1rem;
                 -webkit-text-stroke-width: thin;
+                border-bottom: 1px solid white;
+            }
+            i{
+                transform: scale3d(1.3,1.3,1.3);
             }
         }
     }
     &:hover, a:hover{
-        color: white;
-        background-color: #0084ff;
+        color: rgb(255, 123, 0);
+        background-color: #4b62a5;
+        border-top-left-radius: 15px;
+        border-bottom-left-radius: 15px;
         label,span{
             color: white;
-            transform: translateX(15px);
             transition: 0.2s;
         }
+        i{
+            transform: scale3d(1.3,1.3,1.3);
+            transition: 0.5 ease-in-out;
+        }
+    }
+    &:focus{
+        outline: none;
     }
     .nav-link{
         display: flex;
@@ -60,7 +74,7 @@
     transition: 0.4s;
 }
 .hidden-label{
-    transform: translateX(-500px);
+    transform: translateX(-180%);
     transition: 0.4s;
     will-change: transform;
 }
@@ -90,7 +104,6 @@ span{
 /* dropdown 1*/
 .show-dropdown1,.show-dropdown2{
     display: block;
-    transition: 0.3s;
 }
 .hidden-dropdown1, .hidden-dropdown2{
     display: none;

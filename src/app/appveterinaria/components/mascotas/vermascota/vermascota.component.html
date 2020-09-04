@@ -1,0 +1,83 @@
+<app-message *ngIf="message" [messageDate]="messageDate"></app-message>
+
+<ng-container *ngIf="loading; else content">
+    <div class="d-flex mx-auto my-auto">
+        <h1 class="display-3">Loading...</h1>
+    </div>
+</ng-container>
+<ng-template #content>
+    <div class="detailsMacot">
+        <div class="col-md mascota">
+            <app-detallesmascota [mascota]="mascota" [cliente]="cliente"></app-detallesmascota>
+        </div>
+        <div class="col-md-5 mascotadetails">
+            <app-masdetalles [visitas]="visitas" [vacunas]="vacunas" [reservas]="reservas"></app-masdetalles>
+        </div>
+    </div>
+    
+    <!-- confirmar eliminacion -->
+    <!-- Modal -->
+    <div class="modal modalDelete fade" id="staticBackdropDelete" data-backdrop="static" data-keyboard="false" tabindex="-1"
+        aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header p-3">
+                    <h5 class="modal-title" id="staticBackdropLabel">ELIMINAR</h5>
+                </div>
+                <div class="modal-body">
+                    <h5 class="my-4">¿Esta seguro que desea eliminar a <strong>{{mascota.Nombres}}?</strong></h5>
+                </div>
+                <div class="modal-footer d-flex justify-content-around">
+                    <button type="submit" class="btn btn-primary" (click)="deleted()" data-dismiss="modal" aria-label="Close">Aceptar</button>
+                    <button type="submit" class="btn btn-danger" data-dismiss="modal" aria-label="Close">Cancelar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- formulario para editar -->
+    <!-- Modal -->
+    <div class="modal modalEdit fade" id="staticBackdropEdit" data-backdrop="static" data-keyboard="false" tabindex="-1"
+        aria-labelledby="staticBackdropLabel" aria-hidden="true" #edit>
+        <div class="modal-dialog" editModal>
+            <div class="modal-content">
+                <form [formGroup]='updatedForm'>
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="staticBackdropLabel">ACTUALIZAR DATOS DE LA MASCOTA</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="form-group my-3">
+                            <label>Nombres</label>
+                            <input type="text" class="form-control" formControlName="Nombres">
+                        </div>
+                        <div class="row my-3">
+                            <div class="col-sm-6">
+                                <div class="form-group bmd-form-group is-filled">
+                                    <label class="required bmd-label-static">Especie</label>
+                                    <input type="text" class="form-control" readonly="true" disabled formControlName="Especie">
+                                </div>
+                            </div>
+                            <div class="col-sm-6">
+                                <div class="form-group ">
+                                    <label>Sexo</label>
+                                    <input type="text" class="form-control" readonly="true" disabled formControlName="Sexo">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group my-3">
+                            <label>cliente</label>
+                            <input type="text" class="form-control" [value]="duenio" readonly="true" disabled>
+                        </div>
+                        <div class="modal-footer d-flex justify-content-around">
+                            <button type="submit" class="btn btn-light"(click)="updated()" data-dismiss="modal" aria-label="Close">Guardar</button>
+                            <button type="reset" class="btn btn-danger" data-dismiss="modal" aria-label="Close">Cancelar</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</ng-template>

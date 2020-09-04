@@ -1,0 +1,65 @@
+<div class="btn-group btn-group-lg list-group" aria-label="Gran grupo de botones" id="list-tab" role="tablist">
+  <button type="button" class="btn btn-secondary active" data-toggle="list" href="#list-visitas" >Visitas</button>
+  <button type="button" class="btn btn-secondary" data-toggle="list" href="#list-vacunas" >Vacunas</button>
+  <button type="button" class="btn btn-secondary" data-toggle="list" href="#list-reservas">Reservas</button>
+</div>
+<div class="tab-content mt-1" id="nav-tabContent">
+  <div class="tab-pane fade show active" id="list-visitas" role="tabpanel" aria-labelledby="list-visitas-list">
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th style="width: 1rem;">#</th>
+          <th>Motivo</th>
+          <th>costo</th>
+          <th>fecha</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let visita of visitas; index as i">
+          <th scope="row">{{ i }}</th>
+          <td>{{ visita.Motivo }}</td>
+          <td>{{ visita.Costo }}</td>
+          <td>{{ visita.CreatedAt}}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="tab-pane fade" id="list-vacunas" role="tabpanel" aria-labelledby="list-vacunas-list">
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th style="width: 1rem;">#</th>
+          <th>TipoVacuna</th>
+          <th>Observacion</th>
+          <th>fecha</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let vacuna of vacunas; index as i">
+          <th scope="row">{{ i }}</th>
+          <td>{{ vacuna.Tipo }}</td>
+          <td>{{ vacuna.Observacion }}</td>
+          <td>{{ vacuna.CreatedAt}}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="tab-pane fade" id="list-reservas" role="tabpanel" aria-labelledby="list-reservas-list">
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th style="width: 1rem;">#</th>
+          <th>Descripcion</th>
+          <th>fecha</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let reserva of reservas; index as i">
+          <th scope="row">{{ i }}</th>
+          <td>{{ reserva.Descripcion}}</td>
+          <td>{{ reserva.CreatedAt }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
