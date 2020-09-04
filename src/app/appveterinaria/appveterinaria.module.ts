@@ -8,7 +8,6 @@ import { AppveterinariaComponent } from './appveterinaria.component';
 import { HomeComponent } from "./components/home/home.component";
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { SidenavComponent } from './components/sidenav/sidenav.component';
-import { AsideComponent } from './components/aside/aside.component';
 import { ClientesComponent } from './components/clientes/clientes.component';
 import { MascotasComponent } from './components/mascotas/mascotas.component';
 import { CitasComponent } from './components/citas/citas.component';
@@ -36,7 +35,7 @@ import { ListacitasComponent } from './components/citas/listacitas/listacitas.co
 
 @NgModule({
   declarations: [
-    AppveterinariaComponent, HomeComponent,NavbarComponent,SidenavComponent, AsideComponent, ClientesComponent, MascotasComponent, 
+    AppveterinariaComponent, HomeComponent,NavbarComponent,SidenavComponent, ClientesComponent, MascotasComponent, 
     CitasComponent, BuscarmascotaComponent, BuscarclienteComponent, OpcioncitasComponent, OpcionmascotasComponent, OpcionclientesComponent, 
     AgregarclienteComponent, ListaclientesComponent, VerclienteComponent, DataclienteComponent, DatamascotaComponent, MessageComponent, 
     ListamascotasComponent, VermascotaComponent, AgregarmascotaComponent, MasdetallesComponent, DetallesmascotaComponent, VisitaComponent, 
