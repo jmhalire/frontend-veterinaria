@@ -1,8 +1,8 @@
 <app-message *ngIf="message" [messageDate]="messageDate"></app-message>
-<button class="btn btn-primary my-1" (click)="handlefuntion()">{{texto}} cuadro de busqueda</button>
+<button class="btn my-1" [ngClass]="color" (click)="handlefuntion()">{{texto}} busqueda</button>
 <div class="content">
   <div class="search" *ngIf="openClose" @search>
-    <app-buscarcliente></app-buscarcliente>
+    <app-buscarcliente (nameClient)="nameClient($event)"></app-buscarcliente>
   </div>
   <div class="card">
     <div class="card-header bg-dark text-center text-white">
@@ -20,8 +20,8 @@
             <th>Opcion</th>
           </tr>
         </thead>
-        <tbody>
-          <tr *ngFor='let cliente of  clientes; index as i'>
+        <tbody #listClient>
+          <tr *ngFor='let cliente of  clientes; index as i' style="width: 100%;">
             <th scope="row">{{ i+1 }}</th>
             <td>{{ cliente.Nombres}}</td>
             <td>{{ cliente.Apellidos}}</td>

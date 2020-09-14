@@ -1,5 +1,6 @@
 .card{
     border: none;
+    height: 100%;
     .card-body{
         background-color: #00888833;
         form{
@@ -8,28 +9,18 @@
     }
 }
 
-.form-control, .form-select{
+.form-control{
     color: #000000;
+    font-size: 20px;
+    border-color: #17a2b8;
     &:focus {
         background-color: white;
-        border-color: #17ffe9;
-        box-shadow: 0 0 0 0.2rem #02aa9970;
-        outline: 0;
+        box-shadow: 0 0 0 0.2rem #17a2b8;
         transition: 0.5s;
     }
 }
 
-.card-text{
-    display: flex;
-    flex-wrap: wrap;
-}
 
 @media screen and (min-width: 1200px){
-    .client{
-        display: grid;
-        grid-template-columns: 1fr 3fr;
-    }
-    .card-text{
-        display: block;
-    }
+
 }

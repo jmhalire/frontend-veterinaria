@@ -88,8 +88,8 @@ const main = [
 
 
 const search = trigger('search', [
-    transition(':enter', [style({ opacity: 1, transform: 'translateX(-80%)'}), animate('0.2s ease-in'),]),
-    transition(':leave', [animate('0.2s ease-out', style({ opacity: 0.5, transform: 'translateX(-100%)' }))])
+    transition(':enter', [style({ opacity: 1, transform: 'translateX(-100%)'}), animate('0.15s ease-in'),]),
+    transition(':leave', [animate('0.15s ease-out', style({ opacity: 0.5, transform: 'translateX(-100%)' }))])
 ])
 
 

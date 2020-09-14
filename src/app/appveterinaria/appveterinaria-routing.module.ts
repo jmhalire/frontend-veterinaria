@@ -15,10 +15,35 @@ import { ListaclientesComponent } from "./components/clientes/listaclientes/list
 import { VerclienteComponent } from "./components/clientes/vercliente/vercliente.component";
 import { AgregarmascotaComponent } from "./components/mascotas/agregarmascota/agregarmascota.component";
 import { ListamascotasComponent } from "./components/mascotas/listamascotas/listamascotas.component";
+//servicios
 import { VermascotaComponent } from "./components/mascotas/vermascota/vermascota.component";
 import { ListavisitasComponent } from "./components/mascotas/listavisitas/listavisitas.component";
 import { VisitaComponent } from "./components/mascotas/visita/visita.component";
 import { ListacitasComponent } from "./components/citas/listacitas/listacitas.component";
+//ventas
+import { AgregarcitaComponent } from "./components/citas/agregarcita/agregarcita.component";
+import { VentaComponent } from "./components/venta/venta.component";
+import { NuevaventaComponent } from "./components/venta/nuevaventa/nuevaventa.component";
+import { ListaventasComponent } from "./components/venta/listaventas/listaventas.component";
+//inventario
+import { ListaproductosComponent } from "./components/inventario/listaproductos/listaproductos.component";
+import { PorcategoriaComponent } from "./components/inventario/porcategoria/porcategoria.component";
+import { PorproveedorComponent } from "./components/inventario/porproveedor/porproveedor.component";
+import { NuevoproductoComponent } from "./components/inventario/nuevoproducto/nuevoproducto.component";
+import { InventarioComponent } from "./components/inventario/inventario.component";
+//proveedores
+import { ProveedoresComponent } from "./components/proveedores/proveedores.component";
+import { ListaproveedoresComponent } from "./components/proveedores/listaproveedores/listaproveedores.component";
+import { NuevoproveedorComponent } from "./components/proveedores/nuevoproveedor/nuevoproveedor.component";
+//usuarios
+import { UsuariosComponent } from "./components/usuarios/usuarios.component";
+import { ListausuariosComponent } from "./components/usuarios/listausuarios/listausuarios.component";
+import { NuevousuarioComponent } from "./components/usuarios/nuevousuario/nuevousuario.component";
+//reportes
+import { ReportesComponent } from "./components/reportes/reportes.component"
+import { IngresosComponent } from "./components/reportes/ingresos/ingresos.component";
+import { VentasComponent } from "./components/reportes/ventas/ventas.component";
+import { VisitasComponent } from "./components/reportes/visitas/visitas.component";
 
 const routes: Routes = [
   {
@@ -52,8 +77,52 @@ const routes: Routes = [
         children: [
           { path: '', redirectTo: 'lista', pathMatch: 'full' },
           { path: 'lista', component: ListacitasComponent },
+          { path: 'agregar', component: AgregarcitaComponent }
         ]
       },
+      {
+        path: 'ventas', component: VentaComponent,
+        children: [
+          { path: '', redirectTo: 'lista', pathMatch: 'full'},
+          { path: 'lista', component: ListaventasComponent },
+          { path: 'nueva-venta', component: NuevaventaComponent }
+        ]
+      },
+      {
+        path: 'inventario', component: InventarioComponent,
+        children: [
+          { path: '', redirectTo: 'lista', pathMatch: 'full'},
+          { path: 'lista', component: ListaproductosComponent },
+          { path: 'productos-por-proveedor', component: PorproveedorComponent },
+          { path: 'productos-por-categoria', component: PorcategoriaComponent },
+          { path: 'nuevo-producto', component: NuevoproductoComponent },
+        ]
+      },
+      {
+        path: 'proveedor', component: ProveedoresComponent,
+        children: [
+          { path: '', redirectTo: 'lista', pathMatch: 'full'},
+          { path: 'lista', component: ListaproveedoresComponent },
+          { path: 'nuevo-proveedor', component: NuevoproveedorComponent },
+        ]
+      },
+      {
+        path: 'usuarios', component: UsuariosComponent,
+        children: [
+          { path: '', redirectTo: 'lista', pathMatch: 'full'},
+          { path: 'lista', component: ListausuariosComponent },
+          { path: 'nuevo-usuario', component: NuevousuarioComponent },
+        ]
+      },
+      {
+        path: 'reportes', component: ReportesComponent,
+        children: [
+          { path: '', redirectTo: 'ingresos', pathMatch: 'full'},
+          { path: 'ingresos', component: IngresosComponent },
+          { path: 'ventas', component: VentasComponent },
+          { path: 'visitas', component: VisitasComponent },
+        ]
+      }
     ]
   },
 

@@ -1,9 +1,9 @@
 .image1{
-    background: linear-gradient(to top, #5c4d4281 10%, #5c4d42 90%), url('../../../assets/images/landing1.jpg');
+    background: linear-gradient(to top, #0e6b8886 10%, #00556e 90%), url('../../../assets/images/landing1.jpg');
 }
-
+//#5c4d4281 10%, #5c4d42
 .image2{
-    background: linear-gradient(to top, #0e6b8886 10%, #00556e 90%), url('../../../assets/images/landing2.jpg');
+    background: linear-gradient(to top, #5c4d4281 10%, #5c4d42  90%), url('../../../assets/images/landing2.jpg');
 }
 
 .image3{
@@ -21,13 +21,26 @@
 }
 
 .carousel-item{
-    height: 800px;
+    height: 700px;
 }
 
-.carousel{
-    box-shadow: 0 0.5rem 1rem #000000a2;
-}
 
 .carousel-indicators {
-    bottom: 80px;
+    li{
+        width: 10px;
+        height: 10px;
+        color: #fff;
+        border-radius: 50%;
+    }
+    
+    .active{
+        background-color: #000;
+        color: #fff;
+    }
 }
+@media screen and (max-width: 576px){
+    .carousel-control-prev-icon, .carousel-control-next-icon{
+        opacity: 0.1;
+    }
+}
+

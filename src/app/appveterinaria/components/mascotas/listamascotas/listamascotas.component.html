@@ -1,8 +1,8 @@
 <app-message *ngIf="message" [messageDate]="messageDate"></app-message>
 <button class="btn btn-primary my-1" (click)="handlefuntion()">{{texto}} cuadro de busqueda</button>
 <div class="content">
-  <div class="search" *ngIf="openClose">
-    <app-buscarmascota></app-buscarmascota>
+  <div class="search" *ngIf="openClose" @search>
+    <app-buscarmascota (nameMascot)="nameMascot($event)"></app-buscarmascota>
   </div>
   <div class="card">
     <div class="card-header">
@@ -19,7 +19,7 @@
             <th>Opcion</th>
           </tr>
         </thead>
-        <tbody>
+        <tbody #listMascot>
           <tr *ngFor='let mascota of  mascotas; index as i'>
             <th scope="row">{{ i+1 }}</th>
             <td>{{ mascota.Nombres}}</td>

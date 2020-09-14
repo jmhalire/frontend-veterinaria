@@ -4,25 +4,17 @@
     </div>
     <div class="card-body">
         <form class="mx-auto" name="absc" method="get">
-        <div class="card-text">
-            <div class="form-group bmd-form-group">
-                <label for="absc_name" class="bmd-label-static">Buscar por</label>
-                <select name="" id="" class="form-select">
-                    <option value="">Nombre</option>
-                    <option value="">DNI</option>
-                </select>
+            <p class="mb-0 pb-0 mt-2">Busqueda por nombre</p>
+            <hr>
+            <div class="form-group">
+                <input type="text" 
+                    placeholder="Ingrese nombre de la mascota" class="form-control"
+                    class="form-control" [(ngModel)]='nombre' 
+                    [ngModelOptions]="{standalone: true}" 
+                    (keyup)='changeInput($event)'>
             </div>
-            <div class="form-group bmd-form-group">
-                <label for="absc_name" class="bmd-label-static">Apellido y/o Nombre</label>
-                <input type="text" id="absc_name" name="" class="form-control">
-            </div>
-            <div class="form-group bmd-form-group">
-                <label for="absc_name" class="bmd-label-static">DNI</label>
-                <input type="text" id="absc_name" name="" class="form-control">
-            </div>
-        </div>
-        <br>
-        <button type="submit" class="btn btn-block btn-raised btn-outline-info">Buscar</button>
+            <hr><br>
+            <p *ngIf="nombre">Buscando a:  <strong class="ml-3"> {{ nombre }}</strong> ...</p>
         </form>
     </div>
 </div>

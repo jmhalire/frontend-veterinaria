@@ -1,0 +1,31 @@
+#pie{
+    height: 100%;
+    width: 100%;
+}
+.card{
+    border: none;
+    width: 100%;
+    .card-body{
+        overflow-x: auto;
+        display: flex;
+        .list, .pastel{
+            width: 50%;
+        }
+    }
+}
+.table{
+    min-width: 350px;
+    max-width: 100%;
+} 
+@media only screen and (max-width: 800px){
+    .card{
+        .card-body{
+            padding: 1%;
+            display: block;
+            .list, .pastel{
+                width: 100%;
+                margin-bottom: 5em;
+            }
+        }
+    }
+}

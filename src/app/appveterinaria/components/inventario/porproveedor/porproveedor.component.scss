@@ -1,0 +1,25 @@
+.card{
+    border: none;
+    width: 100%;
+    .card-body{
+        overflow-x: auto;
+    }
+}
+::-webkit-scrollbar {     /* Tamaño del scroll en vertical */
+    height: 6px;    /* Tamaño del scroll en horizontal */  /* Ocultar scroll */
+  }
+.table{
+    thead{
+        --bs-table-bg: #26a544!important;
+    }
+} 
+.form-select{
+    color: #000000;
+    font-size: 20px;
+    border-color: #40cc61;
+    &:focus {
+        background-color: white;
+        box-shadow: 0 0 0 0.2rem #59e078;
+        transition: 0.3s;
+    }
+}

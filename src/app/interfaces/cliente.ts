@@ -1,5 +1,6 @@
 import { Mascot } from './mascot';
 import { Venta } from './venta';
+import { Visita } from './visita';
 
 export interface Cliente {
     id: number,
@@ -10,6 +11,7 @@ export interface Cliente {
     Direccion: string,
     mascotas: Mascot[],
     ventas: Venta[],
+    visitas: Visita[],
     CreatedAt: Date,
     UpdatedAt: Date
 }

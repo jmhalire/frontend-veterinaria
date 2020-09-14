@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { ServiciosService } from '@services/servicios.service';
+import { Cita } from '@interfaces/cita';
 
 @Component({
   selector: 'app-listacitas',
@@ -8,11 +10,21 @@ import { Component, OnInit } from '@angular/core';
 export class ListacitasComponent implements OnInit {
 
   public title: string;
-  constructor() {
+  public citas: Cita[];
+  constructor(
+    private servi: ServiciosService
+  ) {
     this.title = 'Lista de citas'
    }
 
   ngOnInit(): void {
+    this.servi.getListCitas().subscribe(
+      res => {
+        this.citas = res
+      },
+      err=>console.log(err)
+      
+    )
   }
 
 }

@@ -11,7 +11,7 @@
                         <select name="client" class="form-select" aria-selected="true" (change)="selectClient($event)" #client>
                             <option value="" disabled selected>Seleccione un cliente...</option>
                             <option *ngFor="let cliente of clientes; index as i " [value]="i">
-                                {{ cliente.Nombres }} || {{ cliente.Celular}} || {{ cliente.Email }}
+                                [ {{ cliente.Nombres }} ] [ {{ cliente.Celular}} ] [ {{ cliente.Email }} ]
                             </option>
                         </select>
                     </div>
@@ -22,7 +22,7 @@
                         <select name="client" class="form-select" aria-selected="true" #mascot>
                             <option value="" disabled selected>Seleccione una mascota...</option>
                             <option *ngFor="let mascota of mascotas; index as i " [value]="i">
-                                {{ mascota.Nombres }} || {{ mascota.Especie }}
+                                [ {{ mascota.Nombres }} ] [ {{ mascota.Especie }} ]
                             </option>
                         </select>
                     </div>

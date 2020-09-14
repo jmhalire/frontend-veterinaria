@@ -1,0 +1,100 @@
+<div class="alert alert-warning alert-dismissible fade show mt-2" role="alert" *ngIf="message">
+    <strong>{{ message }}</strong>
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close" (click)="closeMessage()">
+        <span aria-hidden="true">&times;</span>
+    </button>
+</div>
+<div class="row">
+    <div class="col-md-6 mb-4" *ngFor="let user of users; index as i">
+        <div class="card">
+            <div class="card-header d-flex">
+                <h4 class="card-title">usuario {{i+1}}</h4>
+                <button type="submit" class="btn btn-outline-success ml-auto mr-1" data-toggle="modal"
+                        data-target="#staticBackdropEdit">Editar</button>
+                    <button type="submit" class="btn btn-outline-danger mx-1" data-toggle="modal"
+                        data-target="#staticBackdropDelete" (click)="selectDelete(i)">Eliminar</button>
+            </div>
+            <div class="card-body p-0">
+                <div class="container">
+                    <div class="row">
+                        <div class="col py-2">
+                            <h6><strong>Nombres</strong></h6>
+                        </div>
+                        <div class="col py-2">
+                            <h6 class="result">{{ user.Names }}</h6>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col py-2">
+                            <h6><strong>Apellidos</strong></h6>
+                        </div>
+                        <div class="col py-2">
+                            <h6 class="result">{{ user.FirstName }}  {{ user.LastName }}</h6>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col py-2">
+                            <h6><strong>Telefono/Celular</strong></h6>
+                        </div>
+                        <div class="col py-2">
+                            <h6 class="result">{{ user.Celular }}</h6>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-6 py-2">
+                            <h6><strong>Direccion</strong></h6>
+                        </div>
+                        <div class="col-6 py-2">
+                            <h6 class="result">{{ user.Address }}</h6>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-6 py-2">
+                            <h6><strong>Rol</strong></h6>
+                        </div>
+                        <div class="col-6 py-2">
+                            <h6 class="result">{{ user.Role }}</h6>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-6 py-2">
+                            <h6><strong>Fue creado el dia</strong></h6>
+                        </div>
+                        <div class="col-6 py-2">
+                            <h6 class="result">{{ user.CreatedAt }}</h6>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-6 py-2">
+                            <h6><strong>Ultima actualizacion</strong></h6>
+                        </div>
+                        <div class="col-6 py-2">
+                            <h6 class="result">{{ user.UpdatedAt }}</h6>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="card-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- delete user -->
+<div class="modal modalDelete fade" id="staticBackdropDelete" data-backdrop="static" data-keyboard="false" tabindex="-1"
+        aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header p-3">
+                    <h5 class="modal-title" id="staticBackdropLabel">ELIMINAR</h5>
+                </div>
+                <div class="modal-body">
+                    <h5 class="my-4">¿Esta seguro que desea eliminar al usuario <strong>{{users[selectUser].Names}}?</strong></h5>
+                </div>
+                <div class="modal-footer d-flex justify-content-around">
+                    <button type="submit" class="btn btn-primary" (click)="deleted()" data-dismiss="modal" aria-label="Close">Eliminar</button>
+                    <button type="submit" class="btn btn-danger" data-dismiss="modal" aria-label="Close">Cancelar</button>
+                </div>
+            </div>
+        </div>
+    </div>

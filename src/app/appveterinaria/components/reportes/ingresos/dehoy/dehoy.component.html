@@ -1,0 +1,41 @@
+<div class="card">
+  <div class="card-header bg-dark text-white">
+    <h4 class="text-center">Reporte del dia de hoy</h4>
+  </div>
+  <div class="card-body">
+      <div class="list">
+        <table class="table table-striped">
+          <thead>
+            <tr>
+              <th>Hora</th>
+              <th>Motivo</th>
+              <th>Cliente</th>
+              <th>Ingreso</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let venta of ventasHoy; index as i">
+              <td>{{HorasVenta[i]}}</td>
+              <td>Venta</td>
+              <td>{{ venta.cliente.Nombres}}</td>
+              <td>S/ .{{ venta.Total}}</td>
+            </tr>
+            <tr *ngFor="let visita of visitasHoy; index as i">
+              <td>{{HorasVisita[i]}}</td>
+              <td>Visita</td>
+              <td>{{ visita.cliente.Nombres}}</td>
+              <td>S/. {{ visita.Costo}}</td>
+            </tr>
+          </tbody>
+        </table>
+        <span class="float-right">Total ingreso: S/. {{ totalVentas + totalVisitas }}</span>
+      </div>
+      <div class="pastel">
+        <canvas id="pie"></canvas>
+        <div class="d-flex justify-content-around">
+          <p>ventas: S/.{{ totalVentas }} </p>
+          <p>visitas: S/.{{ totalVisitas }}</p>
+        </div>
+      </div>
+  </div>
+</div>

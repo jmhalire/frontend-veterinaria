@@ -16,7 +16,14 @@ import { SigninComponent } from "./applogin/signin/signin.component";
 
 //services
 import { AuthGuard } from "./auth.guard";
-import { VeterinariaService } from "./services/veterinaria.service";
+import { VentaService } from "@services/ventas.service";
+import { ClientesService } from "@services/clientes.service";
+import { MascotasService } from "@services/mascotas.service";
+import { UserService } from "@services/user.service";
+import { InventarioService } from "@services/inventario.service";
+import { ServiciosService } from "@services/servicios.service";
+import { MessageService } from "@services/message.service";
+import { ReportesService } from "@services/reportes.service";
 
 @NgModule({
   declarations: [
@@ -34,7 +41,17 @@ import { VeterinariaService } from "./services/veterinaria.service";
     FormsModule,
     ReactiveFormsModule
   ],
-  providers: [ VeterinariaService, AuthGuard], 
+  providers: [ 
+    AuthGuard, 
+    VentaService, 
+    ClientesService, 
+    MascotasService, 
+    UserService, 
+    InventarioService,
+    ServiciosService,
+    MessageService,
+    ReportesService
+  ], 
   bootstrap: [AppComponent]
 })
 export class AppModule { }

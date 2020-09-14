@@ -1,9 +1,12 @@
 import { DetalleVenta } from "./detalleVenta";
-import { Usuario } from './usuario';
+import { User } from './user';
+import { Cliente } from './cliente';
 
 export interface Venta {
     id: number,
-    usuario: Usuario,
-    CreatedAt: Date,
-    detalleVentas: DetalleVenta[]
+    usuario: User,
+    cliente: Cliente
+    detalleVentas: DetalleVenta[],
+    Total: number,
+    CreatedAt: Date
 }

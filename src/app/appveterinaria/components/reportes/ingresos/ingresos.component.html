@@ -1,0 +1,12 @@
+<div *ngIf="ventasHoy && visitasHoy">
+    <app-pormeses [ventas]="ventas"></app-pormeses>
+    <br>
+    <app-dehoy 
+        [ventasHoy]="ventasHoy" 
+        [HorasVenta]="HorasVenta" 
+        [totalVentas]="totalVentas" 
+        [visitasHoy]="visitasHoy" 
+        [HorasVisita]="HorasVisita" 
+        [totalVisitas]="totalVisitas">
+    </app-dehoy>
+</div>

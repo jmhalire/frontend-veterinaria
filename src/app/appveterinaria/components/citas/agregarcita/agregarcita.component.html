@@ -1,1 +1,76 @@
-<p>agregarcita works!</p>
+<app-message *ngIf="message" [messageDate]="message"></app-message>
+
+<div class="card h-100">
+    <div class="card-header text-white text-center">
+        <h4 class="card-title">{{title}}</h4>
+    </div>
+    <div class="card-body">
+        <form class="mx-auto" [formGroup]='createdForm' (ngSubmit)="created()">
+            <div class="form-group my-3">
+                <label>Tipo</label>
+                <select class="form-select" formControlName="Tipo">
+                    <option value="" selected disabled>Seleccione un tipo de cita...</option>
+                    <option value="Análisis de sangre">Análisis de sangre</option>
+                    <option value="Baño">Baño</option>
+                    <option value="Cirugía">Cirugía</option>
+                    <option value="Control especialidad">Control especialidad</option>
+                    <option value="Control general">Control general</option>
+                    <option value="Corte">Corte</option>
+                    <option value="Ecografía">Ecografía</option>
+                    <option value="Limpieza de dientes">Limpieza de dientes</option>
+                    <option value="Otros Estética">Otros Estética</option>
+                    <option value="Radiografía">Radiografía</option>
+                    <option value="Vacuna">Vacuna</option>
+
+                </select>
+            </div>
+            <div class="row my-3">
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label>Cliente</label>
+                        <select formControlName="cliente" class="form-select" aria-selected="true" (change)="selectClient($event)"
+                            #client>
+                            <option value="" disabled selected>Seleccione un cliente...</option>
+                            <option *ngFor="let cliente of clientes; index as i " [value]="cliente.id">
+                                [ {{ cliente.Nombres }} ]  [ {{ cliente.Celular}} ]  [ {{ cliente.Email }} ]
+                            </option>
+                        </select>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label>Macota</label>
+                        <select formControlName="mascota" class="form-select" aria-selected="true" #mascot>
+                            <option value="" disabled selected>Seleccione una mascota...</option>
+                            <option *ngFor="let mascota of mascotas; index as i " [value]="mascota.id">
+                                [ {{ mascota.Nombres }} ]  [ {{ mascota.Especie }} ]
+                            </option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group my-3">
+                <label>Motivo</label>
+                <textarea name="" id="" cols="30" rows="2" class="form-control" formControlName="Motivo"></textarea>
+            </div>
+            <div class="row my-3">
+                <div class="col-md-6">
+                    <div class="form-group my-3">
+                        <label>Dia</label>
+                        <input type="date" name="" id="" class="form-control" formControlName="Dia">
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group my-3">
+                        <label>Hora</label>
+                        <input type="time" name="" id="" class="form-control" formControlName="Hora">
+                    </div>
+                </div>
+            </div>
+            <br>
+            <div class="d-flex">
+                <button type="submit" class="btn btn-cyan mx-auto">Guardar</button>
+            </div>
+        </form>
+    </div>
+</div>

@@ -32,6 +32,31 @@ import { VacunaComponent } from './components/mascotas/visita/vacuna/vacuna.comp
 import { ListavisitasComponent } from "./components/mascotas/listavisitas/listavisitas.component";
 import { AgregarcitaComponent } from './components/citas/agregarcita/agregarcita.component';
 import { ListacitasComponent } from './components/citas/listacitas/listacitas.component';
+import { VentaComponent } from './components/venta/venta.component';
+import { NuevaventaComponent } from './components/venta/nuevaventa/nuevaventa.component';
+import { OpcionesventaComponent } from './components/venta/opcionesventa/opcionesventa.component';
+import { ArticuloComponent } from './components/venta/nuevaventa/articulo/articulo.component';
+import { ListaproductosComponent } from './components/inventario/listaproductos/listaproductos.component';
+import { PorcategoriaComponent } from './components/inventario/porcategoria/porcategoria.component';
+import { PorproveedorComponent } from './components/inventario/porproveedor/porproveedor.component';
+import { NuevoproductoComponent } from './components/inventario/nuevoproducto/nuevoproducto.component';
+import { InventarioComponent } from "./components/inventario/inventario.component";
+import { OpcionesinventarioComponent } from "./components/inventario/opcionesinventario/opcionesinventario.component";
+import { ProveedoresComponent } from './components/proveedores/proveedores.component';
+import { ListaproveedoresComponent } from './components/proveedores/listaproveedores/listaproveedores.component';
+import { NuevoproveedorComponent } from './components/proveedores/nuevoproveedor/nuevoproveedor.component';
+import { OpcionesproveedorComponent } from './components/proveedores/opcionesproveedor/opcionesproveedor.component';
+import { UsuariosComponent } from './components/usuarios/usuarios.component';
+import { ListausuariosComponent } from './components/usuarios/listausuarios/listausuarios.component';
+import { NuevousuarioComponent } from './components/usuarios/nuevousuario/nuevousuario.component';
+import { OpcionesusuarioComponent } from "./components/usuarios/opcionesusuario/opcionesusuario.component";
+import { ReportesComponent } from './components/reportes/reportes.component';
+import { OpcionesreporteComponent } from './components/reportes/opcionesreporte/opcionesreporte.component';
+import { VentasComponent } from './components/reportes/ventas/ventas.component';
+import { IngresosComponent } from "./components/reportes/ingresos/ingresos.component";
+import { VisitasComponent } from "./components/reportes/visitas/visitas.component";
+import { PormesesComponent } from './components/reportes/ingresos/pormeses/pormeses.component';
+import { DehoyComponent } from './components/reportes/ingresos/dehoy/dehoy.component';
 
 @NgModule({
   declarations: [
@@ -39,7 +64,11 @@ import { ListacitasComponent } from './components/citas/listacitas/listacitas.co
     CitasComponent, BuscarmascotaComponent, BuscarclienteComponent, OpcioncitasComponent, OpcionmascotasComponent, OpcionclientesComponent, 
     AgregarclienteComponent, ListaclientesComponent, VerclienteComponent, DataclienteComponent, DatamascotaComponent, MessageComponent, 
     ListamascotasComponent, VermascotaComponent, AgregarmascotaComponent, MasdetallesComponent, DetallesmascotaComponent, VisitaComponent, 
-    VacunaComponent, ListavisitasComponent, AgregarcitaComponent, ListacitasComponent,
+    VacunaComponent, ListavisitasComponent, AgregarcitaComponent, ListacitasComponent, VentaComponent, NuevaventaComponent, OpcionesventaComponent,
+    ArticuloComponent,InventarioComponent, ListaproductosComponent, PorcategoriaComponent, PorproveedorComponent, NuevoproductoComponent,
+    OpcionesinventarioComponent, ProveedoresComponent, ListaproveedoresComponent, NuevoproveedorComponent, OpcionesproveedorComponent, UsuariosComponent,
+    ListausuariosComponent, NuevousuarioComponent, OpcionesusuarioComponent, ReportesComponent, OpcionesreporteComponent, VentasComponent,
+    IngresosComponent, VisitasComponent, PormesesComponent, DehoyComponent
   ],
   imports: [
     CommonModule,

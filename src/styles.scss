@@ -40,7 +40,7 @@ body{
 }
 
 .table{
-  width: 101%;
+  width: 100%;
   min-width: 800px;
   color: #000000;
   border-color: #484e53;
@@ -108,15 +108,13 @@ body{
 }
 
 ::-webkit-scrollbar {
-  width: 12px;     /* Tamaño del scroll en vertical */
-  height: 12px;    /* Tamaño del scroll en horizontal */ 
-
+  width: 8px;     /* Tamaño del scroll en vertical */
+  height: 8px;    /* Tamaño del scroll en horizontal */ 
 }
 
 ::-webkit-scrollbar-thumb {
   background: #005a69;
   border-radius: 10px;
-  
 }
 /* Cambiamos el fondo y agregamos una sombra cuando esté en hover */
 ::-webkit-scrollbar-thumb:hover {
@@ -125,6 +123,7 @@ body{
 
 ::-webkit-scrollbar-track {
   background: #e4e4e4;
+  
 }
 /* Cambiamos el fondo cuando esté en active o hover */
 ::-webkit-scrollbar-track:hover {

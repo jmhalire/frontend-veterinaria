@@ -1,0 +1,23 @@
+#bar{
+    min-width: 700px;
+    min-height: 350px;
+    max-height: 400px;
+}
+.card{
+    border: none;
+    width: 100%;
+    .card-body{
+        overflow-x: auto;
+        padding: 3% 10%;
+    }
+}
+
+@media only screen and (max-width: 800px){
+    .card{
+        padding-left: 1%;
+        padding-right: 1%;
+        .card-body{
+            padding: 3% 0%;
+        }
+    }
+}

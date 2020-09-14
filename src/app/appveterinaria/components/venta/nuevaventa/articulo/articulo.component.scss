@@ -1,0 +1,26 @@
+.fila{
+    display: flex;
+    .delete {
+        width: 8%;
+    }
+    .nro {
+        width: 5%;
+    }
+    .articulo {
+        width: 50%;
+    }
+    .cantidad, .precio, .subtotal{
+        width: 10%;
+    }
+}
+
+.form-control, .form-select{
+    color: #000000;
+    font-size: 20px;
+    border-color: #17a2b8;
+    &:focus {
+        background-color: white;
+        box-shadow: 0 0 0 0.1rem #17a2b8;
+        transition: 0.5s;
+    }
+}

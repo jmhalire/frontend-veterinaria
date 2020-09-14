@@ -1,6 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { VeterinariaService } from "@services/veterinaria.service";
-
 @Component({
   selector: 'app-mascotas',
   templateUrl: './mascotas.component.html',

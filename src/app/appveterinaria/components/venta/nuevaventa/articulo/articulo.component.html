@@ -1,0 +1,21 @@
+
+<div class="my-2 fila">
+    <div class="mx-1 delete">
+        <button class="btn btn-outline-danger my-0 py-0 px-2" (click)="delete()">X</button>
+    </div>
+    <div class="mx-1 nro">
+        <label class="my-auto">{{ index + 1 }}</label>
+    </div>
+    <div class="mx-1 articulo">
+        <input type="text" class="form-control" [value]="articulo.Nombre" disabled>
+    </div>
+    <div class="mx-1 cantidad">
+        <input type="number" min="1" [max]="articulo.Stock" class="form-control" id="cantidad" value="1" (change)="Cantidad($event)">
+    </div>
+    <div class="mx-1 precio">
+        <input type="text" class="form-control" [value]="articulo.Particulo" disabled>
+    </div>
+    <div class="mx-1 ml-auto subtotal">
+        <input id="subtotal" type="text" class="form-control" [value]="subtotal" disabled>
+    </div>
+</div>

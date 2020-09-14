@@ -1,7 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { FormGroup, FormBuilder, FormControl, Validators } from '@angular/forms';
 import { ClientesService } from '@services/clientes.service';
 import { Router, ActivatedRoute } from "@angular/router";
+import { HttpResponse } from '@angular/common/http';
 
 @Component({
   selector: 'app-agregarcliente',
@@ -13,6 +14,7 @@ export class AgregarclienteComponent implements OnInit {
   createdForm : FormGroup
   public title: string;
   public message: string;
+  
 
   constructor(
     private builder: FormBuilder, 
@@ -45,7 +47,7 @@ export class AgregarclienteComponent implements OnInit {
           this.router.navigate(['../lista'],{relativeTo: this.activeRouter})
         }
       },
-      err =>{
+      err=>{
         this.message = err.error.message
         
       }

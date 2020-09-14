@@ -1,0 +1,122 @@
+<div class="alert alert-info alert-dismissible fade show mt-1" role="alert" *ngIf="message">
+    <strong>{{ message }}</strong>
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close" (click)="closeMessage()">
+        <span aria-hidden="true">&times;</span>
+    </button>
+</div>
+<div class="card">
+    <div class="card-header">
+        <h4 class="card-title">NUEVA VENTA</h4>
+    </div>
+    <div class="card-body">
+        <div class="form-group">
+            <label>Cliente</label>
+            <select name="client" class="form-select" aria-selected="true" (change)="selectClient($event)" id="client">
+                <option value="" disabled selected>Seleccione un cliente...</option>
+                <option *ngFor="let cliente of clientes; index as i " [value]="i">
+                    [ {{ cliente.Nombres }} {{ cliente.Apellidos }} ] [ {{ cliente.Celular}} ] [ {{ cliente.Email }} ]
+                </option>
+            </select>
+        </div>
+        <br>
+        <div class="d-flex">
+            <button class="btn btn-cyan ml-auto" data-toggle="modal" data-target="#staticBackdrop">
+                Cargar nuevo producto
+            </button>
+        </div>
+        <fieldset class="border-5 p-2">
+            <legend class="w-auto">ARTICULOS</legend>
+            <div class="d-flex bg-dark py-1 text-white">
+                <div class="mx-1" style="width: 8%;"></div>
+                <div class="mx-1" style="width: 5%;">N°</div>
+                <div class="mx-1" style="width: 50%;">Articulo</div>
+                <div class="mx-1" style="width: 10%;">Cantidad</div>
+                <div class="mx-1" style="width: 10%;">P. unitario</div>
+                <div class="mx-1 ml-auto" style="width: 10%;">Sub total</div>
+            </div><br>
+            <div id="lista">
+                <app-articulo *ngFor="let articulo of articulos; index as i" [articulo]="articulo" [index]="i"
+                    (change)="TotalArticulo()" (deleted)="delete($event)">
+                </app-articulo>
+            </div>
+            <hr style="color: darkcyan">
+            <h5 class="float-right">Subtotal articulos S/. {{TotalArticle}}</h5>
+        </fieldset>
+        <hr>
+        <fieldset class="border-5 p-2">
+            <legend class="w-auto">SERVICIOS</legend>
+            <div class="d-flex bg-dark py-1 text-white">
+                <div class="mx-1" style="width: 8%;"></div>
+                <div class="mx-1" style="width: 10%;">N°</div>
+                <div class="mx-1" style="width: 60%;">Motivo</div>
+                <div class="mx-1" style="width: 20%;">Valor</div>
+            </div><br>
+            <div class="text-center" *ngIf="visitas.length<=0">
+                <h5>El cliente no tiene deudas de servicios</h5>
+            </div>
+            <div id="listaService">
+                <div class="d-flex my-2" *ngFor="let visita of visitas; index as i">
+                    <div class="mx-1" style="width: 8%;">
+                        <button class="btn btn-outline-danger my-0 py-0 px-2" (click)="deleteService(i)">X</button>
+                    </div>
+                    <div class="mx-1" style="width: 10%;">
+                        <label class="my-auto">{{ i + 1 }}</label>
+                    </div>
+                    <div class="mx-1" style="width: 60%;">
+                        <input type="text" class="form-control" [value]="visita.Motivo" disabled>
+                    </div>
+                    <div class="mx-1" style="width: 20%;">
+                        <input type="number" min="1" class="form-control" id="cantidad" [value]="visita.Costo" disabled>
+                    </div>
+                </div>
+            </div>
+            <hr style="color: darkcyan">
+            <h5 class="float-right">Subtotal servicios S/. {{TotalServices}}</h5>
+        </fieldset>
+        <br>
+        <h4 class="float-right total">Total S/. {{Total}}</h4>
+    </div>
+    <div class="card-footer text-center">
+        <button class="btn btn-cyan mx-2 w-25" (click)="Guardar()">Guardar factura</button>
+        <button class="btn btn-danger mx-2 w-25" (click)="reiniciar()">Reiniciar venta</button>
+    </div>
+</div>
+<!-- Modal -->
+<div class="modal fade" id="staticBackdrop" data-backdrop="static" data-keyboard="false" tabindex="-1"
+    aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="staticBackdropLabel">Productos</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="form-group">
+                    <label>Categoria</label>
+                    <select name="" class="form-select" (change)="selectCategoria($event)">
+                        <option value="" disabled selected>Selccione una categoria</option>
+                        <option *ngFor="let categoria of categorias; index as i" [value]="i">{{ categoria.Nombre }}
+                        </option>
+                    </select>
+                </div>
+                <br>
+                <div class="form-group">
+                    <label>Articulo</label>
+                    <select name="" id="product" class="form-select">
+                        <option value="" disabled selected>Selccione un articulo</option>
+                        <option *ngFor="let articulo of productos; index as i" [value]="i">{{ articulo.Nombre }}
+                        </option>
+                    </select>
+                </div>
+            </div>
+            <hr>
+            <div class="d-flex pb-2 justify-content-around">
+                <button type="button" class="btn btn-cyan" (click)="selectProduct()"
+                    data-dismiss="modal">Agregar</button>
+                <button type="button" class="btn btn-danger" data-dismiss="modal" aria-label="Close">Cancelar</button>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,38 @@
+fieldset{
+    border-width: 2px;
+    border-style: groove;
+    border-color: cyan;
+    border-image: initial;
+}
+legend {
+    float: unset;
+    padding-bottom: 5px;
+    margin-bottom: 0px;
+}
+
+.modal{
+    background-color: rgba(0, 0, 0, 0.6);
+}
+
+.total{
+    border-top: 1px solid black;
+    border-bottom: 1px solid black;
+}
+
+.form-control, .form-select{
+    color: #000000;
+    font-size: 20px;
+    border-color: #17a2b8;
+    &:focus {
+        background-color: white;
+        box-shadow: 0 0 0 0.2rem #17a2b8;
+        transition: 0.5s;
+    }
+}
+
+@media screen and (min-width: 992px){
+    /* .card-body{
+        padding-right: 5%;
+        padding-left: 5%;
+    } */
+}

@@ -1,0 +1,28 @@
+.card{
+    border: none;
+    width: 100%;
+    .card-header{
+        background-color: darkcyan;
+    }
+    .card-body{
+        overflow-x: auto;
+    }
+}
+::-webkit-scrollbar {     /* Tamaño del scroll en vertical */
+    height: 6px;    /* Tamaño del scroll en horizontal */  /* Ocultar scroll */
+  }
+.table{
+    thead{
+        --bs-table-bg: darkcyan!important;
+    }
+} 
+.form-select{
+    color: #000000;
+    font-size: 20px;
+    border-color: #17a2b8;
+    &:focus {
+        background-color: white;
+        box-shadow: 0 0 0 0.2rem #17a2b8;
+        transition: 0.3s;
+    }
+}

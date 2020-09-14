@@ -1,0 +1,41 @@
+<!-- <app-message *ngIf="message" [messageDate]="messageDate"></app-message> -->
+<div class="card">
+    <div class="card-header bg-dark text-center text-white">
+      <h4 class="card-title">{{title}}</h4>
+    </div>
+    <div class="card-body p-0">
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>Nombre</th>
+            <th>Codigo</th>
+            <th>P. de venta</th>
+            <th>Stock</th>
+            <th>Categoria</th>
+            <th>Proveedor</th>
+            <th>Operaciones</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor='let articulo of  articulos; index as i'>
+            <th scope="row">{{ i+1 }}</th>
+            <td>{{ articulo.Nombre }}</td>
+            <td>{{ articulo.Codigo }}</td>
+            <td>{{ articulo.Particulo }}</td>
+            <td>{{ articulo.Stock }}</td>
+            <td>{{ articulo.categoria.Nombre }}</td>
+            <td>{{ articulo.proveedor.Nombre }}</td>
+            <td>
+              <div class="d-flex">
+                <button type="submit" class="btn btn-dark">Ver detalles</button>
+              </div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="card-footer">
+      footer
+    </div>
+  </div>

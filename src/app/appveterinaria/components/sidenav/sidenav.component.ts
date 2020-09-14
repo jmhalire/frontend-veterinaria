@@ -1,5 +1,6 @@
 import { Component, OnInit, Input, ViewChild, ElementRef, EventEmitter, Output } from '@angular/core';
 import { sidenav } from '@animations/animations';
+import { User } from '@interfaces/user';
 
 @Component({
   selector: 'app-sidenav',
@@ -12,6 +13,7 @@ export class SidenavComponent implements OnInit {
 
   public dropdown1: boolean;
   public dropdown2: boolean;
+  public admin : boolean;
 
   @ViewChild('icondropdown1') icondropdown1: ElementRef;
   @ViewChild('icondropdown2') icondropdown2: ElementRef;
@@ -22,9 +24,18 @@ export class SidenavComponent implements OnInit {
   constructor() {
     this.dropdown1 = false;
     this.dropdown2 = false;
+    this.admin = false;
   }
 
   ngOnInit(): void {
+    let user = <User>JSON.parse(localStorage.getItem('user'));
+    if(user.Role==='ADMIN'){
+      this.admin = true;
+    }
+    else{
+      this.admin = false
+    }
+    
   }
 
   /**

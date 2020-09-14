@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, EventEmitter, Output } from '@angular/core';
 
 @Component({
   selector: 'app-buscarmascota',
@@ -8,11 +8,19 @@ import { Component, OnInit } from '@angular/core';
 export class BuscarmascotaComponent implements OnInit {
 
   public title:string
-  constructor() { 
+  public nombre: string;
+  
+  @Output('nameMascot') nameMascot = new EventEmitter<string>();
+  constructor() {
     this.title = 'Busqueda'
-  }
+   }
 
   ngOnInit(): void {
+      
+  }
+
+  public changeInput(e:any){
+    this.nameMascot.emit(this.nombre)
   }
 
 }

@@ -6,13 +6,24 @@
     left: 0;
     z-index: 1030;
     background-color: #1e2741!important;
-    box-shadow: 0 0.5rem 1rem #0000006b;
+    box-shadow: 0 0.5rem 1rem #00000046;
 }
 
 .navbar-nav {
     flex-direction: row;
     
 }
+
+
+/* trigger('iconOpenClose',[
+        state('open', style({
+            transform: 'rotateZ(180deg)',
+        })),
+        state('closed', style({
+            transform: 'rotateZ(0deg)',
+        })),
+        transition("* => *", animate(400))
+    ]) */
 
 .nav-item{
     margin-left: 5px;
@@ -22,7 +33,7 @@
 .icon-nav{
     height: 55px;
     &:hover{
-        background-color: #060e27;
+        background-color: #060e276f;
     }
 }
 .dropdown-item{
@@ -51,10 +62,24 @@
     transition: 0.5s;
 }
 .closed-sidenav{
-    width: 30px;
+    width: 50px;
     transition: 0.3s;
 }
 .dropdown-menu{
     position: absolute;
     border: none;
+}
+@media screen and (max-width: 600px){
+    .open-sidenav{
+        width: 50px;
+        transition: 0.5s;
+    }
+}
+
+
+@media screen and (min-width: 601px) and (max-width: 700px){
+    .open-sidenav{
+        width: 180px;
+        transition: 0.5s;
+    }
 }

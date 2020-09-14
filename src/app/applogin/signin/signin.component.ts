@@ -6,6 +6,7 @@ import { Router } from '@angular/router';
 import { AuthService } from "@services/auth.service";
 
 import { signin } from "../../animations/animations";
+import { stringify } from '@angular/compiler/src/util';
 @Component({
   selector: 'app-signin',
   templateUrl: './signin.component.html',
@@ -46,6 +47,7 @@ export class SigninComponent implements OnInit {
           if (res.value == true) {
             this.signinForm.reset();
             localStorage.setItem('token', res.token);
+            localStorage.setItem('user', JSON.stringify(res.user));
             this.router.navigate(['/veterinaria'])
           }
           else {

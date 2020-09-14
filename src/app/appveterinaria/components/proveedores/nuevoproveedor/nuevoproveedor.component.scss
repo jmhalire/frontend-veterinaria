@@ -1,0 +1,38 @@
+.card{
+    margin-right: auto;
+    margin-left: auto;
+    border: none;
+    .card-header{
+        background-color: #005c5ccb!important;
+        color: white;
+        text-align: center;
+    }
+    .card-body{
+        background-color: #00888833;
+        form{
+            width: 90%;
+            .form-group label{
+                font-size: 20px;
+            }
+        } 
+    }
+}
+
+.form-control, .form-select{
+    color: #000000;
+    font-size: 20px;
+    border-color: #17a2b8;
+    &:focus {
+        background-color: white;
+        box-shadow: 0 0 0 0.2rem #17a2b8;
+        transition: 0.3s;
+    }
+}
+
+.btn-cyan{
+    font-size: 20px;
+    width: 270px;
+}
+@media screen and (min-width: 750px){
+
+}
