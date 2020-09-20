@@ -16,6 +16,8 @@ export class DataclienteComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    console.log(this.cliente[0]);
+    
     setTimeout(()=>{
       this.Cel = `tel:${this.cliente.Celular}`;
     },100)

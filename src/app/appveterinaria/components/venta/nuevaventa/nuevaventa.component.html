@@ -14,7 +14,7 @@
             <select name="client" class="form-select" aria-selected="true" (change)="selectClient($event)" id="client">
                 <option value="" disabled selected>Seleccione un cliente...</option>
                 <option *ngFor="let cliente of clientes; index as i " [value]="i">
-                    [ {{ cliente.Nombres }} {{ cliente.Apellidos }} ] [ {{ cliente.Celular}} ] [ {{ cliente.Email }} ]
+                    {{ cliente.Nombres }} {{ cliente.Apellidos }} _ {{ cliente.Celular}} _ {{ cliente.Email }}
                 </option>
             </select>
         </div>
@@ -29,18 +29,18 @@
             <div class="d-flex bg-dark py-1 text-white">
                 <div class="mx-1" style="width: 8%;"></div>
                 <div class="mx-1" style="width: 5%;">N°</div>
-                <div class="mx-1" style="width: 50%;">Articulo</div>
+                <div class="mx-1" style="width: 50%;">producto</div>
                 <div class="mx-1" style="width: 10%;">Cantidad</div>
                 <div class="mx-1" style="width: 10%;">P. unitario</div>
                 <div class="mx-1 ml-auto" style="width: 10%;">Sub total</div>
             </div><br>
             <div id="lista">
-                <app-articulo *ngFor="let articulo of articulos; index as i" [articulo]="articulo" [index]="i"
+                <app-articulo *ngFor="let producto of selectProducts; index as i" [producto]="producto" [index]="i"
                     (change)="TotalArticulo()" (deleted)="delete($event)">
                 </app-articulo>
             </div>
             <hr style="color: darkcyan">
-            <h5 class="float-right">Subtotal articulos S/. {{TotalArticle}}</h5>
+            <h5 class="float-right">Subtotal productos S/. {{TotalArticle}}</h5>
         </fieldset>
         <hr>
         <fieldset class="border-5 p-2">
@@ -103,10 +103,10 @@
                 </div>
                 <br>
                 <div class="form-group">
-                    <label>Articulo</label>
+                    <label>Producto</label>
                     <select name="" id="product" class="form-select">
-                        <option value="" disabled selected>Selccione un articulo</option>
-                        <option *ngFor="let articulo of productos; index as i" [value]="i">{{ articulo.Nombre }}
+                        <option value="" disabled selected>Selccione un producto</option>
+                        <option *ngFor="let producto of productos; index as i" [value]="i">{{ producto.Nombre }}
                         </option>
                     </select>
                 </div>

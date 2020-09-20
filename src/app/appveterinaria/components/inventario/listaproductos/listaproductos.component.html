@@ -18,14 +18,14 @@
           </tr>
         </thead>
         <tbody>
-          <tr *ngFor='let articulo of  articulos; index as i'>
+          <tr *ngFor='let producto of  productos; index as i'>
             <th scope="row">{{ i+1 }}</th>
-            <td>{{ articulo.Nombre }}</td>
-            <td>{{ articulo.Codigo }}</td>
-            <td>{{ articulo.Particulo }}</td>
-            <td>{{ articulo.Stock }}</td>
-            <td>{{ articulo.categoria.Nombre }}</td>
-            <td>{{ articulo.proveedor.Nombre }}</td>
+            <td>{{ producto.Nombre }}</td>
+            <td>{{ producto.Codigo }}</td>
+            <td>{{ producto.Particulo }}</td>
+            <td>{{ producto.Stock }}</td>
+            <td>{{ producto.categoria.Nombre }}</td>
+            <td>{{ producto.proveedor.Nombre }}</td>
             <td>
               <div class="d-flex">
                 <button type="submit" class="btn btn-dark">Ver detalles</button>
@@ -35,7 +35,7 @@
         </tbody>
       </table>
     </div>
-    <div class="card-footer">
-      footer
+    <div class="card-footer text-info">
+      Se muestran la lista de todos los productos registrados en el sistema ordenados de manera alfabetica por el nombre
     </div>
   </div>

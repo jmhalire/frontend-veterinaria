@@ -5,7 +5,7 @@ import { AuthService } from "./auth.service";
 import { Observable } from 'rxjs';
 
 //interfaces
-import { Articulo } from '@interfaces/articulo';
+import { Producto } from '@interfaces/producto';
 import { Categoria } from "@interfaces/categoria";
 import { Proveedor } from "@interfaces/proveedor";
 
@@ -22,8 +22,12 @@ export class InventarioService {
     this.url = authService.getBackend();
   }
 
-  public getProductos(): Observable<Articulo[]>{
-    return this.http.get<Articulo[]>(`${this.url}article/list`, {headers: this.authService.httpOptions()});
+  //Articulos
+  public saveProducto(product: Producto): Observable<any>{
+    return this.http.post<any>(`${this.url}article/save`,product, { headers : this.authService.httpOptions()})
+  }
+  public getProductos(): Observable<Producto[]>{
+    return this.http.get<Producto[]>(`${this.url}article/list`, {headers: this.authService.httpOptions()});
   }
 
 
@@ -35,6 +39,10 @@ export class InventarioService {
     return this.http.get<Proveedor[]>(`${this.url}proveedor/list`, {headers: this.authService.httpOptions()});
   }
 
+  //categorias
+  public saveCategoria(dato: Categoria | any){
+    return this.http.post<any>(`${this.url}categoria/save`, dato,{headers: this.authService.httpOptions()})
+  }
   public getCategorias(): Observable<Categoria[]>{
     return this.http.get<Categoria[]>(`${this.url}categoria/list`, {headers: this.authService.httpOptions()});
   }

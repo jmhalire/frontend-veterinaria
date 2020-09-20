@@ -33,7 +33,7 @@ export class AuthService {
   }
 
   public getBackend(): string{
-    return 'http://localhost:3200/';
+    return 'http://localhost:8080/';
   }
 
 }

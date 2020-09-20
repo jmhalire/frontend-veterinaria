@@ -8,7 +8,6 @@
 .modalEdit, .modalDelete{
     background-color: rgba(0, 0, 0, 0.85);
     .modal-dialog .modal-content{
-        background-color: rgb(0, 167, 167);
         .modal-header{
             color: black;
         }
@@ -17,11 +16,14 @@
         }
     }
 }
+.modalEdit .modal-dialog .modal-content{
+    background-color: #bebebe;
+}
 .btn{
     width: 150px;
     &:hover{
-        box-shadow: 0 0 0.2rem 0.2rem hsla(0, 0%, 0%, 0.3);
-        border: 1px solid black;
+        text-decoration: underline;
+        transform: translateY(-5px);
         transition: 200ms ease-in-out;
     }
 }

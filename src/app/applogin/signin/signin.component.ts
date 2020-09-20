@@ -4,15 +4,15 @@ import { Router } from '@angular/router';
 
 //service
 import { AuthService } from "@services/auth.service";
-
 import { signin } from "../../animations/animations";
-import { stringify } from '@angular/compiler/src/util';
+
 @Component({
   selector: 'app-signin',
   templateUrl: './signin.component.html',
   styleUrls: ['./signin.component.scss'],
   animations: [signin]
 })
+
 export class SigninComponent implements OnInit {
 
   signinForm: FormGroup

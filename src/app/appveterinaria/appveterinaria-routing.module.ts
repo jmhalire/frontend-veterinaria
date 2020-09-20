@@ -31,6 +31,7 @@ import { PorcategoriaComponent } from "./components/inventario/porcategoria/porc
 import { PorproveedorComponent } from "./components/inventario/porproveedor/porproveedor.component";
 import { NuevoproductoComponent } from "./components/inventario/nuevoproducto/nuevoproducto.component";
 import { InventarioComponent } from "./components/inventario/inventario.component";
+import { NuevacategoriaComponent } from "./components/inventario/nuevacategoria/nuevacategoria.component";
 //proveedores
 import { ProveedoresComponent } from "./components/proveedores/proveedores.component";
 import { ListaproveedoresComponent } from "./components/proveedores/listaproveedores/listaproveedores.component";
@@ -96,6 +97,8 @@ const routes: Routes = [
           { path: 'productos-por-proveedor', component: PorproveedorComponent },
           { path: 'productos-por-categoria', component: PorcategoriaComponent },
           { path: 'nuevo-producto', component: NuevoproductoComponent },
+          { path: 'nueva-categoria', component: NuevacategoriaComponent },
+
         ]
       },
       {

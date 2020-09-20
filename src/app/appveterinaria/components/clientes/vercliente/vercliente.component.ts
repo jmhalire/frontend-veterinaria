@@ -37,7 +37,6 @@ export class VerclienteComponent implements OnInit {
 
   ngOnInit(): void {
     this.getDatos();
-
   }
 
   public formGrup() {
@@ -58,12 +57,11 @@ export class VerclienteComponent implements OnInit {
   public deleted() {
     this.clientService.deleteClient(this.cliente.id).subscribe(
       res => {
-        if (res.value) {
+        if (res.message) {
           const message = `El cliente "${this.cliente.Nombres}" a sido Eliminado del sistema`;
           localStorage.setItem('message', message)
           this.router.navigate(['../../lista'], { relativeTo: this.route })
         }
-
       },
       err => console.log(err)
     )

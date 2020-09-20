@@ -19,7 +19,7 @@ export class AgregarcitaComponent implements OnInit {
   createdForm : FormGroup
   
   public title: string;
-  public message: boolean
+  public message: string
   public clientes: Cliente[];
   public mascotas: Mascot[]
   constructor(
@@ -63,16 +63,17 @@ export class AgregarcitaComponent implements OnInit {
     this.serviService.RegistrarCita(this.createdForm.value).subscribe(
       res => {
         console.log(res);
-        
-        // if(res.value){
-        //   console.log(res.message);
-        //   localStorage.setItem('message', res.message)
-        //   this.router.navigate(['../lista'],{relativeTo: this.activeRouter})
-        // }
+        this.message = res.message;
+        this.createdForm.reset();
       },
       err =>{
         this.message = err.error.message
       }
     )
+  }
+
+  //close message
+  public closeMessage(){
+    this.message = null;
   }
 }

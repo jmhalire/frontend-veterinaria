@@ -1,6 +1,6 @@
 import { Proveedor } from "./proveedor";
 import { Categoria } from './categoria';
-export interface Articulo{
+export interface Producto{
     id: number,
     Codigo: string,
     Nombre: string,

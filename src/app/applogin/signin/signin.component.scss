@@ -14,7 +14,7 @@
     left: 0%;
     .card{
         //margin: 0% 5px;
-        background: rgba(255, 255, 255, 0.1);
+        background: rgba(255, 255, 255, 0.2);
         box-shadow: 0px 0px 20px 5px #00000096;
         color: white;
         .card-header{
@@ -32,7 +32,7 @@
     background: transparent;
     border-bottom: 3px solid #ffffff;
     &:focus {
-        box-shadow: 0 0 0 1px #fff;
+        box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.603);
         transition: all 0.7s;
     }
 }

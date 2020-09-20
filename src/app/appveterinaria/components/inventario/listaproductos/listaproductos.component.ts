@@ -4,9 +4,7 @@ import { Component, OnInit } from '@angular/core';
 import { InventarioService } from "@services/inventario.service";
 
 //interfaces
-import { Articulo } from "@interfaces/articulo";
-import { Categoria } from "@interfaces/categoria";
-import { Proveedor } from "@interfaces/proveedor";
+import { Producto } from "@interfaces/producto";
 
 @Component({
   selector: 'app-listaproductos',
@@ -16,7 +14,7 @@ import { Proveedor } from "@interfaces/proveedor";
 export class ListaproductosComponent implements OnInit {
 
   public title: string;
-  public articulos: Articulo[];
+  public productos: Producto[];
 
   constructor(
     private inventService: InventarioService
@@ -27,7 +25,7 @@ export class ListaproductosComponent implements OnInit {
   ngOnInit(): void {
    this.inventService.getProductos().subscribe(
      res => {
-       this.articulos = res;
+       this.productos = res;
      }
    )
 

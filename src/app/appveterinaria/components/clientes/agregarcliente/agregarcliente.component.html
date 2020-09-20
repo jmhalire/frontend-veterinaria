@@ -8,7 +8,7 @@
         <form class="mx-auto" [formGroup]='createdForm' (ngSubmit)="created()">
             <div class="form-group my-3">
                 <label>Nombres</label>
-                <input type="text" class="form-control text" formControlName="Nombres">
+                <input type="text" class="form-control" style="text-transform: capitalize;" formControlName="Nombres">
             </div>
             <div class="form-group my-3">
                 <label>Apellidos</label>
@@ -25,7 +25,7 @@
                 <div class="col-sm-6">
                     <div class="form-group ">
                         <label>Celular</label>
-                        <input type="text" class="form-control" formControlName="Celular">
+                        <input type="text" class="form-control" formControlName="Celular" maxlength="9">
                     </div>
                 </div>
             </div>

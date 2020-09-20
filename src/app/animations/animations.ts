@@ -48,6 +48,21 @@ const upload = trigger('upload', [
     transition(':enter', [style({ opacity: 1, transform: 'translateY(-100%)', backgroundColor: 'black' }), animate('250ms')]),
 ])
  */
+const dropdown = [
+    trigger('OpenCloseDropdown',[
+        state('open', style({
+            paddingTop: '.5rem',
+            height: '180px',
+        })),
+        state('closed', style({
+            height: '0px',
+            paddingLeft: '0px'
+        })),
+        transition('open => closed', [animate('0.3s ease-in-out')]),
+        transition('closed => open', [animate('0.3s ease-in-out')]),
+    ])
+]
+
 const openClose = [
     trigger('iconOpenClose',[
         state('open', style({
@@ -127,5 +142,6 @@ export {
     main,
     openClose,
     signin,
-    search
+    search,
+    dropdown
 }

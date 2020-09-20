@@ -1,12 +1,11 @@
 .card{
-    margin-right: auto;
-    margin-left: auto;
-    border: none;
     .card-header{
-        background-color: darkcyan;
+        background-color: #0257d5;
+        color: white;
+        text-align: center;
     }
     .card-body{
-        background-color: #00888833;
+        background-color: #0256d567;
         form{
             width: 90%;
             .form-group label{
@@ -15,21 +14,19 @@
         } 
     }
 }
-.text{
-    text-transform: capitalize!important;
-}
-.form-control{
+
+.form-control, .form-select{
     color: #000000;
     font-size: 20px;
-    border-color: #17a2b8;
+    border-color: #0257d5;
     &:focus {
         background-color: white;
-        box-shadow: 0 0 0 0.2rem #17a2b8;
-        transition: 0.5s;
+        box-shadow: 0 0 0 0.2rem #0257d5;
+        transition: 0.3s;
     }
 }
 
-button{
+.btn-primary{
     font-size: 20px;
     width: 270px;
 }

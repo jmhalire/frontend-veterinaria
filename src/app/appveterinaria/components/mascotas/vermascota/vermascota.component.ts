@@ -46,14 +46,15 @@ export class VermascotaComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.getDatos();
-
+    this.getDatos(); 
   }
 
   public formGrup() {
+    console.log('kjsnkncksnkjwnkj',this.mascota.id);
+    
     this.updatedForm = this.builder.group(
       {
-        idMascota: this.mascota.id,
+        id: this.mascota.id,
         Nombres: new FormControl(this.mascota.Nombres, Validators.required),
         Especie: new FormControl(this.mascota.Especie, Validators.required),
         Sexo: new FormControl(this.mascota.Sexo, Validators.required)
@@ -91,7 +92,6 @@ export class VermascotaComponent implements OnInit {
 
   public getDatos() {
     const idMascota = this.route.snapshot.paramMap.get('id');
-
     this.mascotService.getMascota(idMascota.toString()).subscribe(
       res => {
         this.mascota = res;

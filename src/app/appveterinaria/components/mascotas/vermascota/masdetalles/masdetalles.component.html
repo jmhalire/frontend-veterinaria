@@ -16,7 +16,7 @@
       </thead>
       <tbody>
         <tr *ngFor="let visita of visitas; index as i">
-          <th scope="row">{{ i }}</th>
+          <th scope="row">{{ i+1 }}</th>
           <td>{{ visita.Motivo }}</td>
           <td>{{ visita.Costo }}</td>
           <td>{{ visita.CreatedAt}}</td>
@@ -36,7 +36,7 @@
       </thead>
       <tbody>
         <tr *ngFor="let vacuna of vacunas; index as i">
-          <th scope="row">{{ i }}</th>
+          <th scope="row">{{ i+1 }}</th>
           <td>{{ vacuna.Tipo }}</td>
           <td>{{ vacuna.Observacion }}</td>
           <td>{{ vacuna.CreatedAt}}</td>
@@ -55,7 +55,7 @@
       </thead>
       <tbody>
         <tr *ngFor="let reserva of reservas; index as i">
-          <th scope="row">{{ i }}</th>
+          <th scope="row">{{ i+1 }}</th>
           <td>{{ reserva.Descripcion}}</td>
           <td>{{ reserva.CreatedAt }}</td>
         </tr>

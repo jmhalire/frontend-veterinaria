@@ -36,7 +36,7 @@
                 <span class="ml-2">Caja</span>
             </a>
         </li>
-        <li class="nav-item mx-2">
+        <li class="nav-item mx-2" routerLinkActive="active" [routerLink]="['./ventas']">
             <a class="nav-link mr-lg-2" data-toggle="tooltip" data-placement="bottom" title=""
                 data-original-title=" Nueva  Venta">
                 <i class="fa fa-cart-plus fa-lg" aria-hidden="true"></i>
@@ -47,8 +47,8 @@
             <a class="nav-link mr-2" href="#">
                 <i class="fa fa-user-md fa-lg" aria-hidden="true"></i>
             </a>
-            <div class="text-white my-auto">
-                <p style="font-size:11px">Benvenido</p>
+            <div class="text-secondary my-auto">
+                <p style="font-size:11px">Bienvenido</p>
                 <p style="font-size:16px">{{ nameUser }}</p>
             </div>
         </li>

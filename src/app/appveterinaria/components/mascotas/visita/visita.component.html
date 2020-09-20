@@ -1,3 +1,10 @@
+<div class="alert alert-info alert-dismissible fade show mt-1" role="alert" *ngIf="message">
+    <strong>{{ message }}</strong>
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close" (click)="closeMessage()">
+        <span aria-hidden="true">&times;</span>
+    </button>
+</div>
+
 <div class="card h-100">
     <div class="card-header bg-success text-white text-center">
         <h4 class="card-title">{{title}}</h4>
@@ -11,7 +18,7 @@
                         <select name="client" class="form-select" aria-selected="true" (change)="selectClient($event)" #client>
                             <option value="" disabled selected>Seleccione un cliente...</option>
                             <option *ngFor="let cliente of clientes; index as i " [value]="i">
-                                [ {{ cliente.Nombres }} ] [ {{ cliente.Celular}} ] [ {{ cliente.Email }} ]
+                                {{ cliente.Nombres }} _ {{ cliente.Celular}} _ {{ cliente.Email }}
                             </option>
                         </select>
                     </div>
@@ -22,7 +29,7 @@
                         <select name="client" class="form-select" aria-selected="true" #mascot>
                             <option value="" disabled selected>Seleccione una mascota...</option>
                             <option *ngFor="let mascota of mascotas; index as i " [value]="i">
-                                [ {{ mascota.Nombres }} ] [ {{ mascota.Especie }} ]
+                                {{ mascota.Nombres }}
                             </option>
                         </select>
                     </div>
@@ -30,13 +37,13 @@
             </div>
             <div class="form-group my-3">
                 <label>Motivo</label>
-                <textarea name="" id="" cols="30" rows="2" class="form-control" #motivo></textarea>
+                <textarea name="" id="" cols="30" rows="2" class="form-control" #motivo>No hay</textarea>
             </div>
             <br>
             <hr>
             <span class="d-block">Campos opcionales</span>
             <button class="btn btn-success my-4" (click)="addVacuna()">Agregar vacuna</button>
-            <button class="btn btn-danger float-right my-4" *ngIf="vacunas.length>0" (click)="remove()">Quitar</button>
+            <button class="btn btn-outline-danger float-right my-4" *ngIf="vacunas.length>0" (click)="remove()">Quitar</button>
             <div #vacuna>
                 <app-vacuna *ngFor="let ele of vacunas; index as i" [index]="i"></app-vacuna>
             </div>
@@ -44,26 +51,26 @@
                 <div class="col-lg">
                     <div class="form-group my-3">
                         <label>Sintomas</label>
-                        <textarea name="" id="" cols="30" rows="3" class="form-control" #sintoma></textarea>
+                        <textarea name="" id="" cols="30" rows="3" class="form-control" #sintoma>No hay</textarea>
                     </div>
                 </div>
                 <div class="col-lg">
                     <div class="form-group my-3">
                         <label>Diagnostico</label>
-                        <textarea name="" id="" cols="30" rows="3" class="form-control" #diagnostico></textarea>
+                        <textarea name="" id="" cols="30" rows="3" class="form-control" #diagnostico>No hay</textarea>
                     </div>
                 </div>
             </div>
             <div class="form-group my-3">
                 <label>Tratamiento</label>
-                <textarea name="" id="" cols="30" rows="2" class="form-control" #tratamiento></textarea>
+                <textarea name="" id="" cols="30" rows="2" class="form-control" #tratamiento>No hay</textarea>
             </div><br>
             <hr>
             <div class="row my-3">
                 <div class="col-sm">
                     <div class="form-group d-flex my-3">
                         <label style="align-self: center;">Costo</label>
-                        <input type="text" class="form-control ml-3" #costo>
+                        <input type="text" class="form-control ml-3" value="0" #costo>
                         <label style="align-self: center;margin-left:1%">Soles</label>
                     </div>
                 </div>
@@ -72,7 +79,6 @@
                         <div class="d-flex justify-content-center">
                             <label>¿Esta pagado?</label>
                         </div>
-                        
                         <div class="d-flex justify-content-center">
                             <div class="custom-control custom-radio mr-3">
                                 <input type="radio" class="custom-control" id="customControlValidation2"
@@ -86,8 +92,6 @@
                             </div>
                         </div>
                     </div>
-                        
-                        
                 </div>
             </div>
             <br>

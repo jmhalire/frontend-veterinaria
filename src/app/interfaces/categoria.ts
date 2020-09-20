@@ -1,10 +1,10 @@
-import { Articulo } from './articulo';
+import { Producto } from './producto';
 
 export interface Categoria{
     id: number,
     Nombre: string,
     Descripcion: string,
-    articulos: Articulo[]
+    productos: Producto[]
     CreatedAt: Date,
     UpdatedAt: Date
 }

@@ -19,11 +19,6 @@ export class VentaService {
   ) { 
     this.url = authService.getBackend();
   }
-
-  //lista de categorias con sus productos para realizar venta
-  public getCategorias(){
-    return this.http.get<Categoria[]>(`${this.url}categoria/list`, { headers : this.authService.httpOptions() })
-  }
   
   // guardar una venta realizada
   public saveVenta(dato: Venta | any){

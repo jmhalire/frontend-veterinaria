@@ -2,38 +2,38 @@
     <div class="card-header text-white text-center">
         <h4 class="card-title">{{title}}</h4>
     </div>
-    <div class="card-body p-0">
-        <div class="container py-4">
-            <div class="form-group">
-                <label>Proveedor</label>
-                <select name="" id="" class="form-select" (change)="selectCategoria($event)">
-                    <option value="" selected disabled>Seleccione un proveedor</option>
-                    <option *ngFor="let categoria of categorias; index as i" [value]="i">
-                        {{ categoria.Nombre }}
-                    </option>
-                </select>
-            </div>
+    <div class="container py-4">
+        <div class="form-group">
+            <label>Categoria</label>
+            <select name="" id="" class="form-select" (change)="selectCategoria($event)">
+                <option value="" selected disabled>Seleccione una categoria</option>
+                <option *ngFor="let categoria of categorias; index as i" [value]="i">
+                    {{ categoria.Nombre }}
+                </option>
+            </select>
         </div>
+    </div>
+    <div class="card-body p-0">
         <table class="table table-striped">
             <thead>
                 <tr>
                     <th>#</th>
                     <th>Nombre</th>
                     <th>Codigo</th>
-                    <th>P. de venta</th>
+                    <th>P. venta</th>
                     <th>Stock</th>
                     <th>Proveedor</th>
                     <th>Operaciones</th>
                 </tr>
             </thead>
             <tbody>
-                <tr *ngFor='let articulo of articulos; index as i'>
+                <tr *ngFor='let producto of productos; index as i'>
                     <th scope="row">{{ i+1 }}</th>
-                    <td>{{ articulo.Nombre }}</td>
-                    <td>{{ articulo.Codigo }}</td>
-                    <td>{{ articulo.Particulo }}</td>
-                    <td>{{ articulo.Stock }}</td>
-                    <td>{{ articulo.proveedor.Nombre }}</td>
+                    <td>{{ producto.Nombre }}</td>
+                    <td>{{ producto.Codigo }}</td>
+                    <td>{{ producto.Particulo }}</td>
+                    <td>{{ producto.Stock }}</td>
+                    <td>{{ producto.proveedor.Nombre }}</td>
                     <td>
                         <div class="d-flex">
                             <button type="submit" class="btn btn-dark">Ver detalles</button>
@@ -42,5 +42,8 @@
                 </tr>
             </tbody>
         </table>
+    </div>
+    <div class="card-footer text-info">
+        Productos de la categoria <strong>{{selectCategoriaName}}</strong>.
     </div>
 </div>

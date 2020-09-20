@@ -1,6 +1,4 @@
 import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
-import { VacunaComponent } from './vacuna/vacuna.component';
-import { MascotasService } from '@services/mascotas.service';
 import { ClientesService } from '@services/clientes.service';
 import { ServiciosService } from '@services/servicios.service';
 
@@ -18,6 +16,7 @@ export class VisitaComponent implements OnInit {
   public mascotas: Mascot[];
   public clientes: Cliente[];
   public title: string;
+  public message: string
   @ViewChild('vacuna') vacuna: ElementRef;
 
   @ViewChild('client') client: ElementRef;
@@ -29,11 +28,11 @@ export class VisitaComponent implements OnInit {
   @ViewChild('costo') costo: ElementRef;
   @ViewChild('noPago') noPago: ElementRef;
   @ViewChild('siPago') siPago: ElementRef;
- 
+
   constructor(
     private clientService: ClientesService,
     private service: ServiciosService
-    ) { 
+  ) {
     this.title = 'REGISTRAR NUEVA VISITA'
     this.vacunas = []
   }
@@ -44,46 +43,53 @@ export class VisitaComponent implements OnInit {
         this.clientes = res;
       },
       err => console.log(err)
-      
+
     )
   }
 
-  public addVacuna(){
+  public addVacuna() {
     this.vacunas.push('new');
   }
-  public remove(){
+  public remove() {
     let last = this.vacuna.nativeElement.lastElementChild;
     last.parentNode.removeChild(last)
-    this.vacunas.pop() 
+    this.vacunas.pop()
   }
 
-  public selectClient(e: any){
+  public selectClient(e: any) {
     this.mascotas = this.clientes[e.target.value].mascotas;
   }
 
 
   //generar nueva visita
-  public RegistrarVisita(){
+  public RegistrarVisita() {
     let datosVisita = this.datosVisita();
     let datosVacuna = this.datosVacuna();
 
     this.service.RegistrarVisita(datosVisita).subscribe(
       res => {
-        if(datosVacuna.length > 0){
+        if (datosVacuna.length > 0) {
           this.service.RegistrarVacuna(datosVacuna).subscribe(
             res => {
-              console.log('los datos se gurdaron correctamente');    
+              this.message = res.message
+              this.resetForm();
             }
           )
         }
-      }
+        else {
+          this.message = res.message;
+          this.resetForm();
+        }
+      },
+      err => console.log(err)
+
     )
   }
 
 
-  public datosVisita(): any{
+  public datosVisita(): any {
     let checked: string;
-    if(this.siPago.nativeElement.checked){
+    if (this.siPago.nativeElement.checked) {
       checked = 'SI';
     } else {
       checked = 'NO';
@@ -97,17 +103,17 @@ export class VisitaComponent implements OnInit {
       EstaPagado: checked,
       mascota: this.mascotas[this.mascot.nativeElement.value].id,
       cliente: this.clientes[this.client.nativeElement.value].id
-    }    
+    }
     return visita;
-    
+
   }
 
-  public datosVacuna(): any[]{
+  public datosVacuna(): any[] {
     let vacunas: any[]
     vacunas = [];
     let value1: HTMLInputElement;
     let value2: HTMLInputElement;
-    if(this.vacunas.length > 0){
+    if (this.vacunas.length > 0) {
       let hijos = this.vacuna.nativeElement.children;
       for (let i = 0; i < hijos.length; i++) {
         const element = hijos[i].children[1];
@@ -124,5 +130,19 @@ export class VisitaComponent implements OnInit {
       }
     }
     return vacunas;
+  }
+
+  //formateamos el formulario
+  private resetForm(){
+    this.motivo.nativeElement.value = "No hay";
+    this.sintoma.nativeElement.value = "No hay";
+    this.diagnostico.nativeElement.value = "No hay";
+    this.tratamiento.nativeElement.value = "No hay";
+    this.costo.nativeElement.value = "0";
+    this.vacunas = [];
+  }
+  //close message
+  public closeMessage() {
+    this.message = null;
   }
 }

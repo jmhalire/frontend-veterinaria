@@ -10,6 +10,9 @@ export class VisitasComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
+    const dat = new Date().toLocaleString();
+    console.log(dat);
+    
   }
 
 }

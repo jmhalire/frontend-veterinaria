@@ -21,6 +21,12 @@ export class ServiciosService {
     
   }
 
+  //actualizar estado de una visita
+  public updatedVisita(datos: any[]){
+    return this.http.post<any>(`${this.url}visita/update`,datos, { headers : this.authService.httpOptions()})
+    
+  }
+
   //regfistrar una vacuna
   public RegistrarVacuna(datos: any){
     return this.http.post<any>(`${this.url}vacuna/add`,datos, { headers : this.authService.httpOptions()})

@@ -1,7 +1,7 @@
 import { Component, OnInit, Input, Host, Output, EventEmitter } from '@angular/core';
 
 //interfaces
-import { Articulo } from '@interfaces/articulo';
+import { Producto } from '@interfaces/producto';
 
 @Component({
   selector: 'app-articulo',
@@ -10,7 +10,7 @@ import { Articulo } from '@interfaces/articulo';
 })
 export class ArticuloComponent implements OnInit {
 
-  @Input('articulo') articulo: Articulo;
+  @Input('producto') producto: Producto;
   @Input('index') index: any;
   @Output('deleted') deleted = new EventEmitter()
   public subtotal: number;
@@ -19,12 +19,12 @@ export class ArticuloComponent implements OnInit {
    }
 
   ngOnInit(): void {
-    this.subtotal = this.articulo.Particulo;
+    this.subtotal = this.producto.Particulo;
   }
 
   public Cantidad(e: any){
     const can = e.target.value;
-    this.subtotal = can*this.articulo.Particulo
+    this.subtotal = can*this.producto.Particulo
   }
 
   public delete(){

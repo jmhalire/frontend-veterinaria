@@ -1,14 +1,16 @@
 import { Component, OnInit } from '@angular/core';
+
+//servicios
 import { VentaService } from "@services/ventas.service";
+import { ServiciosService } from "@services/servicios.service";
 
 //interfaces
-import { Articulo } from '@interfaces/articulo';
+import { Producto } from '@interfaces/producto';
 import { ClientesService } from '@services/clientes.service';
 import { Cliente } from '@interfaces/cliente';
 import { Visita } from '@interfaces/visita';
-import { DetalleVenta } from "@interfaces/detalleVenta";
 import { Categoria } from "@interfaces/categoria";
-import { HttpErrorResponse } from '@angular/common/http';
+import { InventarioService } from '@services/inventario.service';
 
 @Component({
   selector: 'app-nuevaventa',
@@ -18,9 +20,8 @@ import { HttpErrorResponse } from '@angular/common/http';
 export class NuevaventaComponent implements OnInit {
 
   public message: string;
-
-  public articulos: Articulo[];
-  public productos: Articulo[];
+  public selectProducts: Producto[];
+  public productos: Producto[];
   public categorias: Categoria[];
   public clientes: Cliente[];
   public visitas: Visita[];
@@ -28,10 +29,12 @@ export class NuevaventaComponent implements OnInit {
   public TotalServices: number;
   public Total: number;
   constructor(
+    private inventario: InventarioService,
+    private clientService: ClientesService,
     private ventaService: VentaService,
-    private clientService: ClientesService
+    private serviService: ServiciosService
   ) {
-    this.articulos = [];
+    this.selectProducts = [];
     this.visitas = [];
     this.TotalArticle = 0;
     this.TotalServices = 0;
@@ -40,19 +43,7 @@ export class NuevaventaComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.clientService.getListaClientes().subscribe(
-      res => {
-        this.clientes = res;
-      },
-      err => console.log(err)
-    )
-    this.ventaService.getCategorias().subscribe(
-      res=>{
-        this.categorias = res;
-      },
-      err=>console.log(err)
-      
-    );
+    this.getDatosServer();
   }
 
   //a un cliente seleccionado le asignamos sus visitas
@@ -66,20 +57,18 @@ export class NuevaventaComponent implements OnInit {
     this.TotalServicios();
   }
 
-  public selectCategoria(e: any){
+  public selectCategoria(e: any) {
     this.productos = [];
-    this.productos = this.categorias[e.target.value].articulos;
-    console.log(this.productos);
-    
+    this.productos = this.categorias[e.target.value].productos;
   }
 
   // el producto seleccionado se agrega al la factura
   public selectProduct() {
     const prod = <HTMLSelectElement>document.getElementById('product')
-    this.articulos.push(this.productos[prod.value])
-    setTimeout(()=>{
+    this.selectProducts.push(this.productos[prod.value])
+    setTimeout(() => {
       this.TotalArticulo();
-    },100)    
+    }, 100)
   }
 
   //si existe cambio en la cantidad de productos a vender entonces cambia la suma total de precios
@@ -111,7 +100,7 @@ export class NuevaventaComponent implements OnInit {
 
   // si el usuario o vendedor decide retirar el producto seleccionado
   public delete(e: any) {
-    this.articulos.splice(e, 1);
+    this.selectProducts.splice(e, 1);
     setTimeout(() => {
       this.TotalArticulo();
     }, 200)
@@ -127,7 +116,9 @@ export class NuevaventaComponent implements OnInit {
   }
 
   //generando la venta
-  public Guardar(){
+  public Guardar() {
+
+    //datos de detalle venta
     let DetVenta: any[];
     DetVenta = [];
     const ele = <any>document.getElementById('lista')
@@ -135,40 +126,62 @@ export class NuevaventaComponent implements OnInit {
     for (let i = 0; i < child.length; i++) {
       const cant = child[i].children[0].children[3].children[0].value;
       const sub = child[i].children[0].children[5].children[0].value;
-      console.log(cant);
-      let detalle =  {
+      let detalle = {
+        producto: this.selectProducts[i].id,
         Cantidad: cant,
-        Punitario: this.articulos[i].Particulo,
-        producto: i+1,
+        Punitario: this.selectProducts[i].Particulo,
         Total: sub
       };
       DetVenta.push(detalle);
     }
-    const c = <HTMLInputElement>document.getElementById('client')
-    let vent = {
-      usuario: 0,
-      cliente: this.clientes[c.value].id,
-      detalleVentas: DetVenta,
-      Total: this.Total,
+
+    //datos de la venta
+    if (DetVenta.length > 0) {
+      const c = <HTMLInputElement>document.getElementById('client')
+      let vent = {
+        usuario: 0,
+        cliente: this.clientes[c.value].id,
+        detalleVentas: DetVenta,
+        Total: this.Total,
+      }
+
+      //enviando datos de la venta ala servidor
+      this.ventaService.saveVenta(vent).subscribe(
+        res => {
+          if (res.message) {
+            this.message = res.message;
+            //enviando datos de pagos sobre los servicios pendientes
+            if (this.visitas.length > 0) {
+              let idVisitas = [];
+              this.visitas.forEach(visita => {
+                idVisitas.push(visita.id)
+              });
+              this.serviService.updatedVisita(idVisitas).subscribe(
+                res => {
+                  this.message += `y ${res.message}`;
+                  this.reiniciar();
+                  this.getDatosServer();
+                },
+                err => this.message = err
+              )
+            }
+            else{
+              this.reiniciar();
+              this.getDatosServer();
+            }
+          }
+        },
+        err => {
+          this.message = err;
+        }
+      )
     }
 
-    //enviando datos al servidor
-    this.ventaService.saveVenta(vent).subscribe(
-      res => {
-        if(res.message){
-          this.message = res.message;
-          this.reiniciar();
-        }
-      },
-      err=>{
-        this.message = err;
-      }
-    )
   }
 
   //reinicia
-  public reiniciar(){
-    this.articulos = [];
+  public reiniciar() {
+    this.selectProducts = [];
     this.visitas = [];
     this.TotalArticle = 0;
     this.TotalServices = 0;
@@ -176,7 +189,25 @@ export class NuevaventaComponent implements OnInit {
   }
 
   //close message
-  public closeMessage(){
+  public closeMessage() {
     this.message = null;
+  }
+
+
+  //obetenemos los datos del servoidor
+  public getDatosServer() {
+    this.clientService.getListaClientes().subscribe(
+      res => {
+        this.clientes = res;
+      },
+      err => console.log(err)
+    )
+    this.inventario.getCategorias().subscribe(
+      res => {
+        this.categorias = res;
+      },
+      err => console.log(err)
+
+    );
   }
 }

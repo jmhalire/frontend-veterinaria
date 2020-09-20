@@ -1,4 +1,4 @@
-import { Articulo } from './articulo';
+import { Producto } from './producto';
 
 export interface Proveedor{
     id: number,
@@ -7,6 +7,6 @@ export interface Proveedor{
     Telefono: string,
     Email: string,
     CreatedAt: Date,
-    articulos: Articulo[],
+    productos: Producto[],
     UpdatedAt: Date
 }

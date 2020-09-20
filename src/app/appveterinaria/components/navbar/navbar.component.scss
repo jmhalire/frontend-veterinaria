@@ -11,6 +11,16 @@
 
 .navbar-nav {
     flex-direction: row;
+    .nav-item{
+        &.active>*{
+            color: #fff;
+            border: none;
+        }
+        &:focus{
+            outline: none;
+        }
+    }
+    
     
 }
 

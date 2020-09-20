@@ -64,8 +64,6 @@ export class ListaclientesComponent implements OnInit {
   }
 
   public nameClient(e: string) {
-    console.log(e);
-    
     //console.log(this.listClient.nativeElement.classList);
     let query = e.toLowerCase();
     requestAnimationFrame(() => {

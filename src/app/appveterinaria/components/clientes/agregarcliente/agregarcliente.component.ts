@@ -42,7 +42,6 @@ export class AgregarclienteComponent implements OnInit {
     this.clientService.createdClient(this.createdForm.value).subscribe(
       res => {
         if(res.value){
-          console.log(res.message);
           localStorage.setItem('message', res.message)
           this.router.navigate(['../lista'],{relativeTo: this.activeRouter})
         }

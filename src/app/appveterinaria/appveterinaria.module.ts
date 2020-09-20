@@ -57,6 +57,7 @@ import { IngresosComponent } from "./components/reportes/ingresos/ingresos.compo
 import { VisitasComponent } from "./components/reportes/visitas/visitas.component";
 import { PormesesComponent } from './components/reportes/ingresos/pormeses/pormeses.component';
 import { DehoyComponent } from './components/reportes/ingresos/dehoy/dehoy.component';
+import { NuevacategoriaComponent } from './components/inventario/nuevacategoria/nuevacategoria.component';
 
 @NgModule({
   declarations: [
@@ -68,7 +69,7 @@ import { DehoyComponent } from './components/reportes/ingresos/dehoy/dehoy.compo
     ArticuloComponent,InventarioComponent, ListaproductosComponent, PorcategoriaComponent, PorproveedorComponent, NuevoproductoComponent,
     OpcionesinventarioComponent, ProveedoresComponent, ListaproveedoresComponent, NuevoproveedorComponent, OpcionesproveedorComponent, UsuariosComponent,
     ListausuariosComponent, NuevousuarioComponent, OpcionesusuarioComponent, ReportesComponent, OpcionesreporteComponent, VentasComponent,
-    IngresosComponent, VisitasComponent, PormesesComponent, DehoyComponent
+    IngresosComponent, VisitasComponent, PormesesComponent, DehoyComponent, NuevacategoriaComponent
   ],
   imports: [
     CommonModule,
