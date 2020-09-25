@@ -4,8 +4,9 @@
   <div class="search" *ngIf="openClose" @search>
     <app-buscarcliente (nameClient)="nameClient($event)"></app-buscarcliente>
   </div>
+  <!-- cargando datos -->
   <div class="card">
-    <div class="card-header bg-dark text-center text-white">
+    <div class="card-header text-center text-white">
       <h4 class="card-title">{{titleList}}</h4>
     </div>
     <div class="card-body p-0">
@@ -28,17 +29,20 @@
             <td>{{ cliente.Celular}}</td>
             <td>{{ cliente.Direccion}}</td>
             <td>
-              <div class="d-flex">
-                <button type="submit" class="btn btn-dark" [routerLink]="['./', cliente.id]">Ver detalles</button>
-              </div>
+              <button type="submit" class="btn btn-dark" [routerLink]="['./', cliente.id]"><i _ngcontent-uhn-c58="" aria-hidden="true" class="fa fa-eye mr-2"></i>Ver</button>
             </td>
           </tr>
         </tbody>
       </table>
+      
     </div>
     <div class="card-footer text-info">
       Se muestran la lista de todos los clientes registrados en el sistema ordenados de manera alfabetica por el nombre
     </div>
+    <div>
+      
+    </div>
+    <app-loader [size]="'200px'" *ngIf="!clientes"></app-loader>
   </div>
 </div>
 <br>

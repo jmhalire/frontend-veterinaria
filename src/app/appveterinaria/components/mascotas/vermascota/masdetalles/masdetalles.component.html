@@ -1,7 +1,7 @@
 <div class="btn-group btn-group-lg list-group" aria-label="Gran grupo de botones" id="list-tab" role="tablist">
   <button type="button" class="btn btn-secondary active" data-toggle="list" href="#list-visitas" >Visitas</button>
   <button type="button" class="btn btn-secondary" data-toggle="list" href="#list-vacunas" >Vacunas</button>
-  <button type="button" class="btn btn-secondary" data-toggle="list" href="#list-reservas">Reservas</button>
+  <button type="button" class="btn btn-secondary" data-toggle="list" href="#list-reservas">Citas</button>
 </div>
 <div class="tab-content mt-1" id="nav-tabContent">
   <div class="tab-pane fade show active" id="list-visitas" role="tabpanel" aria-labelledby="list-visitas-list">
@@ -49,15 +49,17 @@
       <thead>
         <tr>
           <th style="width: 1rem;">#</th>
-          <th>Descripcion</th>
-          <th>fecha</th>
+          <th>Tipo</th>
+          <th>Motivo</th>
+          <th>Fecha</th>
         </tr>
       </thead>
       <tbody>
-        <tr *ngFor="let reserva of reservas; index as i">
+        <tr *ngFor="let cita of citas; index as i">
           <th scope="row">{{ i+1 }}</th>
-          <td>{{ reserva.Descripcion}}</td>
-          <td>{{ reserva.CreatedAt }}</td>
+          <td>{{ cita.Tipo}}</td>
+          <td>{{ cita.Motivo }}</td>
+          <td>{{ cita.Dia }}  {{cita.Hora}}</td>
         </tr>
       </tbody>
     </table>

@@ -1,1 +1,10 @@
-<p>ventas works!</p>
+<div class="card">
+    <div class="card-header">
+        <h4>Los 10 productos mas vendidos hasta hoy</h4>
+    </div>
+    <div class="card-body">
+        <google-chart #chart [type]="type" [data]="data" [columns]="columnNames" 
+                            [options]="options" [width]="width" [height]="height">
+        </google-chart>
+    </div>
+</div>

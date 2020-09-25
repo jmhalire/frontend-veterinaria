@@ -1,0 +1,18 @@
+.card{
+    .card-header{
+        background-color: #5c4d42;
+        text-align: center;
+        color: white;
+    }
+    .card-body{
+        padding: 0%;
+        overflow-x: scroll;
+        overflow-y: hidden;
+    }
+    
+}
+
+::-webkit-scrollbar {
+    width: 5px; /* Tamaño del scroll en vertical */
+    height: 5px; /* Tamaño del scroll en horizontal */
+}

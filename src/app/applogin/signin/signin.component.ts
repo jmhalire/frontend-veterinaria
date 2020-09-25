@@ -17,14 +17,18 @@ export class SigninComponent implements OnInit {
 
   signinForm: FormGroup
 
+  public sendDates: boolean;
   public message: string
+  @ViewChild('btnSend') btnSend: ElementRef;
   @ViewChild('email') email: ElementRef;
   @ViewChild('password') password: ElementRef;
   constructor(
     private authService: AuthService,
     private router: Router,
     private builder: FormBuilder
-  ) { }
+  ) {
+    this.sendDates = false;
+   }
 
   ngOnInit(): void {
 
@@ -42,6 +46,8 @@ export class SigninComponent implements OnInit {
       this.password.nativeElement.focus();
     }
     else {
+      this.sendDates = true;
+      this.btnSend.nativeElement.disabled = true;
       this.authService.signin(this.signinForm.value).subscribe(
         res => {
           if (res.value == true) {
@@ -59,6 +65,7 @@ export class SigninComponent implements OnInit {
       );
     }
   }
+
   public closeMessage() {
     this.message = null;
   }

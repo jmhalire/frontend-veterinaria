@@ -17,6 +17,7 @@ import { search } from "@animations/animations";
 })
 export class ListaclientesComponent implements OnInit {
 
+  //carga de datos 
   public clientes: Cliente[]
   public titleList: string
   public messageDate: string;
@@ -28,22 +29,25 @@ export class ListaclientesComponent implements OnInit {
   @ViewChild('listClient') listClient: ElementRef;
   constructor(private clientService: ClientesService, private messageService: MessageService) {
     this.titleList = 'LISTA DE CLIENTES'
-    this.clientes = [];
     this.message = false;
     this.openClose = false;
     this.texto = 'Abrir'
     this.color = 'btn-primary';
+    
   }
 
   ngOnInit(): void {
     this.clientService.getListaClientes().subscribe(
       res => {
-        this.clientes = res;
+        this.clientes = res;  
+        console.log(res);
+              
       },
       err => {
-
+        this.message = err;
       }
     )
+
 
     this.messageDate = this.messageService.getMessage();
     if (this.messageDate.length > 0) {

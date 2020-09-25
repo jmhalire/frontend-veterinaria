@@ -32,6 +32,7 @@ import { PorproveedorComponent } from "./components/inventario/porproveedor/porp
 import { NuevoproductoComponent } from "./components/inventario/nuevoproducto/nuevoproducto.component";
 import { InventarioComponent } from "./components/inventario/inventario.component";
 import { NuevacategoriaComponent } from "./components/inventario/nuevacategoria/nuevacategoria.component";
+import { VerproductoComponent } from "./components/inventario/verproducto/verproducto.component";
 //proveedores
 import { ProveedoresComponent } from "./components/proveedores/proveedores.component";
 import { ListaproveedoresComponent } from "./components/proveedores/listaproveedores/listaproveedores.component";
@@ -46,6 +47,9 @@ import { IngresosComponent } from "./components/reportes/ingresos/ingresos.compo
 import { VentasComponent } from "./components/reportes/ventas/ventas.component";
 import { VisitasComponent } from "./components/reportes/visitas/visitas.component";
 
+//perfil
+import { PerfilComponent } from "./components/perfil/perfil.component";
+
 const routes: Routes = [
   {
     path: '', component: AppveterinariaComponent,
@@ -59,7 +63,7 @@ const routes: Routes = [
           { path: '', redirectTo: 'lista', pathMatch: 'full' },
           { path: 'lista', component: ListaclientesComponent },
           { path: 'lista/:id', component: VerclienteComponent },
-          { path: 'agregar', component: AgregarclienteComponent },
+          { path: 'nuevo-cliente', component: AgregarclienteComponent },
         ]
       },
       {
@@ -68,25 +72,25 @@ const routes: Routes = [
           { path: '', redirectTo: 'lista', pathMatch: 'full' },
           { path: 'lista', component: ListamascotasComponent },
           { path: 'lista/:id', component: VermascotaComponent },
-          { path: 'agregar', component: AgregarmascotaComponent },
-          { path: 'visita', component: VisitaComponent },
+          { path: 'nueva-mascota', component: AgregarmascotaComponent },
+          { path: 'nueva-visita', component: VisitaComponent },
           { path: 'lista-visitas', component: ListavisitasComponent },
         ]
       },
       {
         path: 'citas-programadas', component: CitasComponent,
         children: [
-          { path: '', redirectTo: 'lista', pathMatch: 'full' },
-          { path: 'lista', component: ListacitasComponent },
-          { path: 'agregar', component: AgregarcitaComponent }
+          { path: '', redirectTo: 'pendientes', pathMatch: 'full' },
+          { path: 'pendientes', component: ListacitasComponent },
+          { path: 'nueva-cita', component: AgregarcitaComponent }
         ]
       },
       {
         path: 'ventas', component: VentaComponent,
         children: [
-          { path: '', redirectTo: 'lista', pathMatch: 'full'},
-          { path: 'lista', component: ListaventasComponent },
-          { path: 'nueva-venta', component: NuevaventaComponent }
+          { path: '', redirectTo: 'nueva-venta', pathMatch: 'full'},
+          { path: 'nueva-venta', component: NuevaventaComponent },
+          { path: 'lista', component: ListaventasComponent }          
         ]
       },
       {
@@ -94,6 +98,7 @@ const routes: Routes = [
         children: [
           { path: '', redirectTo: 'lista', pathMatch: 'full'},
           { path: 'lista', component: ListaproductosComponent },
+          { path: 'lista/:id', component: VerproductoComponent },
           { path: 'productos-por-proveedor', component: PorproveedorComponent },
           { path: 'productos-por-categoria', component: PorcategoriaComponent },
           { path: 'nuevo-producto', component: NuevoproductoComponent },
@@ -125,7 +130,8 @@ const routes: Routes = [
           { path: 'ventas', component: VentasComponent },
           { path: 'visitas', component: VisitasComponent },
         ]
-      }
+      },
+      { path: 'perfil', component: PerfilComponent }
     ]
   },
 

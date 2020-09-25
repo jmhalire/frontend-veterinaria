@@ -1,0 +1,29 @@
+.perfil {
+    background: rgba(0, 152, 195, 1);
+    background: linear-gradient(90deg,rgba(0, 152, 195, 1)  10%, rgb(0, 71, 104) 45%,rgba(0, 54, 109, 1) 80%);
+}
+.photo-perfil {
+    width: 200px;
+    height: 200px;
+    margin: auto;
+}
+.card{
+    background: transparent!important;
+    color: white!important;
+    border: none!important;
+}
+span{
+    font-size: 1.3em;
+    line-height: 1;
+}
+.col-7 span{
+    color: burlywood;
+}
+img{
+    border: 1px solid black!important;
+    box-shadow: 0 0 0.5em black;
+    &:hover{
+        transform: translateY(-7px);
+        transition: all 0.3s;
+    }
+}

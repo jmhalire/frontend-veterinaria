@@ -16,7 +16,12 @@
           <h5 class="mb-2">Contraseña</h5>
           <input class="form-control" formControlName='Password' type="password" #password>
         </div>
-        <button type="submit" class="btn btn-outline-light btn-block mt-4">INICIAR</button>
+        <button type="submit" class="btn btn-light btn-block mt-4" #btnSend>
+          <div class="spinner-border" role="status" *ngIf="sendDates">
+          </div>
+          <span class="mx-4" *ngIf="!sendDates">INICIAR</span>
+        </button>
+        
       </form>
     </div>
     <div class="card-footer">

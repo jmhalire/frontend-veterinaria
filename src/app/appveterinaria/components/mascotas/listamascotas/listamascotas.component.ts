@@ -15,9 +15,12 @@ export class ListamascotasComponent implements OnInit {
   public mascotas: Mascot[]
   public title: string
   public message: boolean;
-  public messageDate: string
-  public openClose: boolean
-  public texto: string
+  public messageDate: string;
+  public openClose: boolean;
+  public texto: string;
+  public color: string;
+
+
   @ViewChild('listMascot') listMascot: ElementRef;
 
   constructor(
@@ -28,6 +31,7 @@ export class ListamascotasComponent implements OnInit {
     this.message = false;
     this.openClose = false;
     this.texto = 'Abrir';
+    this.color = 'btn-primary';
    }
 
   ngOnInit(): void {
@@ -46,10 +50,12 @@ export class ListamascotasComponent implements OnInit {
 
   public handlefuntion(){
     this.openClose = !this.openClose
-    if(this.openClose){
+    if (this.openClose) {
       this.texto = 'Cerrar'
-    } else{
+      this.color = 'btn-warning'
+    } else {
       this.texto = 'Abrir'
+      this.color = 'btn-primary'
     }
   }
 

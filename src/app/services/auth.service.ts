@@ -24,8 +24,8 @@ export class AuthService {
     return !!localStorage.getItem('token'); //si existe devuelve un true o false
   }
 
-  public logout(){
-    localStorage.removeItem('token');
+  public logout(): Observable<any>{
+    return this.http.get<any>(`${this.getBackend()}user/logout`)
   }
 
   public httpOptions(): HttpHeaders {

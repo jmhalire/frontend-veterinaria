@@ -1,0 +1,159 @@
+<div class="card card-user">
+    <div class="card-header card-header-user d-flex align-items-center">
+        <i _ngcontent-ouw-c55="" aria-hidden="true" class="fa fa-user-md fa-lg mr-2"></i>
+        <h4 class="card-title">{{user.Names}}{{i+1}}</h4>
+        <button type="submit" class="btn btn-success ml-auto mr-1" (click)="updatedUser()">Editar</button>
+        <button type="submit" class="btn btn-danger mx-1" (click)="confirDeleted()">Eliminar</button>
+    </div>
+    <div class="card-body card-body-user p-0">
+        <div class="container">
+            <div class="row">
+                <div class="col py-2">
+                    <h6><strong>Nombres</strong></h6>
+                </div>
+                <div class="col py-2">
+                    <h6 class="result">{{ user.Names }}</h6>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col py-2">
+                    <h6><strong>Apellidos</strong></h6>
+                </div>
+                <div class="col py-2">
+                    <h6 class="result">{{ user.FirstName }} {{ user.LastName }}</h6>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col py-2">
+                    <h6><strong>Telefono/Celular</strong></h6>
+                </div>
+                <div class="col py-2">
+                    <h6 class="result">{{ user.Celular }}</h6>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-6 py-2">
+                    <h6><strong>Direccion</strong></h6>
+                </div>
+                <div class="col-6 py-2">
+                    <h6 class="result">{{ user.Address }}</h6>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-6 py-2">
+                    <h6><strong>Rol</strong></h6>
+                </div>
+                <div class="col-6 py-2">
+                    <h6 class="result">{{ user.Role }}</h6>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-6 py-2">
+                    <h6><strong>Fue creado el dia</strong></h6>
+                </div>
+                <div class="col-6 py-2">
+                    <h6 class="result">{{ user.CreatedAt }}</h6>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-6 py-2">
+                    <h6><strong>Ultima actualizacion</strong></h6>
+                </div>
+                <div class="col-6 py-2">
+                    <h6 class="result">{{ user.UpdatedAt }}</h6>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="card-footer card-footer-user">
+    </div>
+</div>
+<!-- eliminar usuario -->
+<div class="infoDelete" *ngIf="showConfigDelete">
+    <div class="card card-delete">
+        <div class="card-header card-delete-header">
+            <h5>ELIMINAR</h5>
+        </div>
+        <div class="card-body">
+            <h6 class="my-3">¿Esta seguro que desea eliminar al usuario <strong>{{user.Names}}?</strong></h6>
+        </div>
+        <div class="card-footer card-footer-delete">
+            <button type="submit" class="btn btn-primary" (click)="deleted()" data-dismiss="modal"
+                aria-label="Close">SI</button>
+            <button type="submit" class="btn btn-danger" (click)="cancelDelete()">NO</button>
+        </div>
+    </div>
+</div>
+
+<!-- editar datos de usuario -->
+<div class="infoEdit" *ngIf="showEdit">
+    <div class="card card-edit">
+        <div class="card-header card-header-edit">
+            <h5 class="card-title text-white text-center">Actualizacion de datos del usuario</h5>
+        </div>
+        <div class="card-body">
+            <form class="mx-auto" [formGroup]='formUpdate' (ngSubmit)="sendUpdateUser()">
+                <p class="float-right">Datos</p><br>
+                <div class="form-group my-3">
+                    <label>Nombres</label>
+                    <input type="text" class="form-control text" formControlName="Names">
+                </div>
+                <div class="row my-3">
+                    <div class="col-sm-6">
+                        <div class="form-group">
+                            <label>Primer apellido</label>
+                            <input type="text" class="form-control text" formControlName="FirstName">
+                        </div>
+                    </div>
+                    <div class="col-sm-6">
+                        <div class="form-group ">
+                            <label>Segundo apellido</label>
+                            <input type="text" class="form-control text" formControlName="LastName">
+                        </div>
+                    </div>
+                </div>
+                <hr>
+                <p class="float-right">Contacto</p><br>
+                <div class="row my-3">
+                    <div class="col-sm-6">
+                        <div class="form-group bmd-form-group is-filled">
+                            <label>Telefono</label>
+                            <input type="tel" maxlength="9" class="form-control" class="form-control"
+                                formControlName="Celular">
+                        </div>
+                    </div>
+                    <div class="col-sm-6">
+                        <div class="form-group ">
+                            <label>Direccion</label>
+                            <input type="text" class="form-control" class="form-control" formControlName="Address">
+                        </div>
+                    </div>
+                </div>
+                <hr>
+                <p class="float-right">Usuario</p><br>
+                <div class="row my-3">
+                    <div class="col-sm-6">
+                        <div class="form-group bmd-form-group is-filled">
+                            <label>Correo electronico</label>
+                            <input type="text" class="form-control" class="form-control" formControlName="Email">
+                        </div>
+                    </div>
+                    <div class="col-sm-6">
+                        <div class="form-group ">
+                            <label>Rol</label>
+                            <select name="" id="" class="form-select" formControlName="Role">
+                                <option [value]="user.Role" selected>{{user.Role}}</option>
+                                <option value="otherRole">{{otherRole}}</option>
+                            </select>
+                        </div>
+                    </div>
+                </div><br>
+                <div class="d-flex justify-content-around">
+                    <button type="submit" class="btn btn-brown" style="width: 160px;">Guardar</button>
+                    <button type="reset" class="btn btn-danger" style="width: 160px;"
+                        (click)="cancelUpdate()">Cancelar</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

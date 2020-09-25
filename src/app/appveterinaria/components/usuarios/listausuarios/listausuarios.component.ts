@@ -28,24 +28,16 @@ export class ListausuariosComponent implements OnInit {
       }
     )
   }
-  public selectDelete(index: number){
-    this.selectUser = index;    
-  }
 
-  public deleted(){
-    this.userService.deleteUser(this.users[this.selectUser].id).subscribe(
+  public messageUser(value: string){
+    this.userService.getUsers().subscribe(
       res => {
-        this.message = res.message;
-        this.userService.getUsers().subscribe(
-          res => {
-            this.users = res
-          }
-        )
-      },
-      err => console.log(err)
+        this.users = res
+        this.message = value;
+        setTimeout(() => {this.message = null}, 5000);
+      }
     )
   }
-
   public closeMessage(){
     this.message = null;
   }

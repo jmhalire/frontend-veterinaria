@@ -3,6 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { AuthService } from './auth.service';
 import { Visita } from '@interfaces/visita';
 import { Cita } from "@interfaces/cita";
+import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -27,6 +28,11 @@ export class ServiciosService {
     
   }
 
+  //metodo para el reporte de vistas de clientes por meses
+  public getClientMonth(): Observable<any>{
+    return this.http.get<any>(`${this.url}report/client-for-month`, { headers : this.authService.httpOptions()})
+  }
+
   //regfistrar una vacuna
   public RegistrarVacuna(datos: any){
     return this.http.post<any>(`${this.url}vacuna/add`,datos, { headers : this.authService.httpOptions()})
@@ -40,11 +46,20 @@ export class ServiciosService {
 
   //   ========================== CITAS   ==========================
   public getListCitas(){
-    return this.http.get<Cita[]>(`${this.url}cita/lista`, { headers : this.authService.httpOptions()})
+    return this.http.get<Cita[]>(`${this.url}cita/pendientes`, { headers : this.authService.httpOptions()})
   }
 
   public RegistrarCita(datos: any){
     return this.http.post<any>(`${this.url}cita/add`,datos, { headers : this.authService.httpOptions()})
-    
+  }
+
+  //actualizar estado de citas
+  public updatedCita(id: string): Observable<any>{
+    return this.http.get<any>(`${this.url}cita/updated-state/${id}`,{ headers : this.authService.httpOptions()})
+  }
+
+  //acceso a la api de weather
+  public getWeather(): Observable<any>{
+    return this.http.get<any>(`${this.url}weather`);
   }
 }

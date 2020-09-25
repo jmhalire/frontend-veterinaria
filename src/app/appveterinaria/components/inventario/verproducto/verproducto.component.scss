@@ -1,0 +1,31 @@
+.alert{
+    margin: 1em 0!important;
+    box-shadow: 0 0 1em black;
+}
+.card {
+    border: none;
+    background: transparent;
+    //background: linear-gradient(0deg, #0099c3 10%, #0f648b 50%, #12618f 60%);
+    .card-body{
+        padding: 1em 5em;
+    }
+}
+.form-control, .form-select{
+    color: #000000;
+    font-size: 20px;
+    border-color: #17a2b8;
+    &:focus {
+        background-color: white;
+        box-shadow: 0 0 0 0.2rem #17a2b8;
+        transition: 0.5s;
+    }
+}
+.modal{
+    background-color: rgba(24, 24, 24, 0.822);
+}
+
+@media screen and (max-width: 576px){
+    .card-body{
+        padding: 0.1em!important;
+    }
+}

@@ -1,0 +1,72 @@
+.infoEdit{
+    overflow-y: scroll;
+    width: -webkit-fill-available;
+    height: -webkit-fill-available;
+    top: 0;
+    left: 0;
+    padding: 0% 20px;
+    background-color: rgba(48, 48, 48, 0.753);
+    position: fixed;
+    .card-edit{
+        border: none;
+        max-width: 550px;
+        margin: 4em auto;
+        box-shadow: 0 0 0.5em black;
+        
+        &:hover{
+            box-shadow: 0 0 1em black;
+        }
+    }
+    .card-header-edit{
+        background-color: #6b5649;
+    }
+}
+.infoDelete{
+    width: -webkit-fill-available;
+    height: -webkit-fill-available;
+    top: 0;
+    left: 0;
+    background-color: rgba(48, 48, 48, 0.6);
+    position: fixed;
+    .card-delete{
+        border: none;
+        width: 370px;
+        margin: 7em auto;
+        box-shadow: 0 0 0.5em black;
+        &:hover{
+            box-shadow: 0 0 1em black;
+            transform: translateY(-2px)
+        }
+        .card-footer-delete{
+            display: flex;
+            justify-content: space-around;
+            .btn{
+                width: 100px;
+                box-shadow: 0 0 0.1em black;
+            }
+        }
+    }
+}
+.card-user{
+    .card-header-user{
+        background-color: #8f796b;
+        color: white;
+    }
+    .card-body-user{
+        background-color: #f0d7c8;
+    }
+    .card-footer-user{
+        background-color: #8f796b;
+    }
+}
+
+.form-control, .form-select{
+    color: #000000;
+    font-size: 20px;
+    border-color: #635347;
+    &:focus {
+        background-color: white;
+        box-shadow: 0 0 0 0.2rem #635347;
+        transition: 0.3s;
+    }
+}

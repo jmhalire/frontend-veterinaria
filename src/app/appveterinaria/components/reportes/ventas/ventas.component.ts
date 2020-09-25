@@ -1,6 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-import { Chart } from "chart.js";
-
+import { Component, ElementRef, HostListener, OnInit, ViewChild } from '@angular/core';
+import { InventarioService } from '@services/inventario.service';
 @Component({
   selector: 'app-ventas',
   templateUrl: './ventas.component.html',
@@ -8,48 +7,62 @@ import { Chart } from "chart.js";
 })
 export class VentasComponent implements OnInit {
 
-  private graph: any[]
-  constructor() { 
-    this.graph = []
+  public data: any[]
+  public type: string;
+  public height : number;
+  public width: number;
+  public columnNames: string[]
+  public options: any;
+  public productFavory: any[];
+  public valor: number;
+  constructor(
+    private inventService: InventarioService
+  ) {
+    this.valor = 650;
+    this.width = 1050;
+    this.height = 550;
+    this.type = 'PieChart';
+    this.columnNames = ['Nombre_Producto', 'Cantidad'];
+    this.options = {
+      colors: ['#43382f','#0098c3','#fcb045','#ab4a05','#064e4e','#ff0000','#00366d','#060d4e','#5a3300','#fcb045'],
+      is3D: true
+    };
   }
 
   ngOnInit(): void {
-  }
-
-  public graphPie() {
-    var ctx = <HTMLCanvasElement>document.getElementById('pie');
-    this.graph = new Chart(ctx, {
-      type: 'pie',
-      data: {
-        labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
-        datasets: [
-          {
-            label: '# of Votes',
-            data: [12, 19, 3, 5, 2, 10],
-            backgroundColor: [
-              'rgba(255, 99, 132, 1)',
-              'rgba(54, 162, 235, 1)',
-              'rgba(255, 206, 86, 1)',
-              'rgba(75, 192, 192, 1)',
-              'rgba(153, 102, 255,1)',
-              'rgba(255, 159, 64, 1)'
-            ],
-
-            borderWidth: 3
-          }
-        ]
-      },
-      options: {
-        legend: {
-          display: true,
-          position: 'right',
-          labels: {
-            boxWidth: 20,
-            fontColor: 'black',
-            padding: 8
-          }
-        }
+    this.inventService.getReportProductFavory().subscribe(
+      res => {
+        this.productFavory = res;
+        this.data = [];
+        this.productFavory.forEach(element => {
+          let dat = []
+          dat.push(element.producto_Nombre);
+          dat.push(parseInt(element.ProductCantidad));
+          this.data.push(dat);
+        });
+        console.log(this.data);
+        
       }
-    });
+    )
+  }
+  @HostListener('window:resize', ['$event'])
+  onResize(event) {
+    let screenWidth = event.target.innerWidth
+    if(screenWidth>500 && screenWidth<650){
+      if(screenWidth<this.valor){
+        this.width -= 3;
+        this.height -= 3;
+      }
+      else{
+        this.width += 3;
+        this.height += 3;
+      }
+      this.valor = screenWidth;
+      
+    }
+    if(screenWidth>=650){
+      this.width = 1050;
+      this.height = 550;
+    }
   }
 }

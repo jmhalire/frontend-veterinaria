@@ -5,90 +5,96 @@
     right: 0;
     left: 0;
     z-index: 1030;
-    background-color: #1e2741!important;
-    box-shadow: 0 0.5rem 1rem #00000046;
+    //background-color: #1e2741!important;
+    background: rgb(0, 74, 109);
+    background: linear-gradient(190deg, rgba(0, 74, 109, 1) 29%, rgba(13, 115, 127, 1) 60%, rgba(1, 69, 88, 1) 80%);
+
+    
+    box-shadow: 0 0.2rem 0.4rem #00000046;
 }
 
 .navbar-nav {
     flex-direction: row;
-    .nav-item{
+    .nav-item {
+        &>*{
+            color: white;
+        }
+        margin-left: 5px;
+        margin-right: 5px;
+        cursor: pointer;
+        &:hover{
+            transform: translateY(-2px);
+        }
         &.active>*{
-            color: #fff;
+            color: cyan;
             border: none;
         }
-        &:focus{
+        &:focus {
             outline: none;
         }
+        button:hover > * {
+            color: black !important;
+        }
     }
-    
-    
 }
 
-
-/* trigger('iconOpenClose',[
-        state('open', style({
-            transform: 'rotateZ(180deg)',
-        })),
-        state('closed', style({
-            transform: 'rotateZ(0deg)',
-        })),
-        transition("* => *", animate(400))
-    ]) */
-
-.nav-item{
-    margin-left: 5px;
-    margin-right: 5px;
-    cursor: pointer;
-}
-.icon-nav{
+// .nav-item{
+//     margin-left: 5px;
+//     margin-right: 5px;
+//     cursor: pointer;
+//     &:hover>*{
+//         color: cyan;
+//     }
+// }
+.icon-nav {
     height: 55px;
-    &:hover{
+    &:hover {
         background-color: #060e276f;
     }
 }
-.dropdown-item{
+.dropdown-item {
     font-size: 17px;
     padding-top: 0.5rem;
     padding-bottom: 0.5rem;
-    &:hover{
+    &:hover {
         background-color: #0084ff;
         color: white;
     }
 }
-.icon-sidenav{
+.icon-sidenav {
     color: white;
     display: flex;
     align-items: center;
     margin: 0px;
 }
-.fa-angle-double-right{
+.fa-angle-double-right {
     margin-left: auto;
     margin-right: auto;
     font-size: 30px;
 }
 
-.open-sidenav{
-    width: 260px;
+.open-sidenav {
+    width: 250px;
     transition: 0.5s;
 }
-.closed-sidenav{
-    width: 50px;
+.closed-sidenav {
+    width: 40px;
     transition: 0.3s;
 }
-.dropdown-menu{
+.dropdown-menu {
+    box-shadow: 0 0 1em black;
     position: absolute;
     border: none;
 }
-@media screen and (max-width: 600px){
-    .open-sidenav{
+@media screen and (max-width: 600px) {
+    .open-sidenav {
         width: 50px;
         transition: 0.5s;
     }
 }
 
-
-@media screen and (min-width: 601px) and (max-width: 700px){
-    .open-sidenav{
+@media screen and (min-width: 601px) and (max-width: 700px) {
+    .open-sidenav {
         width: 180px;
         transition: 0.5s;
     }

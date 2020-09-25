@@ -1,3 +1,10 @@
+<div class="alert alert-info alert-dismissible fade show mt-1" role="alert" *ngIf="message">
+  <strong>{{ message }}</strong>
+  <button type="button" class="close" data-dismiss="alert" aria-label="Close" (click)="closeMessage()">
+      <span aria-hidden="true">&times;</span>
+  </button>
+</div>
+
 <div class="card">
     <div class="card-header">
       <h4 class="card-title">{{title}}</h4>
@@ -13,7 +20,7 @@
             <th>Tipo</th>
             <th>Dia</th>
             <th>Hora</th>
-            <th>Operaciones</th>
+            <th>Operacion</th>
           </tr>
         </thead>
         <tbody>
@@ -26,13 +33,16 @@
             <td>{{cita.Dia}}</td>
             <td>{{cita.Hora}}</td>
             <td>
-              <button class="btn btn-cyan">ojear</button>
+              <button class="btn btn-cyan" (click)="endCita(cita.id)">
+                <i class="far fa-check-circle"></i>
+                Finalizar
+              </button>
             </td>
           </tr>
         </tbody>
       </table>
     </div>
-    <div class="card-footer">
-      fooootegbj
+    <div class="card-footer text-info">
+      Se tiene la lista completa de todas las citas por atender
     </div>
   </div>

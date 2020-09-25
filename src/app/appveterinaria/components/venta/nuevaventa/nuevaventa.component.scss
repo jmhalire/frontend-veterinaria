@@ -1,3 +1,14 @@
+.alert{
+    margin: 1em 0!important;
+    box-shadow: 0 0 1em black;
+}
+.card{
+    width: 100%;
+    .card-header{
+        background-color: darkcyan;
+        color: #fff;
+    }
+}
 fieldset{
     border-width: 2px;
     border-style: groove;

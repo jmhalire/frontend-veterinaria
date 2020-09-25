@@ -26,12 +26,12 @@ export class MascotasService {
   }
 
   //crear una nueva mascota
-  public createdMascota(mascota: Mascot){
+  public createdMascota(mascota: Mascot | any){
     return this.http.post<any>(`${this.url}mascot/add`,mascota, { headers : this.authService.httpOptions()})
   }
 
   //editar mascota
-  public editMascota(mascota: Mascot){
+  public editMascota(mascota: Mascot | any){
     return this.http.post<any>(`${this.url}mascot/edit`,mascota, { headers : this.authService.httpOptions()})
   }
 
@@ -41,18 +41,10 @@ export class MascotasService {
   }
 
   public getEspecies(){
-    return [
-      { value : 0, nombre: 'Caninos'},
-      { value : 1, nombre: 'Felinos'},
-      { value : 2, nombre: 'Otro'},
-    ]
+    return [ 'Canino', 'Felino', 'Otro'];
   }
 
   public getGeneros(){
-    return [
-      { value : 0, nombre: 'Macho'},
-      { value : 1, nombre: 'Hembra'},
-      { value : 2, nombre: 'Indefinido'},
-    ]
+    return ['Macho', 'Hembra', 'Indefinido'];
   }
 }

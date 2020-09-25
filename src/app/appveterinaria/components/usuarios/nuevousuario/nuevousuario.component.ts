@@ -30,8 +30,7 @@ export class NuevousuarioComponent implements OnInit {
       Address : new FormControl('', Validators.required),
       Email : new FormControl('', [Validators.email, Validators.required]),
       Password : new FormControl('', Validators.required),
-      Role : new FormControl('', Validators.required),
-      Estado: 1
+      Role : new FormControl('', Validators.required)
     })
   }
 

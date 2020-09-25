@@ -38,6 +38,29 @@
         color: #fff;
     }
 }
+
+.alert{
+    position: fixed;
+    z-index: 85;
+    top: 20vh;
+    box-shadow: 0 0 1em black;
+    right: 0px;
+    background-color: darkcyan;
+    border-color: darkcyan;
+    color: white;
+    strong{
+        color: white;
+    }
+    &:hover{
+        background-color: white;
+        strong{
+            color: black!important;
+        }
+        
+    }
+}
+
+
 @media screen and (max-width: 576px){
     .carousel-control-prev-icon, .carousel-control-next-icon{
         opacity: 0.1;

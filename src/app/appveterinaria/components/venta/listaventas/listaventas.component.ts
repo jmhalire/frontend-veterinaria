@@ -7,7 +7,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ListaventasComponent implements OnInit {
 
-  constructor() { }
+  size = '300px'
+  constructor() {
+   }
 
   ngOnInit(): void {
   }

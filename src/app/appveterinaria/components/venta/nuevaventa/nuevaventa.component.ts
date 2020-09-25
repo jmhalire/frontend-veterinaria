@@ -175,7 +175,27 @@ export class NuevaventaComponent implements OnInit {
           this.message = err;
         }
       )
+    } else{
+      if (this.visitas.length > 0) {
+        let idVisitas = [];
+        this.visitas.forEach(visita => {
+          idVisitas.push(visita.id)
+        });
+        this.serviService.updatedVisita(idVisitas).subscribe(
+          res => {
+            this.message += `y ${res.message}`;
+            this.reiniciar();
+            this.getDatosServer();
+          },
+          err => this.message = err
+        )
+      }
+      else{
+        this.reiniciar();
+        this.getDatosServer();
+      }
     }
+    
 
   }
 

@@ -22,6 +22,14 @@ export class UserService {
   public Create(user: User): Observable<any> {
     return this.http.post<any>(`${this.url}user/create`,user, { headers: this.authService.httpOptions()});
   }
+  //actualizar
+  public updateUser(user: any){
+    return this.http.post<any>(`${this.url}user/edit`,user, { headers : this.authService.httpOptions()})
+  }
+
+  public getUser():Observable<User>{
+    return this.http.get<User>(`${this.url}user`, { headers: this.authService.httpOptions() })
+  }
   
   public getUsers(): Observable<User[]>{
     return this.http.get<User[]>(`${this.url}user/list`, { headers: this.authService.httpOptions() })

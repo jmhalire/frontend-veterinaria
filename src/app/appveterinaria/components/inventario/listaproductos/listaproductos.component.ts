@@ -15,7 +15,6 @@ export class ListaproductosComponent implements OnInit {
 
   public title: string;
   public productos: Producto[];
-
   constructor(
     private inventService: InventarioService
   ) { 

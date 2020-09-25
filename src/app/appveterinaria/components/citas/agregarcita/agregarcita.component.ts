@@ -36,18 +36,22 @@ export class AgregarcitaComponent implements OnInit {
         this.clientes = res;
       }
     )
+    this.formMascot();
+  }
+
+  public formMascot(){
     this.createdForm = this.builder.group(
       {
         Tipo: new FormControl('', Validators.required),
         cliente: new FormControl('', Validators.required),
         mascota: new FormControl('',Validators.required),
-        Motivo: new FormControl('', Validators.required),
+        Motivo: new FormControl('-', Validators.required),
         Dia: new FormControl('', Validators.required),
         Hora: new FormControl('', Validators.required),
-        Estado: 1
       }
     )
   }
+
   public selectClient(e: any){
     let i = 0;
     while (i<this.clientes.length) {
@@ -60,11 +64,13 @@ export class AgregarcitaComponent implements OnInit {
   }
 
   public created(){
+    console.log(this.createdForm.value);
+    
     this.serviService.RegistrarCita(this.createdForm.value).subscribe(
       res => {
-        console.log(res);
         this.message = res.message;
-        this.createdForm.reset();
+        this.formMascot();
+        setTimeout(() =>this.message=null, 5000);
       },
       err =>{
         this.message = err.error.message

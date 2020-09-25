@@ -5,11 +5,20 @@
 .card{
     border: none;
     width: 100%;
+    position: relative;
     .card-body{
         overflow-x: auto;
         display: flex;
         .list, .pastel{
             width: 50%;
+        }
+        .pastel div .p1{
+            background-color: rgba(180, 100, 10, 1);
+            color: #fff;
+        }
+        .pastel div .p2{
+            background-color: rgba(100, 50, 140, 1);
+            color: #fff;
         }
     }
 }

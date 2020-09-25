@@ -7,6 +7,7 @@ import { ReportesService } from "@services/reportes.service";
 
 //interface
 import { Venta } from "@interfaces/venta";
+import { Pormeses } from '@interfaces/pormeses';
 
 @Component({
   selector: 'app-pormeses',
@@ -17,29 +18,33 @@ export class PormesesComponent implements OnInit {
 
   public graph: any;
   @Input('ventas') ventas:Venta[];
+  public datos: Pormeses[];
+  public datosFecha: Pormeses[];
   constructor(
     private reportService: ReportesService
   ) {
     this.graph = [];
-    this.ventas = [];
+    this.datos = [];
   }
 
   ngOnInit(): void {
+    this.datosFecha = this.reportService.datosFecha(this.datos);
     this.graphBar();
   }
   
   public graphBar() {
-    let datos = this.reportService.calculoDatos(this.ventas);
+    
+    let datos : Pormeses[] = this.reportService.calculoDatos(this.datosFecha,this.ventas);
     let data = []
     datos.forEach(element => {
-      data.push(element.costo)
+      data.push(element.acumulado)
     });
 
     var ctx = <HTMLCanvasElement>document.getElementById('bar');
     this.graph = new Chart(ctx, {
       type: 'bar',
       data: {
-        labels: this.reportService.getlabels(),
+        labels: this.reportService.getlabels(this.datosFecha),
         datasets: [
           {
             label: 'Ingreso total S/.',

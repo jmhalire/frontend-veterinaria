@@ -1,15 +1,15 @@
 import { Injectable } from '@angular/core';
+//interfaces
 import { Venta } from '@interfaces/venta';
+import { Pormeses } from "@interfaces/pormeses";
+import { Visita } from '@interfaces/visita';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ReportesService {
 
-  private datos: any[];
   constructor() { 
-    this.datos = []; 
-    this.datosFecha();
   }
 
   private nombreMeses() {
@@ -22,7 +22,7 @@ export class ReportesService {
   /**
    * fechaNombres
    */
-  public datosFecha(): void {
+  public datosFecha(datos: Pormeses[]): Pormeses[] {
     const fec = this.nombreMeses();
     let dat = new Date().toLocaleDateString();
     let fecha = dat.split('/');
@@ -33,37 +33,48 @@ export class ReportesService {
         mes = 12;
         anio = anio - 1;
       }
-      let dato = {
+      let dato : Pormeses = {
         nombreMes: fec[mes-1],
         nroMes: mes,
         anio: anio,
-        costo: 0
+        acumulado: 0
       }
       mes -= 1
-      this.datos.push(dato)
-      this.datos;
+      datos.push(dato)
+      datos;
     }
+    return datos
   }
 
-  /**
-   * calculoDatos
-   */
-  public calculoDatos(ventas: Venta[]): any {
+  //calculoDatos para obtener total de ingrsos por mese
+  public calculoDatos(datos: Pormeses[],ventas: Venta[]): Pormeses[] {
     ventas.forEach((element, index)=> {
       let dat = new Date(element.CreatedAt).toLocaleString().split(' ')[0].split('/');
-      for (let i = 0; i < this.datos.length; i++) {
-        if(this.datos[i].nroMes.toString()===dat[1].toString() && 
-          this.datos[i].anio.toString()===dat[2].toString()){
-          this.datos[i].costo += element.Total;
+      for (let i = 0; i < datos.length; i++) {
+        if(datos[i].nroMes.toString()===dat[1].toString() && 
+          datos[i].anio.toString()===dat[2].toString()){
+          datos[i].acumulado += element.Total;
         }
       }
     });
-    return this.datos.reverse();
+    return datos;
   }
 
-  /**
-   * bacgroundColor
-   */
+  //calculo para obtener numero de clientes que visitan por meses
+  public calculoClientesXmeses(datos: Pormeses[],visitas: Visita[]): any{
+    visitas.forEach((visita,index)=>{
+      let dat = new Date(visita.CreatedAt).toLocaleString().split(' ')[0].split('/');
+      for (let i = 0; i < datos.length; i++) {
+        if(datos[i].nroMes.toString()===dat[1].toString() && 
+          datos[i].anio.toString()===dat[2].toString()){
+          datos[i].acumulado += 1;
+        }
+      }
+    });
+    return datos;
+  }
+
+  //bacgroundColor
   public backgroundColor() {
     let colors = [];
     for (let i = 0; i < 12; i++) {
@@ -86,10 +97,10 @@ export class ReportesService {
   /**
    * labels
    */
-  public getlabels() {
-    let labels = []
-    for (let i = 0; i < this.datos.length; i++) {
-      let dato = `${this.datos[i].nombreMes} del ${this.datos[i].anio}`;
+  public getlabels(datos: Pormeses[]): string[] {
+    let labels: string[] = []
+    for (let i = 0; i < datos.length; i++) {
+      let dato = `${datos[i].nombreMes} del ${datos[i].anio}`;
       labels.push(dato)      
     }
     return labels;

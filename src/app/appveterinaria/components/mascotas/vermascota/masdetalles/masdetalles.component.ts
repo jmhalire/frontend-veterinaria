@@ -4,6 +4,7 @@ import { Component, OnInit, Input } from '@angular/core';
 import { Visita } from '@interfaces/visita';
 import { Vacuna } from '@interfaces/vacuna';
 import { Reserva } from '@interfaces/reserva';
+import { Cita } from '@interfaces/cita';
 
 @Component({
   selector: 'app-masdetalles',
@@ -14,7 +15,7 @@ export class MasdetallesComponent implements OnInit {
 
   @Input('visitas') visitas: Visita[];
   @Input('vacunas') vacunas: Vacuna[];
-  @Input('reservas') reservas: Reserva[];
+  @Input('citas') citas: Cita[];
 
   constructor() { }
 

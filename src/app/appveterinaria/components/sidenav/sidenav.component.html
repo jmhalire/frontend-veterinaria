@@ -1,6 +1,6 @@
 <div class="sidenav" [@sidenav]="stateSidenav ? 'open' : 'closed'">
     <ul class="navbar-nav">
-        <h1 class="text-center text-white" [ngClass]="stateSidenav ? 'show-label' : 'hidden-label'">Mascotitas</h1>
+        <h1 class="text-center text-white" [ngClass]="stateSidenav ? 'show-logo' : 'hidden-logo'">Mascotitas</h1>
     </ul>
     <hr>
     <ul class="navbar-nav">
@@ -22,13 +22,7 @@
                 <label class="nav-link-text" [ngClass]="stateSidenav ? 'show-label' : 'hidden-label'">Mascotas</label>
             </a>
         </li>
-        <li class="nav-item" routerLinkActive="active" [routerLink]="['./citas-programadas']">
-            <a class="nav-link ml-3" >
-                <i class="fal fa-fw fa-calendar mr-2" aria-hidden="true"></i>
-                <label class="nav-link-text" [ngClass]="stateSidenav ? 'show-label' : 'hidden-label'">Citas Programadas</label>
-            </a>
-        </li>
-        <li  data-toggle="tooltip" data-placement="right" title="">
+        <li data-toggle="tooltip" data-placement="right" title="">
             <a class="nav-item drop pl-3" routerLinkActive="active" (click)="primerdropdown($event)">
                 <i class="fal fa-fw fa-shopping-basket mr-2" aria-hidden="true"></i>
                 <label class="nav-link-text" [ngClass]="stateSidenav ? 'show-label' : 'hidden-label'">Ventas e inventario</label>
@@ -54,26 +48,12 @@
                     </a>
                 </li>
             </ul>
-            <!-- <ul class="navbar-nav dropdown" [ngClass]="dropdown2 ? 'show-dropdown2' : 'hidden-dropdown2'">
-                <li class="nav-item" routerLinkActive="active" [routerLink]="['./ventas']">
-                    <a class="nav-link ml-3" >
-                        <i class="fa fa-fw fa-cart-plus mr-2" aria-hidden="true"></i>
-                        <label class="nav-link-text" [ngClass]="stateSidenav ? 'show-label' : 'hidden-label'" style="font-size: 15px;">Ventas</label>
-                    </a>
-                </li>
-                <li class="nav-item" routerLinkActive="active" [routerLink]="['./inventario']">
-                    <a class="nav-link ml-3" >
-                        <i class="fa fa-fw fa-boxes mr-2" aria-hidden="true"></i>
-                        <label class="nav-link-text" [ngClass]="stateSidenav ? 'show-label' : 'hidden-label'" style="font-size: 15px;">Inventario</label>
-                    </a>
-                </li>
-                <li class="nav-item" routerLinkActive="active"  [routerLink]="['./proveedor']">
-                    <a class="nav-link ml-3">
-                        <i class="fa fa-fw fa-truck-moving mr-2" aria-hidden="true"></i>
-                        <label class="nav-link-text" [ngClass]="stateSidenav ? 'show-label' : 'hidden-label'" style="font-size: 15px;">Proveedores</label>
-                    </a>
-                </li>
-            </ul> -->
+        </li>
+        <li class="nav-item" routerLinkActive="active" [routerLink]="['./citas-programadas']">
+            <a class="nav-link ml-3" >
+                <i class="fal fa-fw fa-calendar mr-2" aria-hidden="true"></i>
+                <label class="nav-link-text" [ngClass]="stateSidenav ? 'show-label' : 'hidden-label'">Citas Programadas</label>
+            </a>
         </li>
         <li class="nav-item" routerLinkActive="active" [routerLink]="['./reportes']" *ngIf="admin">
             <a class="nav-link ml-3">

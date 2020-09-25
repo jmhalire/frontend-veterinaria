@@ -24,6 +24,11 @@ button {
     border-radius: 5px 5px 0 0;
     padding: 1rem 0.5rem;
 }
+
+::-webkit-scrollbar {
+    width: 5px; /* Tamaño del scroll en vertical */
+    height: 5px; /* Tamaño del scroll en horizontal */
+}
   
 @keyframes selectButton {
     from{

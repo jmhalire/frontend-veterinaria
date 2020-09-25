@@ -10,7 +10,7 @@ import { Mascot } from '@interfaces/mascot';
 import { Cliente } from '@interfaces/cliente';
 import { Visita } from '@interfaces/visita';
 import { Vacuna } from '@interfaces/vacuna';
-import { Reserva } from '@interfaces/reserva';
+import { Cita } from '@interfaces/cita';
 
 
 @Component({
@@ -25,7 +25,7 @@ export class VermascotaComponent implements OnInit {
   public cliente: Cliente;
   public visitas: Visita[];
   public vacunas: Vacuna[];
-  public reservas: Reserva[];
+  public citas: Cita[];
 
   public loading: boolean;
   public message: boolean;
@@ -50,8 +50,6 @@ export class VermascotaComponent implements OnInit {
   }
 
   public formGrup() {
-    console.log('kjsnkncksnkjwnkj',this.mascota.id);
-    
     this.updatedForm = this.builder.group(
       {
         id: this.mascota.id,
@@ -98,7 +96,7 @@ export class VermascotaComponent implements OnInit {
         this.cliente = res.cliente;
         this.visitas = res.visitas;
         this.vacunas = res.vacunas;
-        this.reservas = res.reservas;
+        this.citas = res.citas;
         this.duenio = `${this.cliente.Nombres}  ${this.cliente.Apellidos}`;
         this.formGrup();
         this.loading = false;

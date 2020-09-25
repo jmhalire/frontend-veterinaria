@@ -1,5 +1,5 @@
 import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
-import { FormGroup } from '@angular/forms';
+import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { ClientesService } from '@services/clientes.service';
 import { Cliente } from '@interfaces/cliente';
 import { MascotasService } from '@services/mascotas.service';
@@ -12,60 +12,60 @@ import { Router, ActivatedRoute } from '@angular/router';
 })
 export class AgregarmascotaComponent implements OnInit {
 
-  createdForm : FormGroup
+  datosMacot : FormGroup
   public title: string;
   public clientes: Cliente[];
   public Especies: any[];
   public Generos: any[];
   public message: string;
-
-  @ViewChild('nombres') nombres: ElementRef;
-  @ViewChild('especie') especie: ElementRef;
-  @ViewChild('sexo') sexo: ElementRef;
-  @ViewChild('peso') peso: ElementRef;
-  @ViewChild('cliente') cliente: ElementRef;
-
-
+  public sendMascot: boolean;
   constructor(
     private clientService: ClientesService,
-    private mascotSerice: MascotasService,
-    private router: Router,
-    private activeRouter: ActivatedRoute
+    private mascotService: MascotasService,
+    private builder: FormBuilder
     ) {
-    this.title = 'AGREGAR NUEVA MASCOTA'
+    this.title = 'AGREGAR NUEVA MASCOTA';
+    this.sendMascot = false;
   }
 
   ngOnInit(): void {
-    this.clientService.getListaClientes().subscribe(
-      res => {
-        this.clientes = res;       
+    this.datosMacot = this.builder.group(
+      {
+        Nombres: new FormControl('', Validators.required),
+        Especie: new FormControl('', Validators.required),
+        Sexo: new FormControl('',Validators.required),
+        cliente: new FormControl('', Validators.required)
       }
     )
-    this.Especies = this.mascotSerice.getEspecies();
-    this.Generos = this.mascotSerice.getGeneros();
+
+    this.clientService.getListaClientes().subscribe(
+      res => {
+        this.clientes = res;     
+      }
+    )
+    this.Especies = this.mascotService.getEspecies();
+    this.Generos = this.mascotService.getGeneros();    
   }
 
   public created(){
-    let  DatosMascota: any = {
-      Nombres : this.nombres.nativeElement.value,
-      Especie : this.Especies[this.especie.nativeElement.value].nombre,
-      Sexo : this.Generos[this.sexo.nativeElement.value].nombre,
-      cliente : this.cliente.nativeElement.value,
-    }
-
-    this.mascotSerice.createdMascota(DatosMascota).subscribe(
+    this.sendMascot = true;
+    this.mascotService.createdMascota(this.datosMacot.value).subscribe(
       res => {
-        if(res.value){
-          console.log(res.message);
-          localStorage.setItem('message', res.message)
-          this.router.navigate(['../lista'],{relativeTo: this.activeRouter})
-        }
+        this.message = res.message;
+        this.datosMacot.reset();
+        this.sendMascot = false;
+        setTimeout(() => { this.message = null}, 5000);
       },
       err =>{
         this.message = err.error.message
+        console.log(err);
         
       }
     )
+  }
+
+  public closeMessage(){
+    this.message = null;
   }
 
 }

@@ -11,7 +11,8 @@ export interface Visita {
     Costo: number,
     EstaPagado: string,
     mascota: Mascot,
-    cliente: Cliente
-    vacunas: Vacuna[]
-    CreatedAt: Date
+    cliente: Cliente,
+    vacunas: Vacuna[],
+    CreatedAt: Date,
+    UpdatedAt: Date
 }

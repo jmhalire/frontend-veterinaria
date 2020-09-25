@@ -1,0 +1,116 @@
+.weather {
+    background-color: rgba(0, 0, 255, 0.568);
+    color: white;
+    margin-top: -10px;
+    padding: 10px 30px 30px;
+    height: 200px;
+    width: 100%;
+    display: flex;
+    position: fixed;
+    right: 0;
+    left: 30px;
+    z-index: 0;
+    .weather-text {
+        width: 40vw;
+        font-family: Georgia, "Times New Roman", Times, serif;
+    }
+    .weather-content {
+        .content {
+            display: grid;
+            grid-template-columns: 1fr 2fr 1fr;
+            .info-temp {
+                display: flex;
+                justify-content: center;
+                .temp {
+                    margin-top: auto;
+                    font-size: 3.5em;
+                }
+                .grados {
+                    font-size: 1em;
+                    margin-top: auto;
+                    margin-bottom: 10px;
+                }
+            }
+        }
+        .more-description {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+        }
+    }
+}
+.second {
+    // style="font-size: 10px;margin-top: auto;"
+    font-size: 12px;
+    margin-top: auto;
+    margin-bottom: 2px;
+    margin-left: 0.7em;
+}
+
+img {
+    //style="height: 400px;width: 100%;position: fixed;z-index: -1;"
+    position: fixed;
+    height: 200px;
+    width: 100%;
+    z-index: -1;
+    margin: -10px;
+}
+
+.info-home {
+    margin-top: 180px;
+    width: 100%;
+    height: 220px;
+    position: relative;
+    background-color: #8BC6EC;
+}
+
+.card {
+    border: 0;
+    position: relative;
+    margin-top: 2em;
+    .card-body{
+        height: 9em;
+    }
+    &:hover {
+        transform: translateY(-7em);
+        transition: all 0.25s ease-in-out;
+    }
+}
+.card-body-icon {
+    position: absolute;
+    z-index: 0;
+    top: -25px;
+    right: -25px;
+    font-size: 5rem;
+    -webkit-transform: rotate(15deg);
+    -ms-transform: rotate(15deg);
+    transform: rotate(15deg);
+}
+.quare{
+    //width: 100%;height: 100px;position: relative;background-color: #8BC6EC;
+    width: 100%;
+    height: 120px;
+    position: relative;
+    background-color:  #8BC6EC;
+}
+
+@media screen and (max-width: 767px) {
+    .card:hover {
+        transform: translateY(-0.8em);
+        transition: all 0.25s ease-in-out;
+    }
+    .info-home{
+        height: auto;
+    }
+}
+
+@media screen and (max-width: 992px) {
+    .weatvcher {
+        left: 30px;
+    }
+}
+
+@media screen and (max-width: 800px) {
+    .weather .weather-text {
+        display: none;
+    }
+}

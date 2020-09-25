@@ -1,0 +1,84 @@
+<section class="perfil p-2">
+    <div class="card">
+        <div class="card-header text-center">
+            <h4>{{title}}</h4>
+        </div>
+    </div><br>
+    <div class="row align-items-center">
+        <div class="col-md-4 my-2">
+            <div class="photo-perfil">
+                <img src="assets/images/landing2.jpg" alt="" srcset="" class="w-100 h-100 rounded-circle">
+            </div>
+            <hr>
+            <h5 class="text-center text-dark">{{ user.Names }}</h5>
+        </div>
+        <div class="col-md-8 my-2">
+            <div class="card">
+                <div class="card-body">
+                    <div class="row align-items-center">
+                        <div class="col-5">
+                            <span><i class="fad fa-angle-right mr-2"></i>Nombres</span>
+                        </div>
+                        <div class="col-7">
+                            <span>{{ user.Names}}</span>
+                        </div>
+                    </div>
+                    <hr>
+                    <div class="row">
+                        <div class="col-5">
+                            <span><i class="fad fa-angle-right mr-2"></i>Apellidos</span>
+                        </div>
+                        <div class="col-7">
+                            <span>{{ user.FirstName }} {{user.LastName}}</span>
+                        </div>
+                    </div>
+                    <hr>
+                    <div class="row">
+                        <div class="col-5">
+                            <span><i class="fad fa-angle-right mr-2"></i>Telefono y/ó Cel.</span>
+                        </div>
+                        <div class="col-7">
+                            <span>{{ user.Celular }}</span>
+                        </div>
+                    </div>
+                    <hr>
+                    <div class="row">
+                        <div class="col-5">
+                            <span><i class="fad fa-angle-right mr-2"></i>Direccion</span>
+                        </div>
+                        <div class="col-7">
+                            <span>{{ user.Address }}</span>
+                        </div>
+                    </div>
+                    <hr>
+                    <div class="row">
+                        <div class="col-5">
+                            <span><i class="fad fa-angle-right mr-2"></i>Correo</span>
+                        </div>
+                        <div class="col-7">
+                            <span>{{ user.Email }}</span>
+                        </div>
+                    </div>
+                    <hr>
+                    <div class="row">
+                        <div class="col-5">
+                            <span><i class="fad fa-angle-right mr-2"></i>Rol del usuario</span>
+                        </div>
+                        <div class="col-7">
+                            <span>{{ user.Role }}</span>
+                        </div>
+                    </div>
+                    <hr>
+                    <div class="row">
+                        <div class="col-5">
+                            <span><i class="fad fa-angle-right mr-2"></i>Fue creado</span>
+                        </div>
+                        <div class="col-7">
+                            <span>{{ user.CreatedAt }}</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

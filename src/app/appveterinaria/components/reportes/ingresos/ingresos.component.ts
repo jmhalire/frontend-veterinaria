@@ -64,7 +64,9 @@ export class IngresosComponent implements OnInit {
     this.totalVisitas = 0;
     let hoy = new Date().toLocaleString().split(' ');
     this.visitas.forEach(element => {
-      let dato = new Date(element.CreatedAt).toLocaleString().split(' ');      
+      let dato = new Date(element.UpdatedAt).toLocaleString().split(' ');   
+      console.log(dato);
+      console.log(element.UpdatedAt)
       if(dato[0]===hoy[0]){
         this.HorasVisita.push(dato[1])
         this.totalVisitas += element.Costo;

@@ -1,0 +1,126 @@
+<div class="alert alert-info alert-dismissible fade show mt-1" role="alert" *ngIf="message">
+    <strong>{{ message }}</strong>
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close" (click)="closeMessage()">
+        <span aria-hidden="true">&times;</span>
+    </button>
+</div>
+<div class="card">
+    <div class="card-header">
+        <h4 class="card-title text-dark">Informacion del producto</h4>
+    </div>
+    <div class="card-body">
+        <div class="container">
+            <div class="row">
+                <div class="col py-1">
+                    <h5>
+                        <i class="fad fa-angle-right mr-3"></i>
+                        <strong>Codigo</strong>
+                        <span style="float: right;">:</span>
+                    </h5>
+                </div>
+                <div class="col py-1">
+                    <h5>{{ producto.Codigo }}</h5>
+                </div>
+            </div><hr>
+            <div class="row">
+                <div class="col py-1">
+                    <h5>
+                        <i class="fad fa-angle-right mr-3"></i>
+                        <strong>Nombre</strong>
+                        <span style="float: right;">:</span>
+                    </h5>
+                </div>
+                <div class="col py-1">
+                    <h5>{{ producto.Nombre }}</h5>
+                </div>
+            </div><hr>
+            <div class="row">
+                <div class="col py-1">
+                    <h5>
+                        <i class="fad fa-angle-right mr-3"></i>
+                        <strong>Stock</strong>
+                        <span style="float: right;">:</span>
+                    </h5>
+                </div>
+                <div class="col py-1">
+                    <h5>
+                        {{ producto.Stock }} unidades 
+                        <button class="btn btn-info ml-3" data-toggle="modal" data-target="#moreStock">
+                            <i _ngcontent-avy-c55="" aria-hidden="true" class="fa fa-plus-circle ng-tns-c55-1"></i>
+                        </button>
+                    </h5>
+                </div>
+            </div><hr>
+            <div class="row">
+                <div class="col-6 py-1">
+                    <h5>
+                        <i class="fad fa-angle-right mr-3"></i>
+                        <strong>Precio del producto</strong>
+                        <span style="float: right;">:</span>
+                    </h5>
+                </div>
+                <div class="col-6 py-1">
+                    <h5>{{ producto.Particulo }} soles</h5>
+                </div>
+            </div><hr>
+            <div class="row">
+                <div class="col-6 py-1">
+                    <h5>
+                        <i class="fad fa-angle-right mr-3"></i>
+                        <strong>Precio de compra</strong>
+                        <span style="float: right;">:</span>
+                    </h5>
+                </div>
+                <div class="col-6 py-1">
+                    <h5>{{ producto.Pcompra }} soles</h5>
+                </div>
+            </div><hr>
+            <div class="row">
+                <div class="col-6 py-1">
+                    <h5>
+                        <i class="fad fa-angle-right mr-3"></i>
+                        <strong>Categoria</strong>
+                        <span style="float: right;">:</span>
+                    </h5>
+                </div>
+                <div class="col-6 py-1">
+                    <h5>{{ producto.categoria.Nombre }}</h5>
+                </div>
+            </div><hr>
+            <div class="row">
+                <div class="col-6 py-1">
+                    <h5>
+                        <i class="fad fa-angle-right mr-3"></i>
+                        <strong>Proveedor</strong>
+                        <span style="float: right;">:</span>
+                    </h5>
+                </div>
+                <div class="col-6 py-1">
+                    <h5>{{ producto.proveedor.Nombre }}</h5>
+                </div>
+            </div><hr>
+        </div>
+    </div>
+</div>
+<div class="modal modalDelete fade" id="moreStock" data-backdrop="static" data-keyboard="false"
+        tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header p-3">
+                    <h5 class="modal-title" id="staticBackdropLabel">Aumentar stock del producto</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                      </button>
+                </div>
+                <div class="modal-body">
+                    <div class="form-group">
+                        <input type="number" class="form-control" [min]="producto.Stock" [value]="producto.Stock" #newStock>
+                    </div>
+                </div>
+                <div class="modal-footer d-flex justify-content-around">
+                    <button type="submit" class="btn btn-cyan" data-dismiss="modal"
+                        aria-label="Close" (click)="updatedStock()">Guardar</button>
+                </div>
+            </div>
+        </div>
+    </div>

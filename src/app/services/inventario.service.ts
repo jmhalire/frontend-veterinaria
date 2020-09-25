@@ -26,8 +26,21 @@ export class InventarioService {
   public saveProducto(product: Producto): Observable<any>{
     return this.http.post<any>(`${this.url}article/save`,product, { headers : this.authService.httpOptions()})
   }
+  //lista de productos
   public getProductos(): Observable<Producto[]>{
     return this.http.get<Producto[]>(`${this.url}article/list`, {headers: this.authService.httpOptions()});
+  }
+  //lista de productos
+  public getProducto(id: string): Observable<Producto>{
+    return this.http.get<Producto>(`${this.url}article/${id}`, {headers: this.authService.httpOptions()});
+  }
+  //para el reporte de los 5 productos mas vendidos
+  public getReportProductFavory(): Observable<any>{
+    return this.http.get<any>(`${this.url}report/product-favory`, {headers: this.authService.httpOptions()})
+  }
+  //actualizar sctock del producto
+  public updatedStockProduct(dato: any): Observable<any>{
+    return this.http.post<any>(`${this.url}article/updated-stock`,dato,{headers: this.authService.httpOptions()})
   }
 
 

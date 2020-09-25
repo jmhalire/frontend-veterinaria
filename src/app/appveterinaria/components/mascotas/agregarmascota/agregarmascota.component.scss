@@ -1,3 +1,7 @@
+.alert{
+    margin: 1em 0!important;
+    box-shadow: 0 0 1em black;
+}
 .card{
     margin-right: auto;
     margin-left: auto;
@@ -31,7 +35,7 @@
     }
 }
 
-button{
+.btn-cyan{
     font-size: 20px;
     width: 270px;
 }
