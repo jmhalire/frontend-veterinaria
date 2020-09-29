@@ -1,5 +1,7 @@
 .weather {
-    background-color: rgba(0, 0, 255, 0.568);
+    background: rgb(31,113,151);
+    background: linear-gradient(0deg, rgba(31,113,151,0.7774154705827644) 24%, rgba(34,139,215,0.8138300364090949) 58%, rgba(5,179,227,0.8194322773054534) 82%);
+
     color: white;
     margin-top: -10px;
     padding: 10px 30px 30px;
@@ -61,6 +63,8 @@ img {
     height: 220px;
     position: relative;
     background-color: #8BC6EC;
+    border-top-right-radius: 5px;
+    border-top-left-radius: 5px;
 }
 
 .card {

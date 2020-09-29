@@ -14,27 +14,27 @@
             </tr>
           </thead>
           <tbody>
-            <tr *ngFor="let venta of ventasHoy; index as i">
-              <td>{{HorasVenta[i]}}</td>
+            <tr *ngFor="let venta of datosHoy.ventasHoy.ventasHoy; index as i">
+              <td>{{datosHoy.ventasHoy.HorasVenta[i]}}</td>
               <td>Venta</td>
               <td>{{ venta.cliente.Nombres}}</td>
               <td>S/ .{{ venta.Total}}</td>
             </tr>
-            <tr *ngFor="let visita of visitasHoy; index as i">
-              <td>{{HorasVisita[i]}}</td>
+            <tr *ngFor="let visita of datosHoy.visitasHoy.visitasHoy; index as i">
+              <td>{{datosHoy.visitasHoy.HorasVisita[i]}}</td>
               <td>Visita</td>
               <td>{{ visita.cliente.Nombres}}</td>
               <td>S/. {{ visita.Costo}}</td>
             </tr>
           </tbody>
         </table>
-        <span class="float-right">Total ingreso: S/. {{ totalVentas + totalVisitas }}</span>
+        <span class="float-right">Total ingreso: S/. {{ datosHoy.ventasHoy.totalVentas + datosHoy.visitasHoy.totalVisitas }}</span>
       </div>
       <div class="pastel my-auto">
         <canvas id="pie"></canvas>
         <div class="d-flex justify-content-around">
-          <p class="p1 px-1">ventas: S/.{{ totalVentas }} </p>
-          <p class="p2 px-1">visitas: S/.{{ totalVisitas }}</p>
+          <p class="p1 px-1">ventas: S/.{{ datosHoy.ventasHoy.totalVentas }} </p>
+          <p class="p2 px-1">visitas: S/.{{ datosHoy.visitasHoy.totalVisitas }}</p>
         </div>
       </div>
   </div>

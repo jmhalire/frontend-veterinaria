@@ -15,43 +15,42 @@ import { ServiciosService } from '@services/servicios.service';
 export class VisitasComponent implements OnInit {
 
   public graph: any;
-  public datos: Pormeses[];
-  public datosFecha: Pormeses[];
-  public datosCalc: Pormeses[];
+  //message
+  public message: string;
   constructor(
-    private reportService: ReportesService,
-    private serviService: ServiciosService,
+    private reportService: ReportesService
   ) {
     this.graph = [];
-    this.datos = [];
   }
 
   ngOnInit(): void {
-    this.serviService.getListVisitas().subscribe(
+    this.reportService.getVisitaMeses().subscribe(
       res => {
-        this.datosFecha = this.reportService.datosFecha(this.datos);
-        this.datosCalc = this.reportService.calculoClientesXmeses(this.datosFecha,res);
-        this.graphBar();
+        this.graphBar(res)
+        console.log(res);
+      },
+      err => {
+        this.message = err.error.message;
       }
     )
   }
 
-  public graphBar() {
+  public graphBar(visitasMeses) {
     let data = [];
-    this.datosCalc.forEach(element => {
+    visitasMeses.datos.forEach(element => {
       data.push(element.acumulado)
     });
     var ctx = <HTMLCanvasElement>document.getElementById('bar');
     this.graph = new Chart(ctx, {
       type: 'bar',
       data: {
-        labels: this.reportService.getlabels(this.datosFecha),
+        labels: visitasMeses.labels,
         datasets: [
           {
             label: 'cantidad de visitas del mes',
             data: data,
-            backgroundColor: this.reportService.backgroundColor(),
-            borderColor: this.reportService.borderColor(),
+            backgroundColor: visitasMeses.backgroundColor,
+            borderColor: visitasMeses.borderColor,
             borderWidth: 2
           }
         ]
@@ -64,5 +63,9 @@ export class VisitasComponent implements OnInit {
         }
       }
     });
+  }
+
+  public closeMessage(){
+    this.message = null;
   }
 }

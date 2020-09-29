@@ -18,6 +18,7 @@ import { search } from "@animations/animations";
 export class ListaclientesComponent implements OnInit {
 
   //carga de datos 
+  private lenBus: number;
   public clientes: Cliente[]
   public titleList: string
   public messageDate: string;
@@ -33,15 +34,14 @@ export class ListaclientesComponent implements OnInit {
     this.openClose = false;
     this.texto = 'Abrir'
     this.color = 'btn-primary';
+    this.lenBus = 0;
     
   }
 
   ngOnInit(): void {
     this.clientService.getListaClientes().subscribe(
       res => {
-        this.clientes = res;  
-        console.log(res);
-              
+        this.clientes = res;       
       },
       err => {
         this.message = err;
@@ -76,11 +76,20 @@ export class ListaclientesComponent implements OnInit {
         let pokes = this.listClient.nativeElement.children[index]
         if (poke) {
           pokes.classList.remove('d-none');
-          //this.NroDePokemons += 1;
         } else {
           pokes.classList.add('d-none');
+          this.lenBus += 1;
         }
       });
     });
+    if(this.clientes.length <= this.lenBus){
+      requestAnimationFrame(() => {
+        this.clientes.forEach((item, index) => {
+          let pokes = this.listClient.nativeElement.children[index]
+          pokes.classList.remove('d-none');
+        });
+      });  
+    }
+    this.lenBus = 0;
   }
 }

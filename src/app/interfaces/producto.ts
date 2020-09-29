@@ -2,7 +2,6 @@ import { Proveedor } from "./proveedor";
 import { Categoria } from './categoria';
 export interface Producto{
     id: number,
-    Codigo: string,
     Nombre: string,
     Pcompra: number,
     Particulo: number,

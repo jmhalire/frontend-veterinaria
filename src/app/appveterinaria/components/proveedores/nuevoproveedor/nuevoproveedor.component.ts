@@ -37,7 +37,11 @@ export class NuevoproveedorComponent implements OnInit {
     this.inventService.createdProveedor(this.createdForm.value).subscribe(
       res => {
         this.message = res.message;
-        this.createdForm.reset();
+        this.complete();
+      },
+      error => {
+        this.message = error.error.message;
+        this.complete();
       }
     )
     //this.signinForm.reset();
@@ -45,5 +49,12 @@ export class NuevoproveedorComponent implements OnInit {
 
   public closeMessage(){
     this.message = null;
+  }
+
+  private complete(){
+    this.createdForm.reset();
+    setTimeout(() => {
+      this.message = null;
+    }, 10000);
   }
 }

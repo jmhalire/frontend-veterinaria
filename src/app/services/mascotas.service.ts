@@ -40,6 +40,11 @@ export class MascotasService {
     return this.http.delete<any>(`${this.url}mascot/delete/${id}`, { headers : this.authService.httpOptions()})
   }
 
+  //cantidad de mascotas
+  public countMascota(){
+    return this.http.get<any>(`${this.url}mascot/count`, { headers : this.authService.httpOptions()})
+  }
+
   public getEspecies(){
     return [ 'Canino', 'Felino', 'Otro'];
   }

@@ -19,7 +19,7 @@
           <th scope="row">{{ i+1 }}</th>
           <td>{{ visita.Motivo }}</td>
           <td>{{ visita.Costo }}</td>
-          <td>{{ visita.CreatedAt}}</td>
+          <td>{{ visita.CreatedAt | fecha}}</td>
         </tr>
       </tbody>
     </table>
@@ -39,7 +39,7 @@
           <th scope="row">{{ i+1 }}</th>
           <td>{{ vacuna.Tipo }}</td>
           <td>{{ vacuna.Observacion }}</td>
-          <td>{{ vacuna.CreatedAt}}</td>
+          <td>{{ vacuna.CreatedAt | fecha}}</td>
         </tr>
       </tbody>
     </table>

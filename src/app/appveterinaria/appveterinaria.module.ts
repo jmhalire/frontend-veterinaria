@@ -1,6 +1,8 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule, ReactiveFormsModule } from "@angular/forms";
+import { FechaPipe } from './fecha.pipe';
+
 //google charts
 import { GoogleChartsModule } from 'angular-google-charts';
 
@@ -79,6 +81,7 @@ import { PerfilComponent } from './components/perfil/perfil.component';
 //loader
 import { LoaderComponent } from './components/loader/loader.component';
 import { VerproductoComponent } from './components/inventario/verproducto/verproducto.component';
+
 @NgModule({
   declarations: [
     AppveterinariaComponent, HomeComponent,NavbarComponent,SidenavComponent, LoaderComponent, ClientesComponent, MascotasComponent, 
@@ -89,7 +92,7 @@ import { VerproductoComponent } from './components/inventario/verproducto/verpro
     ListaventasComponent, ArticuloComponent,InventarioComponent, ListaproductosComponent, PorcategoriaComponent, PorproveedorComponent, NuevoproductoComponent,
     OpcionesinventarioComponent, ProveedoresComponent, ListaproveedoresComponent, NuevoproveedorComponent, OpcionesproveedorComponent, UsuariosComponent,
     ListausuariosComponent, NuevousuarioComponent, OpcionesusuarioComponent, ReportesComponent, OpcionesreporteComponent, VentasComponent,
-    IngresosComponent, VisitasComponent, PormesesComponent, DehoyComponent, NuevacategoriaComponent, PerfilComponent, UsuarioComponent, VerproductoComponent
+    IngresosComponent, VisitasComponent, PormesesComponent, DehoyComponent, NuevacategoriaComponent, PerfilComponent, UsuarioComponent, VerproductoComponent, FechaPipe
   ],
   imports: [
     CommonModule,

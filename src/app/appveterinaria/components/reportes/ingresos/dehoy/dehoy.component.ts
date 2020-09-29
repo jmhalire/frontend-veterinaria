@@ -2,9 +2,6 @@ import { Component, OnInit, Input } from '@angular/core';
 import { Chart } from "chart.js";
 
 //interface
-import { Venta } from "@interfaces/venta";
-import { Visita } from '@interfaces/visita';
-
 @Component({
   selector: 'app-dehoy',
   templateUrl: './dehoy.component.html',
@@ -12,12 +9,7 @@ import { Visita } from '@interfaces/visita';
 })
 export class DehoyComponent implements OnInit {
 
-  @Input('ventasHoy') ventasHoy:Venta[];
-  @Input('visitasHoy') visitasHoy:Visita[];
-  @Input('HorasVenta') HorasVenta: string[];
-  @Input('HorasVisita') HorasVisita: string[];
-  @Input('totalVentas') totalVentas: number;
-  @Input('totalVisitas') totalVisitas: number;
+  @Input('datosHoy') datosHoy: any;
 
   public graph: any;
   constructor(
@@ -37,7 +29,7 @@ export class DehoyComponent implements OnInit {
         datasets: [
           {
             label: 'Ingreso total S/.',
-            data: [this.totalVentas,this.totalVisitas],
+            data: [this.datosHoy.ventasHoy.totalVentas,this.datosHoy.visitasHoy.totalVisitas],
             backgroundColor: ['rgba(180, 100, 10, 1)','rgba(100, 50, 140, 1)'],
             borderWidth: 2
           }

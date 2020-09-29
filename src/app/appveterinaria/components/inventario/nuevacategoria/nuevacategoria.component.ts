@@ -1,3 +1,4 @@
+import { error } from '@angular/compiler/src/util';
 import { Component, OnInit } from '@angular/core';
 import { FormControl, Validators, FormBuilder, FormGroup } from '@angular/forms';
 import { InventarioService } from '@services/inventario.service';
@@ -32,7 +33,11 @@ export class NuevacategoriaComponent implements OnInit {
     this.inventario.saveCategoria(this.createdForm.value).subscribe(
       res => {
         this.message = res.message;
-        this.createdForm.reset();
+        this.complete();
+      },
+      error => {
+        this.message = error.error.message;
+        this.complete();
       }
     )
   }
@@ -42,4 +47,10 @@ export class NuevacategoriaComponent implements OnInit {
     this.message = null;
   }
 
+  private complete(){
+    this.createdForm.reset();
+    setTimeout(() => {
+      this.message = null;
+    },10000)
+  }
 }

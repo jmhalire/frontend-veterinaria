@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { ReportesService } from '@services/reportes.service';
+import { User } from '@interfaces/user';
+import { ClientesService } from '@services/clientes.service';
+import { MascotasService } from '@services/mascotas.service';
 import { ServiciosService } from '@services/servicios.service';
 
 @Component({
@@ -9,17 +11,25 @@ import { ServiciosService } from '@services/servicios.service';
 })
 export class HomeComponent implements OnInit {
 
-
+  public admin: boolean;
   public fecha: string;
   public hora: string;
   public second: string;
   public city: any;
   public date: Date;
+  public countClient: number;
+  public countMascot: number;
+  public countVisita: number;
+
   constructor(
-    private servi: ServiciosService
+    private servi: ServiciosService,
+    private clientService: ClientesService,
+    private mascotService: MascotasService
   ) { }
 
   ngOnInit(): void {  
+    this.isAdmin();
+    this.getDatosSitema()
     this.date = new Date();
     this.fecha = this.date.toLocaleDateString();
     this.getDatesHours();  
@@ -31,12 +41,9 @@ export class HomeComponent implements OnInit {
     this.servi.getWeather().subscribe(
       res => { 
         this.city = res;
-        console.log(res);
-
       },
       err => {
         console.log(err);
-        
       }
     )
   }
@@ -52,5 +59,36 @@ export class HomeComponent implements OnInit {
     
     //console.log(da.toLocaleString().split(' '));
 
+  }
+
+  public getDatosSitema(): void{
+    this.clientService.countClient().subscribe(
+      res => {
+        this.countClient = res.count;
+      },
+      err=>console.log(err)
+    );
+    this.mascotService.countMascota().subscribe(
+      res => {
+        this.countMascot = res.count;
+      },
+      err => console.log(err)
+      
+    );
+    this.servi.countVisita().subscribe(
+      res => {
+        this.countVisita = res.count;
+      }
+    )
+  }
+
+  public isAdmin(){
+    let user = <User>JSON.parse(localStorage.getItem('user'));
+    if(user.Role==='ADMIN'){
+      this.admin = true;
+    }
+    else{
+      this.admin = false
+    }
   }
 }

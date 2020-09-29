@@ -25,7 +25,7 @@
     &:focus {
         background-color: white;
         box-shadow: 0 0 0 0.2rem #635347;
-        transition: 0.3s;
+        transition: all 0.2s ease-in;
     }
 }
 

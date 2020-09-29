@@ -53,10 +53,11 @@ export class NuevoproductoComponent implements OnInit {
     this.inventario.saveProducto(this.formArticulo.value).subscribe(
       res => {
         this.message = res.message;
-        this.formArticulo.reset();
-        setTimeout(() => {
-          this.message = null;
-        },4000)
+        this.complete();
+      },
+      err => {
+        this.message = err.error.message;
+        this.complete();
       }
     )
   }
@@ -64,5 +65,13 @@ export class NuevoproductoComponent implements OnInit {
   //closet message
   public closeMessage() {
     this.message = null;
+  }
+
+  //esta funcion se ejecuta despues de completar un peticion al servidor
+  private complete(){
+    this.formArticulo.reset();
+    setTimeout(() => {
+      this.message = null;
+    },10000)
   }
 }

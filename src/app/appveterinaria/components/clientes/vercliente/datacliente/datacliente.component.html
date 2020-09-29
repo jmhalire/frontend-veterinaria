@@ -52,7 +52,7 @@
                     <h5><strong>Fecha de creacion</strong></h5>
                 </div>
                 <div class="col-6 py-3">
-                    <h5>{{ cliente.CreatedAt }}</h5>
+                    <h5>{{ cliente.CreatedAt | fecha }}</h5>
                 </div>
             </div>
             <div class="row row-7">
@@ -60,7 +60,7 @@
                     <h5><strong>Ultima actualizacion</strong></h5>
                 </div>
                 <div class="col-6 py-3">
-                    <h5>{{ cliente.UpdatedAt }}</h5>
+                    <h5>{{ cliente.UpdatedAt | fecha}}</h5>
                 </div>
             </div>
         </div>

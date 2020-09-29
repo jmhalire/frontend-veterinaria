@@ -42,4 +42,9 @@ export class ClientesService {
   public deleteClient(id: number){
     return this.http.delete<any>(`${this.url}client/delete/${id}`, { headers : this.authService.httpOptions()})
   }
+
+  //count cliente
+  public countClient(): Observable<any>{
+    return this.http.get<any>(`${this.url}client/count`, { headers : this.authService.httpOptions()} );
+  }
 }

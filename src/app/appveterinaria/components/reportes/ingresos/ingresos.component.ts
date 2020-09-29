@@ -3,6 +3,7 @@ import { Venta } from '@interfaces/venta';
 import { VentaService } from '@services/ventas.service';
 import { Visita } from '@interfaces/visita';
 import { ServiciosService } from '@services/servicios.service';
+import { ReportesService } from '@services/reportes.service';
 
 
 @Component({
@@ -12,66 +13,34 @@ import { ServiciosService } from '@services/servicios.service';
 })
 export class IngresosComponent implements OnInit {
 
-  public ventas: Venta[];
-  public visitas: Visita[]
-  public ventasHoy: Venta[];
-  public visitasHoy: Visita[];
-  public HorasVenta: string[];
-  public HorasVisita: string[];
-  public totalVentas: number;
-  public totalVisitas: number;
+  public message: string;
+  //datos
+  public datosXmeses: any;
+  public datosHoy: any;
   constructor(
-    private ventasService: VentaService,
-    private servi: ServiciosService
+    private reportService: ReportesService
   ){ }
 
   ngOnInit(): void {
-    this.ventasService.getVentas().subscribe(
+    this.reportService.getIngresoMeses().subscribe(
       res => {
-        this.ventas = res;
-        this.ventasDeHoy();
+        this.datosXmeses = res;
       },
-      err => {
-        console.log(err);
+      error => {
+        this.message = error.error.message;
       }
-    )
-    this.servi.getListVisitas().subscribe(
+    );
+    this.reportService.getIngresoHoy().subscribe(
       res => {
-        this.visitas = res;
-        this.visitasDeHoy();
+        this.datosHoy = res;
+        console.log(res);
       }
     )
-  }
+  };
 
-  private ventasDeHoy(){
-    this.HorasVenta = [];
-    this.ventasHoy = [];
-    this.totalVentas = 0;
-    let hoy = new Date().toLocaleString().split(' ');
-    this.ventas.forEach(element => {
-      let dato = new Date(element.CreatedAt).toLocaleString().split(' ');      
-      if(dato[0]===hoy[0]){
-        this.HorasVenta.push(dato[1])
-        this.totalVentas += element.Total;
-        this.ventasHoy.push(element);
-      }
-    });
-  }
 
-  private visitasDeHoy(){
-    this.HorasVisita = [];
-    this.visitasHoy = [];
-    this.totalVisitas = 0;
-    let hoy = new Date().toLocaleString().split(' ');
-    this.visitas.forEach(element => {
-      let dato = new Date(element.UpdatedAt).toLocaleString().split(' ');   
-      console.log(dato);
-      console.log(element.UpdatedAt)
-      if(dato[0]===hoy[0]){
-        this.HorasVisita.push(dato[1])
-        this.totalVisitas += element.Costo;
-        this.visitasHoy.push(element);
-      }
-    });
+
+  public closeMessage(){
+    this.message = null;
   }
 }

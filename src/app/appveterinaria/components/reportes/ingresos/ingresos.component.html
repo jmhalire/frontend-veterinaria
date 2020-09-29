@@ -1,12 +1,11 @@
-<div *ngIf="ventasHoy && visitasHoy">
-    <app-pormeses [ventas]="ventas"></app-pormeses>
+<div class="alert alert-info alert-dismissible fade show" role="alert" *ngIf="message">
+    <strong>{{ message }}</strong>
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close" (click)="closeMessage()">
+        <span aria-hidden="true">&times;</span>
+    </button>
+</div>
+<div *ngIf="datosXmeses && datosHoy">
+    <app-pormeses [datosXmeses]="datosXmeses"></app-pormeses>
     <br>
-    <app-dehoy 
-        [ventasHoy]="ventasHoy" 
-        [HorasVenta]="HorasVenta" 
-        [totalVentas]="totalVentas" 
-        [visitasHoy]="visitasHoy" 
-        [HorasVisita]="HorasVisita" 
-        [totalVisitas]="totalVisitas">
-    </app-dehoy>
+    <app-dehoy [datosHoy]="datosHoy"></app-dehoy>
 </div>
