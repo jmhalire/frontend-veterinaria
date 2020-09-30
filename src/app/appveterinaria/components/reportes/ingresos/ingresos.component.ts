@@ -33,7 +33,6 @@ export class IngresosComponent implements OnInit {
     this.reportService.getIngresoHoy().subscribe(
       res => {
         this.datosHoy = res;
-        console.log(res);
       }
     )
   };

@@ -25,19 +25,22 @@ export class HomeComponent implements OnInit {
     private servi: ServiciosService,
     private clientService: ClientesService,
     private mascotService: MascotasService
-  ) { }
+  ) { 
+    this.city = {main:{temp:'-',temp_min:'-',temp_max:'-',feels_like:'-'},weather:[{description:'-'}]}
+  }
 
   ngOnInit(): void {  
+    this.weather();
     this.isAdmin();
     this.getDatosSitema()
     this.date = new Date();
     this.fecha = this.date.toLocaleDateString();
     this.getDatesHours();  
-    this.weather();
+    
   }
 
   public weather() {
-    this.city = {main:{temp:'-',temp_min:'-',temp_max:'-',feels_like:'-'},weather:[{description:'-'}]}
+    
     this.servi.getWeather().subscribe(
       res => { 
         this.city = res;
