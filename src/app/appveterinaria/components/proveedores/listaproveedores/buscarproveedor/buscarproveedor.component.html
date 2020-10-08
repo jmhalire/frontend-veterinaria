@@ -1,0 +1,19 @@
+<div class="card h-100">
+    <div class="card-header text-center text-white bg-dark">
+        <h4 class="card-title">{{title}}</h4>
+    </div>
+    <div class="card-body">
+        <form class="mx-auto">
+            <p class="mb-0 pb-0 mt-2">Busqueda por nombre</p>
+            <hr>
+            <div class="form-group">
+                <input type="text"
+                    placeholder="Ingrese nombre de un cliente" 
+                    class="form-control" [(ngModel)]='nombre' 
+                    [ngModelOptions]="{standalone: true}" 
+                    (keyup)='changeInput($event)'>
+            </div><hr>            
+            <p class="d-flex align-items-center" *ngIf="nombre"><app-loader [size]="'20px'"></app-loader>Buscando a:  <strong class="ml-3"> {{ nombre }}</strong> ...</p>
+        </form>
+    </div>
+</div>

@@ -1,0 +1,48 @@
+<app-message *ngIf="message" [messageDate]="messageDate"></app-message>
+<button class="btn my-1" [ngClass]="color" (click)="handlefuntion()">{{texto}} busqueda</button>
+<div class="content">
+  <div class="search" *ngIf="openClose" @search>
+    <app-buscarproveedor (nameProveed)="nameProveed($event)"></app-buscarproveedor>
+  </div>
+  <!-- cargando datos -->
+  <div class="card">
+    <div class="card-header text-center text-white">
+      <h4 class="card-title">{{titleList}}</h4>
+    </div>
+    <div class="card-body p-0">
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>Nombre</th>
+            <th>Direccion</th>
+            <th>Telefono</th>
+            <th>Email</th>
+            <th>Opcion</th>
+          </tr>
+        </thead>
+        <tbody #listProveed>
+          <tr *ngFor='let proveedor of  proveedores; index as i' style="width: 100%;">
+            <th scope="row">{{ i+1 }}</th>
+            <td>{{ proveedor.Nombre}}</td>
+            <td>{{ proveedor.Direccion}}</td>
+            <td>{{ proveedor.Telefono}}</td>
+            <td>{{ proveedor.Email}}</td>
+            <td>
+              <button type="submit" class="btn btn-dark" [routerLink]="['./', proveedor.id]"><i _ngcontent-uhn-c58="" aria-hidden="true" class="fa fa-eye mr-2"></i>Ver</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      
+    </div>
+    <div class="card-footer text-info">
+      Se muestran la lista de todos los proveedores registrados en el sistema ordenados de manera alfabetica por el nombre
+    </div>
+    <div>
+      
+    </div>
+    <app-loader [size]="'200px'" *ngIf="!proveedores"></app-loader>
+  </div>
+</div>
+<br>

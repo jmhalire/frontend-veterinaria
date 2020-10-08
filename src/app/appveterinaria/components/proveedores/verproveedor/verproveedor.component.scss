@@ -1,0 +1,104 @@
+.detailsMacot{
+    display: block;
+}
+.mascotadetails, .mascota{
+    width: 100%;
+}
+
+.modalEdit, .modalDelete{
+    background-color: rgba(0, 0, 0, 0.85);
+    .modal-dialog .modal-content{
+        .modal-header{
+            color: black;
+        }
+        .modal-body{
+            padding: 0% 1rem;
+        }
+    }
+}
+.modalEdit .modal-dialog .modal-content{
+    background-color: #bebebe;
+}
+.btn{
+    width: 150px;
+    &:hover{
+        text-decoration: underline;
+        transform: translateY(-5px);
+        transition: 200ms ease-in-out;
+    }
+}
+label{
+    font-size: 18px;
+    color: #181818;
+}
+
+.form-control{
+    color: #004400;
+    font-size: 20px;
+    &:focus {
+        background-color: white;
+        border-color: white;
+        box-shadow: 0 0 0 0.2rem rgba(255, 255, 255, 0.7);
+        outline: 0;
+        transition: 0.1s;
+    }
+}
+@media screen and (min-width: 950px){
+    .detailsMacot{
+        display: grid;
+        grid-template-columns: 5fr 4fr;
+    }
+    .mascotadetails{
+        padding-left: 1rem;
+    }
+    .mascota{
+        padding-right: 1rem;
+    }
+}
+
+
+.card{
+    border: none;
+    contain: content;
+    height: min-content;
+    .card-header{
+        background-color: #48515a!important;
+        color: white;
+        text-align: center;
+    }
+    .card-body{
+        table tbody tr th{
+            padding-left: 1.5rem;
+        }
+        .container .row-1, .row-3, .row-5, .row-7{
+            background-color: #ebebeb;
+        }
+    }
+}
+
+button{
+    width: 150px;
+}
+
+
+.list-group{
+    flex-direction: row;
+}
+.btn-group{
+    width: 100%;
+}
+.btn-secondary.active {
+    background-color: #40484e;
+    transform: translateY(2px) scaleY(1.07);
+
+}
+
+table{
+    min-width: auto;
+    thead{
+        background-color: #272d31;
+    }
+}
+.btn-check:focus+.btn-secondary, .btn-secondary:focus {
+    box-shadow: none;
+}

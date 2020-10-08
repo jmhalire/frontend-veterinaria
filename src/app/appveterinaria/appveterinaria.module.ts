@@ -81,6 +81,8 @@ import { PerfilComponent } from './components/perfil/perfil.component';
 //loader
 import { LoaderComponent } from './components/loader/loader.component';
 import { VerproductoComponent } from './components/inventario/verproducto/verproducto.component';
+import { BuscarproveedorComponent } from './components/proveedores/listaproveedores/buscarproveedor/buscarproveedor.component';
+import { VerproveedorComponent } from './components/proveedores/verproveedor/verproveedor.component';
 
 @NgModule({
   declarations: [
@@ -92,7 +94,7 @@ import { VerproductoComponent } from './components/inventario/verproducto/verpro
     ListaventasComponent, ArticuloComponent,InventarioComponent, ListaproductosComponent, PorcategoriaComponent, PorproveedorComponent, NuevoproductoComponent,
     OpcionesinventarioComponent, ProveedoresComponent, ListaproveedoresComponent, NuevoproveedorComponent, OpcionesproveedorComponent, UsuariosComponent,
     ListausuariosComponent, NuevousuarioComponent, OpcionesusuarioComponent, ReportesComponent, OpcionesreporteComponent, VentasComponent,
-    IngresosComponent, VisitasComponent, PormesesComponent, DehoyComponent, NuevacategoriaComponent, PerfilComponent, UsuarioComponent, VerproductoComponent, FechaPipe
+    IngresosComponent, VisitasComponent, PormesesComponent, DehoyComponent, NuevacategoriaComponent, PerfilComponent, UsuarioComponent, VerproductoComponent, FechaPipe, BuscarproveedorComponent, VerproveedorComponent
   ],
   imports: [
     CommonModule,

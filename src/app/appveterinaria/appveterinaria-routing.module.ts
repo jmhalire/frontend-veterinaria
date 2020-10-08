@@ -37,6 +37,7 @@ import { VerproductoComponent } from "./components/inventario/verproducto/verpro
 import { ProveedoresComponent } from "./components/proveedores/proveedores.component";
 import { ListaproveedoresComponent } from "./components/proveedores/listaproveedores/listaproveedores.component";
 import { NuevoproveedorComponent } from "./components/proveedores/nuevoproveedor/nuevoproveedor.component";
+import {VerproveedorComponent} from "./components/proveedores/verproveedor/verproveedor.component";
 //usuarios
 import { UsuariosComponent } from "./components/usuarios/usuarios.component";
 import { ListausuariosComponent } from "./components/usuarios/listausuarios/listausuarios.component";
@@ -112,6 +113,7 @@ const routes: Routes = [
           { path: '', redirectTo: 'lista', pathMatch: 'full'},
           { path: 'lista', component: ListaproveedoresComponent },
           { path: 'nuevo-proveedor', component: NuevoproveedorComponent },
+          { path: 'lista/:id', component: VerproveedorComponent},
         ]
       },
       {

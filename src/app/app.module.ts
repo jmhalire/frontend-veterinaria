@@ -24,6 +24,8 @@ import { InventarioService } from "@services/inventario.service";
 import { ServiciosService } from "@services/servicios.service";
 import { MessageService } from "@services/message.service";
 import { ReportesService } from "@services/reportes.service";
+import { ProveedoresService } from "@services/proveedores.service";
+
 
 @NgModule({
   declarations: [
@@ -50,7 +52,8 @@ import { ReportesService } from "@services/reportes.service";
     InventarioService,
     ServiciosService,
     MessageService,
-    ReportesService
+    ReportesService,
+    ProveedoresService
   ], 
   bootstrap: [AppComponent]
 })
