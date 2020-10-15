@@ -16,14 +16,13 @@
         }
     }
 }
-.modalEdit .modal-dialog .modal-content{
-    background-color: #bebebe;
+.modalEdit .modal-dialog .modal-content .modal-header{
+    background-color: #004400;
+    color: white;
 }
 .btn{
     width: 150px;
     &:hover{
-        text-decoration: underline;
-        //border: 2px solid black;
         transform: translateY(-5px);
         transition: 200ms ease-in-out;
     }
@@ -35,15 +34,15 @@ label{
 
 .form-control{
     color: #004400;
+    border-color: #004400;
     font-size: 20px;
     &:focus {
         background-color: white;
-        border-color: white;
-        box-shadow: 0 0 0 0.2rem rgba(255, 255, 255, 0.7);
-        outline: 0;
-        transition: 0.1s;
+        box-shadow: 0 0 0 0.2rem #168a16;
+        transition: 0.2s;
     }
 }
+
 @media screen and (min-width: 950px){
     .detailsClient{
         display: grid;

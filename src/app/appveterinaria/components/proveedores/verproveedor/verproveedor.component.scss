@@ -16,43 +16,28 @@
         }
     }
 }
-.modalEdit .modal-dialog .modal-content{
-    background-color: #bebebe;
-}
-.btn{
-    width: 150px;
-    &:hover{
-        text-decoration: underline;
-        transform: translateY(-5px);
-        transition: 200ms ease-in-out;
-    }
+
+.btn:hover{
+    //text-decoration: underline;
+    transform: translateY(-5px);
+    transition: 200ms ease-in-out;
 }
 label{
     font-size: 18px;
     color: #181818;
 }
-
+.modalEdit .modal-dialog .modal-content .modal-header{
+    background-color: #054664;
+    color: white;
+}
 .form-control{
-    color: #004400;
+    color: #054664;
+    border-color: #0d5d81;
     font-size: 20px;
     &:focus {
         background-color: white;
-        border-color: white;
-        box-shadow: 0 0 0 0.2rem rgba(255, 255, 255, 0.7);
-        outline: 0;
-        transition: 0.1s;
-    }
-}
-@media screen and (min-width: 950px){
-    .detailsMacot{
-        display: grid;
-        grid-template-columns: 5fr 4fr;
-    }
-    .mascotadetails{
-        padding-left: 1rem;
-    }
-    .mascota{
-        padding-right: 1rem;
+        box-shadow: 0 0 0 0.1rem #116891;
+        transition: 0.2s;
     }
 }
 
@@ -76,7 +61,7 @@ label{
     }
 }
 
-button{
+.btn-info, .btn-danger, .btn-success{
     width: 150px;
 }
 
@@ -101,4 +86,18 @@ table{
 }
 .btn-check:focus+.btn-secondary, .btn-secondary:focus {
     box-shadow: none;
+}
+
+
+@media screen and (min-width: 950px){
+    .detailsMacot{
+        display: grid;
+        grid-template-columns: 5fr 4fr;
+    }
+    .mascotadetails{
+        padding-left: 1rem;
+    }
+    .mascota{
+        padding-right: 1rem;
+    }
 }

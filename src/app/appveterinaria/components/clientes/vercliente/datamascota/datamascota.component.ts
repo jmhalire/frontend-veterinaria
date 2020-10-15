@@ -13,7 +13,6 @@ export class DatamascotaComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
-
   }
 
 }

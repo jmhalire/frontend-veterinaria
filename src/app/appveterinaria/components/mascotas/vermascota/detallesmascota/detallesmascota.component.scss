@@ -16,7 +16,11 @@
         }
     }
 }
-
-button{
+.btn{
     width: 150px;
+    &:hover{
+        //text-decoration: underline;
+        transform: translateY(-4px);
+        transition: 200ms ease-in-out;
+    }
 }

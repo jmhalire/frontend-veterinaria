@@ -40,10 +40,6 @@
         .card-footer-delete{
             display: flex;
             justify-content: space-around;
-            .btn{
-                width: 100px;
-                box-shadow: 0 0 0.1em black;
-            }
         }
     }
 }
@@ -68,5 +64,12 @@
         background-color: white;
         box-shadow: 0 0 0 0.2rem #635347;
         transition: 0.3s;
+    }
+}
+.btn{
+    width: 100px;
+    &:hover{
+        transform: translateY(-3px);
+        transition: 200ms ease-in-out;
     }
 }

@@ -33,8 +33,8 @@ export class AuthService {
   }
 
   public getBackend(): string{
-    return 'https://app-mascotitas.herokuapp.com/';
-    //return 'http://localhost:8080/';
+    //return 'https://app-mascotitas.herokuapp.com/';
+    return 'http://localhost:8080/';
   }
 
 }

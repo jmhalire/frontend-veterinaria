@@ -14,7 +14,10 @@
         }
     }
 }
-
-button{
+.btn{
     width: 150px;
+    &:hover{
+        transform: translateY(-4px);
+        transition: 200ms ease-in-out;
+    }
 }
