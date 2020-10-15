@@ -43,15 +43,6 @@ export class InventarioService {
     return this.http.post<any>(`${this.url}article/updated-stock`,dato,{headers: this.authService.httpOptions()})
   }
 
-
-  //proveedores
-  public createdProveedor(proveedor: Proveedor): Observable<any>{
-    return this.http.post<any>(`${this.url}proveedor/save`,proveedor, { headers : this.authService.httpOptions()})
-  }
-  public getProveedores(): Observable<Proveedor[]>{
-    return this.http.get<Proveedor[]>(`${this.url}proveedor/list`, {headers: this.authService.httpOptions()});
-  }
-
   //categorias
   public saveCategoria(dato: Categoria | any){
     return this.http.post<any>(`${this.url}categoria/save`, dato,{headers: this.authService.httpOptions()})

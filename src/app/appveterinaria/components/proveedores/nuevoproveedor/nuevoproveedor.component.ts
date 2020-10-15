@@ -3,6 +3,7 @@ import { FormGroup, FormBuilder, FormControl, Validators } from '@angular/forms'
 
 //services
 import { InventarioService } from "@services/inventario.service";
+import { ProveedoresService } from '@services/proveedores.service';
 
 @Component({
   selector: 'app-nuevoproveedor',
@@ -16,7 +17,7 @@ export class NuevoproveedorComponent implements OnInit {
   public message: string;
   constructor(
     private builder: FormBuilder,
-    private inventService: InventarioService
+    private proveedService: ProveedoresService,
   ) {
     this.title = "registrar nuevo proveedor"
    }
@@ -34,7 +35,7 @@ export class NuevoproveedorComponent implements OnInit {
 
   public created(){
     console.log(this.createdForm.value);
-    this.inventService.createdProveedor(this.createdForm.value).subscribe(
+    this.proveedService.createdProveed(this.createdForm.value).subscribe(
       res => {
         this.message = res.message;
         this.complete();
