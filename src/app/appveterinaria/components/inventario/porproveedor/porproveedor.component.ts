@@ -6,6 +6,7 @@ import { InventarioService } from "@services/inventario.service";
 //interfaces
 import { Proveedor } from '@interfaces/proveedor';
 import { Producto } from '@interfaces/producto';
+import { ProveedoresService } from '@services/proveedores.service';
 
 @Component({
   selector: 'app-porproveedor',
@@ -19,14 +20,14 @@ export class PorproveedorComponent implements OnInit {
   public productos: Producto[]
   public selectProveedorName: string;
   constructor(
-    private inventService: InventarioService
+    private proveedService: ProveedoresService
   ) { 
     this.title = 'Lista de productos por proveedor';
     this.selectProveedorName = '...'
   }
 
   ngOnInit(): void {
-    this.inventService.getProveedores().subscribe(
+    this.proveedService.getListaProveedores().subscribe(
       res => {
         this.proveedores = res;
       }

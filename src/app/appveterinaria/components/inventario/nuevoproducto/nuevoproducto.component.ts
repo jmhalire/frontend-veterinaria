@@ -5,6 +5,7 @@ import { InventarioService } from '@services/inventario.service';
 //interface
 import { Categoria } from "@interfaces/categoria";
 import { Proveedor } from '@interfaces/proveedor';
+import { ProveedoresService } from '@services/proveedores.service';
 @Component({
   selector: 'app-nuevoproducto',
   templateUrl: './nuevoproducto.component.html',
@@ -19,13 +20,15 @@ export class NuevoproductoComponent implements OnInit {
   public proveedores: Proveedor[];
   constructor(
     private builder: FormBuilder,
+    private proveedService: ProveedoresService,
     private inventario: InventarioService
+    
   ) {
     this.title = 'Registrar nuevo producto'
   }
 
   ngOnInit(): void {
-    this.inventario.getProveedores().subscribe(
+    this.proveedService.getListaProveedores().subscribe(
       res => {
         this.proveedores = res;
       }
