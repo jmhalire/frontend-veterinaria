@@ -62,9 +62,15 @@ background-image: linear-gradient(135deg, #8BC6EC 0%, #9599E2 100%);
     }
   }
   tbody tr:hover {
-    background-color: teal;
+    background-color: #128f8f;
     color: white;
     cursor: pointer;
+    th{
+      border-radius: 10px 0 0 10px;
+    }
+    td:last-child{
+      border-radius: 0 10px 10px 0;
+    }
     td .btn {
       background-color: white;
       color: #000000;

@@ -10,9 +10,10 @@
         border-radius: 10px 10px 0 0;
     }
     .card-body{
-        padding: 0%;
+        padding:0%;
         overflow-x: scroll;
         overflow-y: hidden;
+        border-radius: 0 0 10px 10px;
     }
     
 }

@@ -34,7 +34,9 @@
           </tr>
         </tbody>
       </table>
-      
+      <div class="w-100 d-flex align-items-center justify-content-center" *ngIf="noHayDatos">
+        <h3>No hay datos para ¨ <strong>{{ nombreBusqueda }}</strong> ¨</h3>
+      </div>
     </div>
     <div class="card-footer text-info">
       Se muestran la lista de todos los clientes registrados en el sistema ordenados de manera alfabetica por el nombre

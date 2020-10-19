@@ -18,6 +18,8 @@ import { search } from "@animations/animations";
 export class ListaclientesComponent implements OnInit {
 
   //carga de datos 
+  public nombreBusqueda: string;
+  public noHayDatos: boolean;
   private lenBus: number;
   public clientes: Cliente[]
   public titleList: string
@@ -35,7 +37,8 @@ export class ListaclientesComponent implements OnInit {
     this.texto = 'Abrir'
     this.color = 'btn-primary';
     this.lenBus = 0;
-    
+    this.noHayDatos = false;
+    this.nombreBusqueda = null;
   }
 
   ngOnInit(): void {
@@ -68,7 +71,8 @@ export class ListaclientesComponent implements OnInit {
   }
 
   public nameClient(e: string) {
-    //console.log(this.listClient.nativeElement.classList);
+    this.nombreBusqueda = e;
+    this.noHayDatos = false;
     let query = e.toLowerCase();
     requestAnimationFrame(() => {
       this.clientes.forEach((item, index) => {
@@ -81,15 +85,13 @@ export class ListaclientesComponent implements OnInit {
           this.lenBus += 1;
         }
       });
-    });
-    if(this.clientes.length <= this.lenBus){
-      requestAnimationFrame(() => {
-        this.clientes.forEach((item, index) => {
-          let pokes = this.listClient.nativeElement.children[index]
-          pokes.classList.remove('d-none');
-        });
-      });  
-    }
+    });    
+    setTimeout(() => {
+      if(this.lenBus>=this.clientes.length){
+        this.noHayDatos = true;     
+      }
+    }, 500);
+    
     this.lenBus = 0;
   }
 }
