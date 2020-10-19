@@ -1,4 +1,6 @@
 .perfil {
+    border-radius: 10px;
+    box-shadow: 0 1px 2px #444444;
     background: rgba(0, 152, 195, 1);
     background: linear-gradient(90deg,rgba(0, 152, 195, 1)  10%, rgb(0, 71, 104) 45%,rgba(0, 54, 109, 1) 80%);
 }
@@ -11,6 +13,11 @@
     background: transparent!important;
     color: white!important;
     border: none!important;
+    box-shadow: 0 1px 2px #444444;
+    border-radius: 10px;
+    .card-header{
+        border-radius: 10px 10px 0 0;
+    }
 }
 span{
     font-size: 1.3em;

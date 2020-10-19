@@ -44,9 +44,14 @@
     }
 }
 .card-user{
+    border: none;
+    width: 100%;
+    border-radius: 10px;
+    box-shadow: 0 1px 2px #444444;
     .card-header-user{
         background-color: #8f796b;
         color: white;
+        border-radius: 10px 10px 0 0;
     }
     .card-body-user{
         background-color: #f0d7c8;
@@ -68,8 +73,9 @@
 }
 .btn{
     width: 100px;
+    box-shadow: 0 1px 2px #444444;
     &:hover{
-        transform: translateY(-3px);
+        transform: translateY(-2px);
         transition: 200ms ease-in-out;
     }
 }

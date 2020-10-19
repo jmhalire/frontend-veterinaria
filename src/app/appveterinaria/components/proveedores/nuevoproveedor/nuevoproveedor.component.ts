@@ -19,7 +19,7 @@ export class NuevoproveedorComponent implements OnInit {
     private builder: FormBuilder,
     private proveedService: ProveedoresService,
   ) {
-    this.title = "registrar nuevo proveedor"
+    this.title = "Registrar nuevo proveedor"
    }
 
   ngOnInit(): void {

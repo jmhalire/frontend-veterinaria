@@ -51,6 +51,9 @@ background-image: linear-gradient(135deg, #8BC6EC 0%, #9599E2 100%);
   thead {
     --bs-table-bg: #48515ace;
     color: white;
+    tr {
+      border-style: hidden;
+    }
     tr th:first-child {
       width: 20px;
     }
@@ -71,6 +74,7 @@ background-image: linear-gradient(135deg, #8BC6EC 0%, #9599E2 100%);
     }
   }
   tbody tr {
+    border-style: hidden;
     padding: 0;
     td,
     th {

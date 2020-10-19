@@ -6,11 +6,13 @@
     margin-right: auto;
     margin-left: auto;
     border: none;
+    border-radius: 10px;
+    box-shadow: 0 1px 2px #444444;
     .card-header{
         background-color: darkcyan;
+        border-radius: 10px 10px 0 0;
     }
     .card-body{
-        background-color: #00888833;
         form{
             width: 90%;
             .form-group label{
@@ -23,13 +25,13 @@
     text-transform: capitalize!important;
 }
 .form-control{
-    color: #000000;
+    color: #035764;
     font-size: 20px;
-    border-color: #17a2b8;
+    border-color: #108a9c;
     &:focus {
         background-color: white;
         box-shadow: 0 0 0 0.2rem #17a2b8;
-        transition: 0.5s;
+        transition: 0.2s;
     }
 }
 

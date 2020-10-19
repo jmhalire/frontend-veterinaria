@@ -23,6 +23,7 @@
     padding: 0;
     min-height: 3.5rem;
     border-top: 1px solid #0e4c8610;
+    border-radius: 10px;
     &.active{
         background-color: #fff;
         .nav-link{
@@ -38,6 +39,7 @@
     &:hover, a:hover{
         //color: rgb(0, 17, 255);
         background-color:rgb(6, 149, 185);
+        //border-radius: 5px;
         //border-top-left-radius: 15px;
         //border-bottom-left-radius: 15px;
         label,span{

@@ -3,6 +3,7 @@ import { FormGroup, FormBuilder, FormControl, Validators } from '@angular/forms'
 import { ClientesService } from '@services/clientes.service';
 import { Router, ActivatedRoute } from "@angular/router";
 import { HttpResponse } from '@angular/common/http';
+import { Placeholder } from '@angular/compiler/src/i18n/i18n_ast';
 
 @Component({
   selector: 'app-agregarcliente',
@@ -29,9 +30,9 @@ export class AgregarclienteComponent implements OnInit {
       {
         Nombres: new FormControl('', Validators.required),
         Apellidos: new FormControl('', Validators.required),
-        Email: new FormControl('-',Validators.required),
-        Celular: new FormControl('-', Validators.required),
-        Direccion: new FormControl('-', Validators.required),
+        Direccion: new FormControl('', Validators.required),
+        Email: new FormControl('',),
+        Celular: new FormControl('',),
         Estado: 1
       }
     )

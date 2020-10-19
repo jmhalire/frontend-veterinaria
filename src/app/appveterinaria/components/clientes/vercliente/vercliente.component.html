@@ -1,12 +1,12 @@
 <app-message *ngIf="message" [messageDate]="messageDate"></app-message>
 
 <ng-container *ngIf="loading; else content">
-    <div class="d-flex mx-auto my-auto">
-        <h1 class="display-3">Loading...</h1>
+    <div class="h-100 w-100  mt-3">
+        <app-loader [size]="'200px'"></app-loader>
     </div>
 </ng-container>
 <ng-template #content>
-    <div class="detailsClient">
+    <div class="detailsClient mt-2">
         <div class="col-md cliente">
             <app-datacliente [cliente]="cliente"></app-datacliente>
         </div>
@@ -30,8 +30,7 @@
                 <div class="modal-footer d-flex justify-content-around">
                     <button type="submit" class="btn btn-primary" (click)="deleted()" data-dismiss="modal"
                         aria-label="Close">SI</button>
-                    <button type="submit" class="btn btn-danger" data-dismiss="modal"
-                        aria-label="Close">NO</button>
+                    <button type="submit" class="btn btn-danger" data-dismiss="modal" aria-label="Close">NO</button>
                 </div>
             </div>
         </div>

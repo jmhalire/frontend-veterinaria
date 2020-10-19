@@ -1,11 +1,19 @@
 .card{
     border: none;
+    //background: none;
+    border-radius: 10px;
+    box-shadow: 0 1px 2px #444444;
+
     .card-header{
         background-color: #48515a!important;
         color: white;
         text-align: center;
+        border-radius: 10px 10px 0 0;
     }
     .card-body{
+        border-radius: 10px;
+        background-color: #fff;
+        padding: 7px 0px!important;
         table tbody tr th{
             padding-left: 1.5rem;
         }
@@ -16,6 +24,7 @@
 }
 .btn{
     width: 150px;
+    box-shadow: 0 1px 2px #444444;
     &:hover{
         transform: translateY(-4px);
         transition: 200ms ease-in-out;

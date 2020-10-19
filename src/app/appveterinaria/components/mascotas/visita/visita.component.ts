@@ -134,11 +134,7 @@ export class VisitaComponent implements OnInit {
 
   //formateamos el formulario
   private resetForm(){
-    this.motivo.nativeElement.value = "No hay";
-    this.sintoma.nativeElement.value = "No hay";
-    this.diagnostico.nativeElement.value = "No hay";
-    this.tratamiento.nativeElement.value = "No hay";
-    this.costo.nativeElement.value = "0";
+    this.costo.nativeElement.value = "0.0";
     this.vacunas = [];
   }
   //close message

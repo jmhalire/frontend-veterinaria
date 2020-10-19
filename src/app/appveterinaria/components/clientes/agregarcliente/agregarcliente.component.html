@@ -5,20 +5,31 @@
         <span aria-hidden="true">&times;</span>
     </button>
 </div>
-<div class="card h-100">
+<div class="card mt-2 h-100">
     <div class="card-header text-white text-center">
         <h4 class="card-title">{{title}}</h4>
     </div>
     <div class="card-body">
         <form class="mx-auto" [formGroup]='createdForm' (ngSubmit)="created()">
-            <div class="form-group my-3">
-                <label>Nombres</label>
-                <input type="text" class="form-control" style="text-transform: capitalize;" formControlName="Nombres">
+            <div class="row my-3">
+                <div class="col-sm-6">
+                    <div class="form-group">
+                        <label>Nombres</label>
+                        <input type="text" class="form-control" style="text-transform: capitalize;" formControlName="Nombres">
+                    </div>
+                </div>
+                <div class="col-sm-6">
+                    <div class="form-group">
+                        <label>Apellidos</label>
+                        <input type="text" class="form-control text" formControlName="Apellidos" >
+                    </div>
+                </div>
             </div>
             <div class="form-group my-3">
-                <label>Apellidos</label>
-                <input type="text" class="form-control text" formControlName="Apellidos">
-            </div>
+                <label>Direccion</label>
+                <input type="text" class="form-control" formControlName="Direccion">
+            </div><hr>
+            <span>campos opcionales</span>
             <div class="row my-3">
                 <div class="col-sm-6">
                     <div class="form-group ">
@@ -30,13 +41,9 @@
                 <div class="col-sm-6">
                     <div class="form-group ">
                         <label>Celular</label>
-                        <input type="text" class="form-control" formControlName="Celular" maxlength="9">
+                        <input type="text" class="form-control" formControlName="Celular" maxlength="9"   placeholder="999999999">
                     </div>
                 </div>
-            </div>
-            <div class="form-group my-3">
-                <label>Direccion</label>
-                <input type="text" class="form-control" formControlName="Direccion">
             </div>
             <br>
             <div class="d-flex">

@@ -2,8 +2,14 @@
     margin-right: auto;
     margin-left: auto;
     border: none;
+    border-radius: 10px;
+    box-shadow: 0 1px 2px #444444;
+    
+    .card-header{
+        border-radius: 10px 10px 0 0;
+    }
     .card-body{
-        background-color: rgba(41, 168, 71, 0.4)!important;
+        border-radius: 0 0 10px 10px;
         form{
             width: 90%;
             .form-group label{
@@ -14,19 +20,24 @@
 }
 
 .form-control, .form-select{
-    color: #000000;
+    color: #012409;
     font-size: 20px;
     border-color: #28a745;
     &:focus {
         background-color: white;
         box-shadow: 0 0 0 0.2rem #28a745!important;
-        transition: 0.3s ease-in-out;
+        transition: 0.2s ease-in-out;
     }
 }
 
 .btn-success{
     font-size: 20px;
     width: 270px;
+    box-shadow: 0 1px 2px #444444;
+    &:hover{
+        transform: translateY(-2px);
+    }
+
 }
 
 .btn-check{

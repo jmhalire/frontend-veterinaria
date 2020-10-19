@@ -4,7 +4,7 @@
         <span aria-hidden="true">&times;</span>
     </button>
 </div>
-<div class="card">
+<div class="card mt-2">
     <div class="card-header">
         <h4 class="card-title">NUEVA VENTA</h4>
     </div>
@@ -26,7 +26,7 @@
         </div>
         <fieldset class="border-5 p-2">
             <legend class="w-auto">ARTICULOS</legend>
-            <div class="d-flex bg-dark py-1 text-white">
+            <div class="d-flex bg-dark py-1 text-white" style="border-radius: 7px;">
                 <div class="mx-1" style="width: 8%;"></div>
                 <div class="mx-1" style="width: 5%;">N°</div>
                 <div class="mx-1" style="width: 50%;">producto</div>
@@ -45,7 +45,7 @@
         <hr>
         <fieldset class="border-5 p-2">
             <legend class="w-auto">SERVICIOS</legend>
-            <div class="d-flex bg-dark py-1 text-white">
+            <div class="d-flex bg-dark py-1 text-white" style="border-radius: 7px;">
                 <div class="mx-1" style="width: 8%;"></div>
                 <div class="mx-1" style="width: 10%;">N°</div>
                 <div class="mx-1" style="width: 60%;">Motivo</div>
@@ -76,7 +76,7 @@
         <br>
         <h4 class="float-right total">Total S/. {{Total}}</h4>
     </div>
-    <div class="card-footer text-center">
+    <div class="card-footer">
         <button class="btn btn-cyan mx-2 w-25" (click)="Guardar()">Guardar factura</button>
         <button class="btn btn-danger mx-2 w-25" (click)="reiniciar()">Reiniciar venta</button>
     </div>

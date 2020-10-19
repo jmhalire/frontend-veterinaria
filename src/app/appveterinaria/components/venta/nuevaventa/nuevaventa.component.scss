@@ -4,21 +4,40 @@
 }
 .card{
     width: 100%;
+    border-radius: 10px;
+    box-shadow: 0 1px 2px #444444;
     .card-header{
+        border-radius: 10px 10px 0 0;
         background-color: darkcyan;
         color: #fff;
     }
-}
-fieldset{
-    border-width: 2px;
-    border-style: groove;
-    border-color: cyan;
-    border-image: initial;
+    .card-body{
+        border-radius: 10px;
+        fieldset{
+            border-radius: 7px;
+            border-width: 2px;
+            border-style: groove;
+            border-color: cyan;
+            border-image: initial;
+        }
+    }
+    .card-footer{
+        height: 5em;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
 }
 legend {
     float: unset;
     padding-bottom: 5px;
     margin-bottom: 0px;
+}
+.btn{
+    box-shadow: 0 1px 2px #444444;
+    &:hover{
+        transform: translateY(-2px);
+    }
 }
 .alert{
     margin-bottom: 5px;
@@ -39,7 +58,7 @@ legend {
     &:focus {
         background-color: white;
         box-shadow: 0 0 0 0.2rem #17a2b8;
-        transition: 0.5s;
+        transition: 0.2s;
     }
 }
 

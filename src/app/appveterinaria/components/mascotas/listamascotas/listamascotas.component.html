@@ -2,7 +2,7 @@
 <button class="btn my-1" [ngClass]="color" (click)="handlefuntion()">{{texto}} busqueda</button>
 <div class="content">
   <div class="search" *ngIf="openClose" @search>
-    <app-buscarmascota (nameMascot)="nameMascot($event)"></app-buscarmascota>
+    <app-busqueda (name)="nameMascot($event)"></app-busqueda>
   </div>
   <div class="card">
     <div class="card-header">

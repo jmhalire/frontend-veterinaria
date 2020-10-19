@@ -2,7 +2,7 @@
 <button class="btn my-1" [ngClass]="color" (click)="handlefuntion()">{{texto}} busqueda</button>
 <div class="content">
   <div class="search" *ngIf="openClose" @search>
-    <app-buscarproveedor (nameProveed)="nameProveed($event)"></app-buscarproveedor>
+    <app-busqueda (name)="nameProveed($event)"></app-busqueda>
   </div>
   <!-- cargando datos -->
   <div class="card">

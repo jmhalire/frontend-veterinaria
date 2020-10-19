@@ -63,14 +63,17 @@ img {
     height: 220px;
     position: relative;
     background-color: #8BC6EC;
-    border-top-right-radius: 5px;
-    border-top-left-radius: 5px;
+    border-top-right-radius: 10px;
+    border-top-left-radius: 10px;
 }
 
 .card {
     border: 0;
     position: relative;
+    border-top-right-radius: 10px;
+    border-top-left-radius: 10px;
     margin-top: 2em;
+    box-shadow: 0 1px 2px #444444;
     .card-body{
         height: 9em;
     }

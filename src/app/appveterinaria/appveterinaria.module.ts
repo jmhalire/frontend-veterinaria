@@ -19,14 +19,12 @@ import { OpcionclientesComponent } from './components/clientes/opcionclientes/op
 import { AgregarclienteComponent } from './components/clientes/agregarcliente/agregarcliente.component';
 import { VerclienteComponent } from './components/clientes/vercliente/vercliente.component';
 import { DataclienteComponent } from './components/clientes/vercliente/datacliente/datacliente.component';
-import { BuscarclienteComponent } from "./components/clientes/listaclientes/buscarcliente/buscarcliente.component";
 //componentes de mascotas
 import { MascotasComponent } from './components/mascotas/mascotas.component';
 import { OpcionmascotasComponent } from './components/mascotas/opcionmascotas/opcionmascotas.component';
 import { DatamascotaComponent } from './components/clientes/vercliente/datamascota/datamascota.component';
 import { ListamascotasComponent } from './components/mascotas/listamascotas/listamascotas.component';
 import { VermascotaComponent } from './components/mascotas/vermascota/vermascota.component';
-import { BuscarmascotaComponent } from './components/mascotas/listamascotas/buscarmascota/buscarmascota.component';
 import { AgregarmascotaComponent } from './components/mascotas/agregarmascota/agregarmascota.component';
 import { DetallesmascotaComponent } from './components/mascotas/vermascota/detallesmascota/detallesmascota.component';
 import { MasdetallesComponent } from './components/mascotas/vermascota/masdetalles/masdetalles.component';
@@ -81,20 +79,21 @@ import { PerfilComponent } from './components/perfil/perfil.component';
 //loader
 import { LoaderComponent } from './components/loader/loader.component';
 import { VerproductoComponent } from './components/inventario/verproducto/verproducto.component';
-import { BuscarproveedorComponent } from './components/proveedores/listaproveedores/buscarproveedor/buscarproveedor.component';
 import { VerproveedorComponent } from './components/proveedores/verproveedor/verproveedor.component';
+import { BusquedaComponent } from './components/busqueda/busqueda.component';
 
 @NgModule({
   declarations: [
     AppveterinariaComponent, HomeComponent,NavbarComponent,SidenavComponent, LoaderComponent, ClientesComponent, MascotasComponent, 
-    CitasComponent, BuscarmascotaComponent, BuscarclienteComponent, OpcioncitasComponent, OpcionmascotasComponent, OpcionclientesComponent, 
-    AgregarclienteComponent, ListaclientesComponent, VerclienteComponent, DataclienteComponent, DatamascotaComponent, MessageComponent, 
+    CitasComponent, OpcioncitasComponent, OpcionmascotasComponent, OpcionclientesComponent, AgregarclienteComponent,
+    ListaclientesComponent, VerclienteComponent, DataclienteComponent, DatamascotaComponent, MessageComponent, 
     ListamascotasComponent, VermascotaComponent, AgregarmascotaComponent, MasdetallesComponent, DetallesmascotaComponent, VisitaComponent, 
     VacunaComponent, ListavisitasComponent, AgregarcitaComponent, ListacitasComponent, VentaComponent, NuevaventaComponent, OpcionesventaComponent,
     ListaventasComponent, ArticuloComponent,InventarioComponent, ListaproductosComponent, PorcategoriaComponent, PorproveedorComponent, NuevoproductoComponent,
     OpcionesinventarioComponent, ProveedoresComponent, ListaproveedoresComponent, NuevoproveedorComponent, OpcionesproveedorComponent, UsuariosComponent,
     ListausuariosComponent, NuevousuarioComponent, OpcionesusuarioComponent, ReportesComponent, OpcionesreporteComponent, VentasComponent,
-    IngresosComponent, VisitasComponent, PormesesComponent, DehoyComponent, NuevacategoriaComponent, PerfilComponent, UsuarioComponent, VerproductoComponent, FechaPipe, BuscarproveedorComponent, VerproveedorComponent
+    IngresosComponent, VisitasComponent, PormesesComponent, DehoyComponent, NuevacategoriaComponent, PerfilComponent, UsuarioComponent, VerproductoComponent, 
+    FechaPipe, VerproveedorComponent, BusquedaComponent
   ],
   imports: [
     CommonModule,

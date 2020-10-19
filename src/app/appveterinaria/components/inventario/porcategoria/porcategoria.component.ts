@@ -30,8 +30,6 @@ export class PorcategoriaComponent implements OnInit {
     this.inventService.getCategorias().subscribe(
       res => {
         this.categorias = res;
-        console.log(res);
-        
       }
     )
   }

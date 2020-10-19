@@ -5,7 +5,7 @@
     </button>
 </div>
 
-<div class="card h-100">
+<div class="card mt-2 h-100">
     <div class="card-header bg-success text-white text-center">
         <h4 class="card-title">{{title}}</h4>
     </div>
@@ -37,9 +37,8 @@
             </div>
             <div class="form-group my-3">
                 <label>Motivo</label>
-                <textarea name="" id="" cols="30" rows="2" class="form-control" #motivo>No hay</textarea>
+                <textarea name="" id="" cols="30" rows="2" class="form-control" #motivo placeholder="describa el motivo de la visita"></textarea>
             </div>
-            <br>
             <hr>
             <span class="d-block">Campos opcionales</span>
             <button class="btn btn-success my-4" (click)="addVacuna()">Agregar vacuna</button>
@@ -51,27 +50,28 @@
                 <div class="col-lg">
                     <div class="form-group my-3">
                         <label>Sintomas</label>
-                        <textarea name="" id="" cols="30" rows="3" class="form-control" #sintoma>No hay</textarea>
+                        <textarea name="" id="" cols="30" rows="3" class="form-control" #sintoma placeholder="registre aqui los simtomas"></textarea>
                     </div>
                 </div>
                 <div class="col-lg">
                     <div class="form-group my-3">
                         <label>Diagnostico</label>
-                        <textarea name="" id="" cols="30" rows="3" class="form-control" #diagnostico>No hay</textarea>
+                        <textarea name="" id="" cols="30" rows="3" class="form-control" #diagnostico placeholder="registre aqui el disgnostico"></textarea>
                     </div>
                 </div>
             </div>
             <div class="form-group my-3">
                 <label>Tratamiento</label>
-                <textarea name="" id="" cols="30" rows="2" class="form-control" #tratamiento>No hay</textarea>
-            </div><br>
+                <textarea name="" id="" cols="30" rows="2" class="form-control" #tratamiento placeholder="registre aqui el tratamiento"></textarea>
+            </div>
             <hr>
+            <span class="d-block">Registre el costo de la atencion</span>
             <div class="row my-3">
                 <div class="col-sm">
                     <div class="form-group d-flex my-3">
                         <label style="align-self: center;">Costo</label>
-                        <input type="text" class="form-control ml-3" value="0" #costo>
-                        <label style="align-self: center;margin-left:1%">Soles</label>
+                        <input type="number" class="form-control ml-3" step="0.1" value="0.0"  #costo>
+                        <label style="align-self: center;margin-left:3%">Soles</label>
                     </div>
                 </div>
                 <div class="col-sm">

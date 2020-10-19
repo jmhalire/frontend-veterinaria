@@ -1,13 +1,16 @@
 .card{
     border: none;
     height: 100%;
+    box-shadow: 0 1px 2px #444444;
+    border-radius: 10px;
     .card-header{
         background-color: #48515a!important;
         color: white;
         text-align: center;
+        border-radius: 10px 10px 0 0;
     }
     .card-body{
-        background-color: #00888833;
+        background-color: #ececec;
         form{
             width: 90%;
         } 
@@ -15,12 +18,12 @@
 }
 
 .form-control{
-    color: #000000;
+    color: #075966;
     font-size: 20px;
-    border-color: #17a2b8;
+    border-color: #088194;
     &:focus {
         background-color: white;
         box-shadow: 0 0 0 0.2rem #17a2b8;
-        transition: 0.5s;
+        transition: 0.2s;
     }
 }

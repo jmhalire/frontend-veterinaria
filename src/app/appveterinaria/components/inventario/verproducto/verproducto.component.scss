@@ -5,7 +5,13 @@
 .card {
     border: none;
     background: transparent;
+    box-shadow: 0 1px 2px #444444;
+    border-radius: 10px;
+    background-color: #e2f1ff;
     //background: linear-gradient(0deg, #0099c3 10%, #0f648b 50%, #12618f 60%);
+    .card-header{
+        border-radius: 10px 10px 0 0;
+    }
     .card-body{
         padding: 1em 5em;
     }

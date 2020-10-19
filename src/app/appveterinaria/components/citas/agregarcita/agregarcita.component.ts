@@ -45,7 +45,7 @@ export class AgregarcitaComponent implements OnInit {
         Tipo: new FormControl('', Validators.required),
         cliente: new FormControl('', Validators.required),
         mascota: new FormControl('',Validators.required),
-        Motivo: new FormControl('-', Validators.required),
+        Motivo: new FormControl('', Validators.required),
         Dia: new FormControl('', Validators.required),
         Hora: new FormControl('', Validators.required),
       }

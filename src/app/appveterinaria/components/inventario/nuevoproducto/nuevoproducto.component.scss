@@ -2,13 +2,15 @@
     margin-right: auto;
     margin-left: auto;
     border: none;
+    box-shadow: 0 1px 2px #444444;
+    border-radius: 10px;
     .card-header{
         background-color: #635347!important;
         color: white;
         text-align: center;
+        border-radius: 10px 10px 0 0;
     }
     .card-body{
-        background-color: #6353478c;
         form{
             width: 90%;
             .form-group label{
@@ -19,7 +21,7 @@
 }
 
 .form-control, .form-select{
-    color: #000000;
+    color: #241b14;
     font-size: 20px;
     border-color: #635347;
     &:focus {
@@ -32,6 +34,10 @@
 .btn-brown{
     font-size: 20px;
     width: 270px;
+    box-shadow: 0 1px 2px #444444;
+    &:hover{
+        transform: translateY(-2px);
+    }
 }
 .alert{
     margin-bottom: 5px;

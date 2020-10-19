@@ -13,7 +13,7 @@
                     [ngModelOptions]="{standalone: true}" 
                     (keyup)='changeInput($event)'>
             </div><hr>            
-            <p class="d-flex align-items-center" *ngIf="nombre"><app-loader [size]="'20px'"></app-loader>Buscando a:  <strong class="ml-3"> {{ nombre }}</strong> ...</p>
+            <p class="d-flex align-items-center" *ngIf="nombre">Buscando a:  <strong class="ml-3"> {{ nombre }}</strong> ...</p>
         </form>
     </div>
 </div>
