@@ -36,7 +36,7 @@ export class InventarioService {
   }
   //para el reporte de los 5 productos mas vendidos
   public getReportProductFavory(): Observable<any>{
-    return this.http.get<any>(`${this.url}report/product-favory`, {headers: this.authService.httpOptions()})
+    return this.http.get<any>(`${this.url}report/top_10_product`, {headers: this.authService.httpOptions()})
   }
   //actualizar sctock del producto
   public updatedStockProduct(dato: any): Observable<any>{

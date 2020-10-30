@@ -72,7 +72,7 @@ img {
     position: relative;
     border-top-right-radius: 10px;
     border-top-left-radius: 10px;
-    margin-top: 2em;
+    //margin-top: 2em;
     box-shadow: 0 1px 2px #444444;
     .card-body{
         height: 9em;
@@ -92,15 +92,27 @@ img {
     -ms-transform: rotate(15deg);
     transform: rotate(15deg);
 }
-.quare{
-    //width: 100%;height: 100px;position: relative;background-color: #8BC6EC;
+.bucket{
+    //style="margin-top: 13em;background-color:#8BC6EC;position: relative;border-radius: 10px;"
+    margin-top: 15em;
+    background-color: #8BC6EC;
+    position: relative;
+    border-radius: 10px;
+    box-shadow: 0 1px 2px #444444;
+
+}
+.square{
+    //class="w-100" style="transform: translateY(-125px);height: 120px;background-color:#8BC6EC;"
     width: 100%;
     height: 120px;
-    position: relative;
-    background-color:  #8BC6EC;
+    transform: translateY(-125px);
+    background-color: #8BC6EC;
 }
 
 @media screen and (max-width: 767px) {
+    .square{
+        display: none;
+    }
     .card:hover {
         transform: translateY(-0.8em);
         transition: all 0.25s ease-in-out;

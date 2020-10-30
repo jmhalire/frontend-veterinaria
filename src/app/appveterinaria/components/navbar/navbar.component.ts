@@ -53,7 +53,6 @@ export class NavbarComponent implements OnInit {
 
     this.authService.logout().subscribe(
       res => {
-        console.log(res.message);
         localStorage.setItem('message', res.message)
         localStorage.removeItem('token');
         localStorage.removeItem('user');

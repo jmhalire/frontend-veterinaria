@@ -1,13 +1,30 @@
-
-<label >Vacuna {{ index + 1 }}</label>
-<div class="bg-info px-3 pt-2 pb-3">
+<label>Vacuna {{ index + 1 }}</label>
+<div class="vacuna px-3 pt-2 pb-3">
     <div class="form-group">
         <label>Tipo de vacuna</label>
-        <input type="text" class="form-control" #tipo>
+        <select required="required" class="form-select" #tipo>
+            <option value="" disabled selected="selected">Seleccione una vacuna</option>
+            <option value="Bordetella">Bordetella</option>
+            <option value="Giardia">Giardia</option>
+            <option value="Cuádruple">Cuádruple</option>
+            <option value="DHPPI">DHPPI</option>
+            <option value="DAL / DHL">DAL / DHL</option>
+            <option value="Leptospira">Leptospira</option>
+            <option value="Leucemia felina">Leucemia felina</option>
+            <option value="Moquillo">Moquillo</option>
+            <option value="Octavalente">Octavalente</option>
+            <option value="Parvovirus">Parvovirus</option>
+            <option value="Puppy DP">Puppy DP</option>
+            <option value="Quíntuple">Quíntuple</option>
+            <option value="Rabia">Rabia</option>
+            <option value="Triple Felina">Triple Felina</option>
+            <option value="Traqueobronquitis">Traqueobronquitis</option>
+            <option value="Otra">Otra</option>
+        </select>
     </div>
     <div class="form-group">
         <label>Observaciones</label>
-        <input type="text" class="form-control" #observacion>
+        <input type="text" class="form-control" #observacion placeholder="opcional">
     </div>
 </div>
 <hr>

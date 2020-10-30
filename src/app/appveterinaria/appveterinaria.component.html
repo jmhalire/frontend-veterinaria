@@ -1,14 +1,5 @@
-<!-- <app-navbar (emitEvent)="eventSidenav($event)"></app-navbar>
-<main class="index">
-    <app-sidenav [stateSidenav]="message" (emitEvent)="prueba($event)"></app-sidenav>
-    <div class="main" [@main]="message ? 'open' : 'closed'">
-        <router-outlet></router-outlet>
-    </div>
-    <app-aside></app-aside>
-</main> -->
 <app-navbar (emitEvent)="eventSidenav($event)"></app-navbar>
 <app-sidenav [stateSidenav]="message"></app-sidenav>
-
 <div class="index">
     <div class="main main-open"  #main>
         <router-outlet></router-outlet>

@@ -1,5 +1,7 @@
 import { Component, OnInit, ViewChild, Host } from '@angular/core';
-import { ListaclientesComponent } from './listaclientes/listaclientes.component';
+
+//interfaces
+import { Option } from "@interfaces/opciones";
 
 @Component({
   selector: 'app-clientes',
@@ -8,9 +10,13 @@ import { ListaclientesComponent } from './listaclientes/listaclientes.component'
 })
 export class ClientesComponent implements OnInit {
 
-  @ViewChild(ListaclientesComponent) list: ListaclientesComponent;
+  public datos: Option[];
   constructor() {
-
+    this.datos = [
+      { nombre: 'lista de clientes', clase: 'btn-dark', url: 'lista' },
+      { nombre: 'nuevo cliente', clase: 'btn-cyan', url: 'nuevo-cliente' },
+      { nombre: 'deudores', clase: 'btn-warning', url: 'lista-deudores' },
+    ]
    }
 
   ngOnInit(): void {

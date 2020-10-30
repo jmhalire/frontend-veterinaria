@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Option } from "@interfaces/opciones";
 
 @Component({
   selector: 'app-proveedores',
@@ -7,8 +8,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ProveedoresComponent implements OnInit {
 
-  constructor() { }
-
+  datos: Option[];
+  
+  constructor() { 
+    this.datos = [
+      { nombre: 'lista de proveedores', clase: 'btn-dark', url: 'lista' },
+      { nombre: 'nuevo proveedor', clase: 'btn-cyan', url: 'nuevo-proveedor' },
+    ]
+  }
+  
   ngOnInit(): void {
   }
 

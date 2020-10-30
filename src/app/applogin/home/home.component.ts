@@ -8,10 +8,13 @@ import { Component, OnInit } from '@angular/core';
 export class HomeComponent implements OnInit {
 
   public message: string;
+  public messageIni: string;
   constructor(){}
   ngOnInit(): void {
     if(localStorage.getItem('message')){
-      setTimeout(()=>this.message = localStorage.getItem('message'),600)
+
+      setTimeout(()=> this.message = localStorage.getItem('message'),600);
+
       setTimeout(()=>{
         this.message = null;
         localStorage.removeItem('message');

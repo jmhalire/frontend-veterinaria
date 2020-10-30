@@ -40,67 +40,66 @@
         </div>
     </div>
 </div>
-<div class="row info-home mx-0">
-    <div class="col-md-4 col-sm-6 mb-3">
-        <div class="card text-white h-100" style="background-color: #5c4d42;">
-            <div class="card-header">
-                <div class="card-body-icon">
-                    <i class="fa fa-fw fa-calendar" aria-hidden="true"></i>
+<div class="bucket">
+    <div class="row">
+        <div class="col-md-4 col-sm-6 mb-3">
+            <div class="card text-white h-100" style="background-color: #5c4d42;">
+                <div class="card-header">
+                    <div class="card-body-icon">
+                        <i class="fa fa-fw fa-calendar" aria-hidden="true"></i>
+                    </div>
                 </div>
-            </div>
-            <div class="card-body">
-                <div class="mr-auto">
-                    <h1 style="font-size: 4em;">{{ countVisita}}</h1>
-                    <h3 style="font-size:3em">visitas</h3>
+                <div class="card-body">
+                    <div class="mr-auto">
+                        <h1 style="font-size: 4em;">{{ countVisita}}</h1>
+                        <h3 style="font-size:3em;">visitas</h3><br>
+                    </div>
+                </div><br>
+                <div class="card-footer text-white">
+                    Actualmente existen {{ countVisita }} visitas registrados en el sistema
+                    <button class="btn btn-outline-light btn-block" [routerLink]="['../mascotas/lista-visitas']">Ver lista</button>
                 </div>
-            </div>
-            <div class="card-footer text-white">
-                Actualmente existen {{ countVisita }} visitas registrados en el sistema
-                <button class="btn btn-outline-light btn-block" [routerLink]="['../mascotas/lista-visitas']">Ver lista</button>
             </div>
         </div>
-    </div>
-    <div class="col-md-4 col-sm-6 mb-3">
-        <div class="card text-white bg-primary o-hidden h-100">
-            <div class="card-header">
-                <div class="card-body-icon">
-                    <i class="fal fa-fw fa-users" aria-hidden="true"></i>
+        <div class="col-md-4 col-sm-6 mb-3">
+            <div class="card text-white bg-primary o-hidden h-100">
+                <div class="card-header">
+                    <div class="card-body-icon">
+                        <i class="fal fa-fw fa-users" aria-hidden="true"></i>
+                    </div>
                 </div>
-            </div>
-            <div class="card-body">
-                <div class="mr-auto">
-                    <h1 style="font-size: 4em;">{{ countClient }}</h1>
-                    <h3 style="font-size:3em">clientes</h3>
+                <div class="card-body">
+                    <div class="mr-auto">
+                        <h1 style="font-size: 4em;">{{ countClient }}</h1>
+                        <h3 style="font-size:3em">clientes</h3><br>
+                    </div>
+                </div><br>
+                <div class="card-footer text-white">
+                    Actualmente existen {{ countClient }} clientes registrados en el sistema
+                    <button class="btn btn-outline-light btn-block" [routerLink]="['../clientes/lista']">Ver lista</button>
                 </div>
-            </div>
-            <div class="card-footer text-white">
-                Actualmente existen {{ countClient }} clientes registrados en el sistema
-                <button class="btn btn-outline-light btn-block" [routerLink]="['../clientes/lista']">Ver lista</button>
             </div>
         </div>
-    </div>
-    <div class="col-md-4 col-sm-12 mb-3">
-        <div class="card text-white bg-dark o-hidden h-100">
-            <div class="card-header">
-                <div class="card-body-icon">
-                    <i class="fal fa-fw fa-paw" aria-hidden="true"></i>
+        <div class="col-md-4 col-sm-12 mb-3">
+            <div class="card text-white bg-dark o-hidden h-100">
+                <div class="card-header">
+                    <div class="card-body-icon">
+                        <i class="fal fa-fw fa-paw" aria-hidden="true"></i>
+                    </div>
                 </div>
-            </div>
-            <div class="card-body">
-                <div class="mr-auto">
-                    <h1 style="font-size: 4em;">{{ countMascot }}</h1>
-                    <h3 style="font-size:3em">mascotas</h3>
+                <div class="card-body">
+                    <div class="mr-auto">
+                        <h1 style="font-size: 4em;">{{ countMascot }}</h1>
+                        <h3 style="font-size:3em">mascotas</h3>
+                    </div>
+                </div><br>
+                <div class="card-footer text-white">
+                    Actualmente existen {{ countMascot }} mascotas registrados en el sistema
+                    <button class="btn btn-outline-light btn-block" [routerLink]="['../mascotas/lista']">Ver lista</button>
                 </div>
-            </div>
-            <div class="card-footer text-white">
-                Actualmente existen {{ countMascot }} mascotas registrados en el sistema
-                <button class="btn btn-outline-light btn-block" [routerLink]="['../mascotas/lista']">Ver lista</button>
             </div>
         </div>
     </div>
 </div>
-<div class="quare">
-</div>
-<div style="position: relative;background-color:  #8BC6EC;width: 100%;">
-    <app-ingresos></app-ingresos>
-</div>
+<div class="square"></div>
+

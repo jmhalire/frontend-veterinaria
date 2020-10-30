@@ -40,10 +40,10 @@ export class VentasComponent implements OnInit {
           dat.push(parseInt(element.ProductCantidad));
           this.data.push(dat);
         });
-        console.log(this.data);
-        
       }
-    )
+    );
+    console.log('ksdnsjbj');
+    
   }
   @HostListener('window:resize', ['$event'])
   onResize(event) {

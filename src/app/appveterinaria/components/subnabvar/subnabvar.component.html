@@ -1,0 +1,5 @@
+<div class="more">
+    <button *ngFor="let dato of datos; index as i" class="btn mx-1" [ngClass]="dato.clase" routerLinkActive="active" [routerLink]="[dato.url]">
+        <label> {{ dato.nombre }} </label>
+    </button>
+</div>

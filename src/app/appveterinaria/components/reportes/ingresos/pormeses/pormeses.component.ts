@@ -1,14 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { Chart } from "chart.js";
-
-//services
-import { VentaService } from '@services/ventas.service';
-import { ReportesService } from "@services/reportes.service";
-
-//interface
-import { Venta } from "@interfaces/venta";
-import { Pormeses } from '@interfaces/pormeses';
-
 @Component({
   selector: 'app-pormeses',
   templateUrl: './pormeses.component.html',
@@ -18,9 +9,7 @@ export class PormesesComponent implements OnInit {
 
   public graph: any;
   @Input('datosXmeses') datosXmeses:any;
-  constructor(
-    private reportService: ReportesService
-  ) {
+  constructor() {
     this.graph = [];
   }
 
@@ -30,7 +19,6 @@ export class PormesesComponent implements OnInit {
   
   public graphBar() {
     
-    //let datos : Pormeses[] = this.reportService.calculoDatos(this.datosFecha,this.ventas);
     let data = []
     this.datosXmeses.datos.forEach(element => {
       data.push(element.acumulado)
