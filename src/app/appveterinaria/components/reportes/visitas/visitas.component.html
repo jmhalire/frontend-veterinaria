@@ -9,9 +9,8 @@
         <h4 class="text-center">Cantidad de visitas de clientes clasificado por meses</h4>
     </div>
     <div class="card-body">
-        <ng-template *ngIf="graph">
-            
-        </ng-template>
+        <ng-template *ngIf="graph"></ng-template>
+        <app-loader [size]="'200px'" *ngIf="!exitDate"></app-loader>
         <canvas id="bar"></canvas>
     </div>
 </div>

@@ -1,11 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { Chart } from "chart.js";
 
-import { Venta } from '@interfaces/venta';
 import { ReportesService } from '@services/reportes.service';
-import { VentaService } from '@services/ventas.service';
-import { Pormeses } from '@interfaces/pormeses';
-import { ServiciosService } from '@services/servicios.service';
 
 @Component({
   selector: 'app-visitas',
@@ -15,19 +11,20 @@ import { ServiciosService } from '@services/servicios.service';
 export class VisitasComponent implements OnInit {
 
   public graph: any;
+  public exitDate: boolean;
   //message
   public message: string;
   constructor(
     private reportService: ReportesService
   ) {
     this.graph = [];
+    this.exitDate = false;
   }
 
   ngOnInit(): void {
     this.reportService.getVisitaMeses().subscribe(
       res => {
         this.graphBar(res)
-        console.log(res);
       },
       err => {
         this.message = err.error.message;
@@ -63,6 +60,7 @@ export class VisitasComponent implements OnInit {
         }
       }
     });
+    this.exitDate = true;
   }
 
   public closeMessage(){

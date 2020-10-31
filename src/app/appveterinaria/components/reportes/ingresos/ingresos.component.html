@@ -4,6 +4,7 @@
         <span aria-hidden="true">&times;</span>
     </button>
 </div>
+<app-loader [size]="'200px'" *ngIf="!datosXmeses && !datosHoy"></app-loader>
 <div *ngIf="datosXmeses && datosHoy" class="mt-2">
     <app-pormeses [datosXmeses]="datosXmeses"></app-pormeses>
     <br>

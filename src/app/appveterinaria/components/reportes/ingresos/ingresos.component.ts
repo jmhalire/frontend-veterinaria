@@ -33,6 +33,9 @@ export class IngresosComponent implements OnInit {
     this.reportService.getIngresoHoy().subscribe(
       res => {
         this.datosHoy = res;
+      },
+      error => {
+        this.message = error.error.message;
       }
     )
   };
