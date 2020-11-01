@@ -15,7 +15,7 @@ export class ClientesComponent implements OnInit {
     this.datos = [
       { nombre: 'lista de clientes', clase: 'btn-dark', url: 'lista' },
       { nombre: 'nuevo cliente', clase: 'btn-cyan', url: 'nuevo-cliente' },
-      { nombre: 'deudores', clase: 'btn-warning', url: 'lista-deudores' },
+      //{ nombre: 'deudores', clase: 'btn-warning', url: 'lista-deudores' },
     ]
    }
 

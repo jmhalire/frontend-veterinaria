@@ -12,7 +12,7 @@ export class CitasComponent implements OnInit {
   constructor() { 
     this.datos = [
       { nombre: 'citas pendientes', clase: 'btn-dark', url: 'pendientes' },
-      { nombre: 'citas finalizadas', clase: 'btn-primary', url: 'finalizadas' },
+      //{ nombre: 'citas finalizadas', clase: 'btn-primary', url: 'finalizadas' },
       { nombre: 'nueva cita', clase: 'btn-cyan', url: 'nueva-cita' },
     ]
   }

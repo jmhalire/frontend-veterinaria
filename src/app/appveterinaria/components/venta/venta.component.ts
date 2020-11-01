@@ -13,7 +13,7 @@ export class VentaComponent implements OnInit {
   constructor() { 
     this.datos = [
       { nombre: 'nueva venta', clase: 'btn-cyan', url: 'nueva-venta' },
-      { nombre: 'lista de ventas', clase: 'btn-dark', url: 'lista' },
+      //{ nombre: 'lista de ventas', clase: 'btn-dark', url: 'lista' },
     ]
   }
   
